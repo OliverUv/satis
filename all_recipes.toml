@@ -1,0 +1,5980 @@
+[recipes."Heavy Oil Residue"]
+building = "Refinery"
+name = "Heavy Oil Residue"
+craft_time = 6.0
+is_alt = true
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Heavy Oil Residue".in_1]
+part = "Crude Oil"
+quantity = 30.0
+
+[recipes."Heavy Oil Residue".out_1]
+part = "Heavy Oil Residue"
+quantity = 40.0
+
+[recipes."Heavy Oil Residue".out_2]
+part = "Polymer Resin"
+quantity = 20.0
+
+[recipes."Aluminium Ingot"]
+building = "Foundry"
+name = "Aluminium Ingot"
+craft_time = 4.0
+is_alt = false
+unlocks = "7|1"
+is_unlocked = true
+
+[recipes."Aluminium Ingot".in_1]
+part = "Aluminium Scrap"
+quantity = 90.0
+
+[recipes."Aluminium Ingot".in_2]
+part = "Silica"
+quantity = 75.0
+
+[recipes."Aluminium Ingot".out_1]
+part = "Aluminium Ingot"
+quantity = 60.0
+
+[recipes."Automated Miner"]
+building = "Assembler"
+name = "Automated Miner"
+craft_time = 60.0
+is_alt = true
+unlocks = "3|3"
+is_unlocked = true
+
+[recipes."Automated Miner".in_1]
+part = "Steel Pipe"
+quantity = 4.0
+
+[recipes."Automated Miner".in_2]
+part = "Iron Plate"
+quantity = 4.0
+
+[recipes."Automated Miner".out_1]
+part = "Portable Miner"
+quantity = 1.0
+
+[recipes.Computer]
+building = "Manufacturer"
+name = "Computer"
+craft_time = 24.0
+is_alt = false
+unlocks = "6|1"
+is_unlocked = true
+
+[recipes.Computer.in_1]
+part = "Circuit Board"
+quantity = 10.0
+
+[recipes.Computer.in_2]
+part = "Cable"
+quantity = 20.0
+
+[recipes.Computer.in_3]
+part = "Plastic"
+quantity = 40.0
+
+[recipes.Computer.out_1]
+part = "Computer"
+quantity = 2.5
+
+[recipes."Unpackage Ionised Fuel"]
+building = "Packager"
+name = "Unpackage Ionised Fuel"
+craft_time = 3.0
+is_alt = false
+unlocks = "S|7"
+is_unlocked = true
+
+[recipes."Unpackage Ionised Fuel".in_1]
+part = "Ionised Fuel (Packaged)"
+quantity = 40.0
+
+[recipes."Unpackage Ionised Fuel".out_1]
+part = "Ionised Fuel"
+quantity = 80.0
+
+[recipes."Unpackage Ionised Fuel".out_2]
+part = "Empty Fluid Tank"
+quantity = 40.0
+
+[recipes."Heavy Encased Frame"]
+building = "Manufacturer"
+name = "Heavy Encased Frame"
+craft_time = 64.0
+is_alt = true
+unlocks = "6|1"
+is_unlocked = true
+
+[recipes."Heavy Encased Frame".in_1]
+part = "Modular Frame"
+quantity = 7.5
+
+[recipes."Heavy Encased Frame".in_2]
+part = "Encased Industrial Beam"
+quantity = 9.375
+
+[recipes."Heavy Encased Frame".in_3]
+part = "Steel Pipe"
+quantity = 33.75
+
+[recipes."Heavy Encased Frame".in_4]
+part = "Concrete"
+quantity = 20.625
+
+[recipes."Heavy Encased Frame".out_1]
+part = "Heavy Modular Frame"
+quantity = 2.8125
+
+[recipes."Coal (Limestone)"]
+building = "Converter"
+name = "Coal (Limestone)"
+craft_time = 6.0
+is_alt = false
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Coal (Limestone)".in_1]
+part = "Reanimated SAM"
+quantity = 10.0
+
+[recipes."Coal (Limestone)".in_2]
+part = "Limestone"
+quantity = 360.0
+
+[recipes."Coal (Limestone)".out_1]
+part = "Coal"
+quantity = 120.0
+
+[recipes."Turbo Pressure Motor"]
+building = "Manufacturer"
+name = "Turbo Pressure Motor"
+craft_time = 32.0
+is_alt = true
+unlocks = "8|5"
+is_unlocked = true
+
+[recipes."Turbo Pressure Motor".in_1]
+part = "Motor"
+quantity = 7.5
+
+[recipes."Turbo Pressure Motor".in_2]
+part = "Pressure Conversion Cube"
+quantity = 1.875
+
+[recipes."Turbo Pressure Motor".in_3]
+part = "Nitrogen Gas (Packaged)"
+quantity = 45.0
+
+[recipes."Turbo Pressure Motor".in_4]
+part = "Stator"
+quantity = 15.0
+
+[recipes."Turbo Pressure Motor".out_1]
+part = "Turbo Motor"
+quantity = 3.75
+
+[recipes."Radio Connection Unit"]
+building = "Manufacturer"
+name = "Radio Connection Unit"
+craft_time = 16.0
+is_alt = true
+unlocks = "8|3"
+is_unlocked = true
+
+[recipes."Radio Connection Unit".in_1]
+part = "Heat Sink"
+quantity = 15.0
+
+[recipes."Radio Connection Unit".in_2]
+part = "High-Speed Connector"
+quantity = 7.5
+
+[recipes."Radio Connection Unit".in_3]
+part = "Quartz Crystal"
+quantity = 45.0
+
+[recipes."Radio Connection Unit".out_1]
+part = "Radio Control Unit"
+quantity = 3.75
+
+[recipes."Modular Engine"]
+building = "Manufacturer"
+name = "Modular Engine"
+craft_time = 60.0
+is_alt = false
+unlocks = "6|1"
+is_unlocked = true
+
+[recipes."Modular Engine".in_1]
+part = "Motor"
+quantity = 2.0
+
+[recipes."Modular Engine".in_2]
+part = "Rubber"
+quantity = 15.0
+
+[recipes."Modular Engine".in_3]
+part = "Smart Plating"
+quantity = 2.0
+
+[recipes."Modular Engine".out_1]
+part = "Modular Engine"
+quantity = 1.0
+
+[recipes."Iron Rebar"]
+building = "Constructor"
+name = "Iron Rebar"
+craft_time = 4.0
+is_alt = false
+unlocks = "A|8"
+is_unlocked = true
+
+[recipes."Iron Rebar".in_1]
+part = "Iron Rod"
+quantity = 15.0
+
+[recipes."Iron Rebar".out_1]
+part = "Iron Rebar"
+quantity = 15.0
+
+[recipes.Turbofuel]
+building = "Refinery"
+name = "Turbofuel"
+craft_time = 16.0
+is_alt = false
+unlocks = "S|5"
+is_unlocked = true
+
+[recipes.Turbofuel.in_1]
+part = "Fuel"
+quantity = 22.5
+
+[recipes.Turbofuel.in_2]
+part = "Compacted Coal"
+quantity = 15.0
+
+[recipes.Turbofuel.out_1]
+part = "Turbofuel"
+quantity = 18.75
+
+[recipes."Unpackage Alumina Solution"]
+building = "Packager"
+name = "Unpackage Alumina Solution"
+craft_time = 1.0
+is_alt = false
+unlocks = "7|1"
+is_unlocked = true
+
+[recipes."Unpackage Alumina Solution".in_1]
+part = "Alumina Solution (Packaged)"
+quantity = 120.0
+
+[recipes."Unpackage Alumina Solution".out_1]
+part = "Alumina Solution"
+quantity = 120.0
+
+[recipes."Unpackage Alumina Solution".out_2]
+part = "Empty Canister"
+quantity = 120.0
+
+[recipes."FICSMAS Tree Branch"]
+building = "Constructor"
+name = "FICSMAS Tree Branch"
+craft_time = 6.0
+is_alt = false
+unlocks = "F|1"
+is_unlocked = true
+
+[recipes."FICSMAS Tree Branch".in_1]
+part = "FICSMAS Gift"
+quantity = 10.0
+
+[recipes."FICSMAS Tree Branch".out_1]
+part = "FICSMAS Tree Branch"
+quantity = 10.0
+
+[recipes."AI Limiter"]
+building = "Assembler"
+name = "AI Limiter"
+craft_time = 12.0
+is_alt = false
+unlocks = "C|7"
+is_unlocked = true
+
+[recipes."AI Limiter".in_1]
+part = "Copper Sheet"
+quantity = 25.0
+
+[recipes."AI Limiter".in_2]
+part = "Quickwire"
+quantity = 100.0
+
+[recipes."AI Limiter".out_1]
+part = "AI Limiter"
+quantity = 5.0
+
+[recipes."Nitrogen Gas (Bauxite)"]
+building = "Converter"
+name = "Nitrogen Gas (Bauxite)"
+craft_time = 6.0
+is_alt = false
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Nitrogen Gas (Bauxite)".in_1]
+part = "Reanimated SAM"
+quantity = 10.0
+
+[recipes."Nitrogen Gas (Bauxite)".in_2]
+part = "Bauxite"
+quantity = 100.0
+
+[recipes."Nitrogen Gas (Bauxite)".out_1]
+part = "Nitrogen Gas"
+quantity = 120.0
+
+[recipes."Iodine Infused Filter"]
+building = "Manufacturer"
+name = "Iodine Infused Filter"
+craft_time = 16.0
+is_alt = false
+unlocks = "7|4"
+is_unlocked = true
+
+[recipes."Iodine Infused Filter".in_1]
+part = "Gas Filter"
+quantity = 3.75
+
+[recipes."Iodine Infused Filter".in_2]
+part = "Quickwire"
+quantity = 30.0
+
+[recipes."Iodine Infused Filter".in_3]
+part = "Aluminium Casing"
+quantity = 3.75
+
+[recipes."Iodine Infused Filter".out_1]
+part = "Iodine Infused Filter"
+quantity = 3.75
+
+[recipes."Fine Concrete"]
+building = "Assembler"
+name = "Fine Concrete"
+craft_time = 12.0
+is_alt = true
+unlocks = "Q|3"
+is_unlocked = true
+
+[recipes."Fine Concrete".in_1]
+part = "Silica"
+quantity = 15.0
+
+[recipes."Fine Concrete".in_2]
+part = "Limestone"
+quantity = 60.0
+
+[recipes."Fine Concrete".out_1]
+part = "Concrete"
+quantity = 50.0
+
+[recipes."Encased Industrial Beam"]
+building = "Assembler"
+name = "Encased Industrial Beam"
+craft_time = 10.0
+is_alt = false
+unlocks = "4|3"
+is_unlocked = true
+
+[recipes."Encased Industrial Beam".in_1]
+part = "Steel Beam"
+quantity = 18.0
+
+[recipes."Encased Industrial Beam".in_2]
+part = "Concrete"
+quantity = 36.0
+
+[recipes."Encased Industrial Beam".out_1]
+part = "Encased Industrial Beam"
+quantity = 6.0
+
+[recipes."Unpackage Nitric Acid"]
+building = "Packager"
+name = "Unpackage Nitric Acid"
+craft_time = 3.0
+is_alt = false
+unlocks = "8|5"
+is_unlocked = true
+
+[recipes."Unpackage Nitric Acid".in_1]
+part = "Nitric Acid (Packaged)"
+quantity = 20.0
+
+[recipes."Unpackage Nitric Acid".out_1]
+part = "Nitric Acid"
+quantity = 20.0
+
+[recipes."Unpackage Nitric Acid".out_2]
+part = "Empty Fluid Tank"
+quantity = 20.0
+
+[recipes."Compacted Coal"]
+building = "Assembler"
+name = "Compacted Coal"
+craft_time = 12.0
+is_alt = false
+unlocks = "S|4"
+is_unlocked = true
+
+[recipes."Compacted Coal".in_1]
+part = "Coal"
+quantity = 25.0
+
+[recipes."Compacted Coal".in_2]
+part = "Sulfur"
+quantity = 25.0
+
+[recipes."Compacted Coal".out_1]
+part = "Compacted Coal"
+quantity = 25.0
+
+[recipes."Fancy Fireworks"]
+building = "Assembler"
+name = "Fancy Fireworks"
+craft_time = 24.0
+is_alt = false
+unlocks = "F|1"
+is_unlocked = true
+
+[recipes."Fancy Fireworks".in_1]
+part = "FICSMAS Tree Branch"
+quantity = 10.0
+
+[recipes."Fancy Fireworks".in_2]
+part = "FICSMAS Bow"
+quantity = 7.5
+
+[recipes."Fancy Fireworks".out_1]
+part = "Fancy Fireworks"
+quantity = 2.5
+
+[recipes."Ionised Fuel"]
+building = "Refinery"
+name = "Ionised Fuel"
+craft_time = 24.0
+is_alt = false
+unlocks = "S|7"
+is_unlocked = true
+
+[recipes."Ionised Fuel".in_1]
+part = "Rocket Fuel"
+quantity = 40.0
+
+[recipes."Ionised Fuel".in_2]
+part = "Power Shard"
+quantity = 1.0
+
+[recipes."Ionised Fuel".out_1]
+part = "Ionised Fuel"
+quantity = 40.0
+
+[recipes."Ionised Fuel".out_2]
+part = "Compacted Coal"
+quantity = 5.0
+
+[recipes."Bauxite (Copper)"]
+building = "Converter"
+name = "Bauxite (Copper)"
+craft_time = 6.0
+is_alt = false
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Bauxite (Copper)".in_1]
+part = "Reanimated SAM"
+quantity = 10.0
+
+[recipes."Bauxite (Copper)".in_2]
+part = "Copper Ore"
+quantity = 180.0
+
+[recipes."Bauxite (Copper)".out_1]
+part = "Bauxite"
+quantity = 120.0
+
+[recipes."Sloppy Alumina"]
+building = "Refinery"
+name = "Sloppy Alumina"
+craft_time = 3.0
+is_alt = true
+unlocks = "7|1"
+is_unlocked = true
+
+[recipes."Sloppy Alumina".in_1]
+part = "Bauxite"
+quantity = 200.0
+
+[recipes."Sloppy Alumina".in_2]
+part = "Water"
+quantity = 200.0
+
+[recipes."Sloppy Alumina".out_1]
+part = "Alumina Solution"
+quantity = 240.0
+
+[recipes."Aluminium Beam"]
+building = "Constructor"
+name = "Aluminium Beam"
+craft_time = 8.0
+is_alt = true
+unlocks = "7|1"
+is_unlocked = true
+
+[recipes."Aluminium Beam".in_1]
+part = "Aluminium Ingot"
+quantity = 22.5
+
+[recipes."Aluminium Beam".out_1]
+part = "Steel Beam"
+quantity = 22.5
+
+[recipes."Versatile Framework"]
+building = "Assembler"
+name = "Versatile Framework"
+craft_time = 24.0
+is_alt = false
+unlocks = "3|3"
+is_unlocked = true
+
+[recipes."Versatile Framework".in_1]
+part = "Modular Frame"
+quantity = 2.5
+
+[recipes."Versatile Framework".in_2]
+part = "Steel Beam"
+quantity = 30.0
+
+[recipes."Versatile Framework".out_1]
+part = "Versatile Framework"
+quantity = 5.0
+
+[recipes.Nobelisk]
+building = "Assembler"
+name = "Nobelisk"
+craft_time = 6.0
+is_alt = false
+unlocks = "S|9"
+is_unlocked = true
+
+[recipes.Nobelisk.in_1]
+part = "Black Powder"
+quantity = 20.0
+
+[recipes.Nobelisk.in_2]
+part = "Steel Pipe"
+quantity = 20.0
+
+[recipes.Nobelisk.out_1]
+part = "Nobelisk"
+quantity = 10.0
+
+[recipes."Leached Iron Ingot"]
+building = "Refinery"
+name = "Leached Iron Ingot"
+craft_time = 6.0
+is_alt = true
+unlocks = "7|5"
+is_unlocked = true
+
+[recipes."Leached Iron Ingot".in_1]
+part = "Iron Ore"
+quantity = 50.0
+
+[recipes."Leached Iron Ingot".in_2]
+part = "Sulfuric Acid"
+quantity = 10.0
+
+[recipes."Leached Iron Ingot".out_1]
+part = "Iron Ingot"
+quantity = 100.0
+
+[recipes."Oil-Based Diamonds"]
+building = "Particle Accelerator"
+name = "Oil-Based Diamonds"
+craft_time = 200.0
+is_alt = true
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Oil-Based Diamonds".in_1]
+part = "Crude Oil"
+quantity = 200.0
+
+[recipes."Oil-Based Diamonds".out_1]
+part = "Diamonds"
+quantity = 40.0
+
+[recipes."Red FICSMAS Ornament"]
+building = "Smelter"
+name = "Red FICSMAS Ornament"
+craft_time = 12.0
+is_alt = false
+unlocks = "F|4"
+is_unlocked = true
+
+[recipes."Red FICSMAS Ornament".in_1]
+part = "FICSMAS Gift"
+quantity = 5.0
+
+[recipes."Red FICSMAS Ornament".out_1]
+part = "FICSMAS Ornament (Red)"
+quantity = 5.0
+
+[recipes."Steamed Copper Sheet"]
+building = "Refinery"
+name = "Steamed Copper Sheet"
+craft_time = 8.0
+is_alt = true
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Steamed Copper Sheet".in_1]
+part = "Copper Ingot"
+quantity = 22.5
+
+[recipes."Steamed Copper Sheet".in_2]
+part = "Water"
+quantity = 22.5
+
+[recipes."Steamed Copper Sheet".out_1]
+part = "Copper Sheet"
+quantity = 22.5
+
+[recipes.Biocoal]
+building = "Constructor"
+name = "Biocoal"
+craft_time = 8.0
+is_alt = true
+unlocks = "S|4"
+is_unlocked = true
+
+[recipes.Biocoal.in_1]
+part = "Biomass"
+quantity = 37.5
+
+[recipes.Biocoal.out_1]
+part = "Coal"
+quantity = 45.0
+
+[recipes."Fine Black Powder"]
+building = "Assembler"
+name = "Fine Black Powder"
+craft_time = 8.0
+is_alt = true
+unlocks = "S|4"
+is_unlocked = true
+
+[recipes."Fine Black Powder".in_1]
+part = "Sulfur"
+quantity = 7.5
+
+[recipes."Fine Black Powder".in_2]
+part = "Compacted Coal"
+quantity = 15.0
+
+[recipes."Fine Black Powder".out_1]
+part = "Black Powder"
+quantity = 45.0
+
+[recipes."Steel Pipe"]
+building = "Constructor"
+name = "Steel Pipe"
+craft_time = 6.0
+is_alt = false
+unlocks = "3|3"
+is_unlocked = true
+
+[recipes."Steel Pipe".in_1]
+part = "Steel Ingot"
+quantity = 30.0
+
+[recipes."Steel Pipe".out_1]
+part = "Steel Pipe"
+quantity = 20.0
+
+[recipes."SAM Fluctuator"]
+building = "Manufacturer"
+name = "SAM Fluctuator"
+craft_time = 6.0
+is_alt = false
+unlocks = "T|3"
+is_unlocked = true
+
+[recipes."SAM Fluctuator".in_1]
+part = "Reanimated SAM"
+quantity = 60.0
+
+[recipes."SAM Fluctuator".in_2]
+part = "Wire"
+quantity = 50.0
+
+[recipes."SAM Fluctuator".in_3]
+part = "Steel Pipe"
+quantity = 30.0
+
+[recipes."SAM Fluctuator".out_1]
+part = "SAM Fluctuator"
+quantity = 10.0
+
+[recipes."Packaged Alumina Solution"]
+building = "Packager"
+name = "Packaged Alumina Solution"
+craft_time = 1.0
+is_alt = false
+unlocks = "7|1"
+is_unlocked = true
+
+[recipes."Packaged Alumina Solution".in_1]
+part = "Alumina Solution"
+quantity = 120.0
+
+[recipes."Packaged Alumina Solution".in_2]
+part = "Empty Canister"
+quantity = 120.0
+
+[recipes."Packaged Alumina Solution".out_1]
+part = "Alumina Solution (Packaged)"
+quantity = 120.0
+
+[recipes."Pink Diamonds"]
+building = "Converter"
+name = "Pink Diamonds"
+craft_time = 4.0
+is_alt = true
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Pink Diamonds".in_1]
+part = "Coal"
+quantity = 120.0
+
+[recipes."Pink Diamonds".in_2]
+part = "Quartz Crystal"
+quantity = 45.0
+
+[recipes."Pink Diamonds".out_1]
+part = "Diamonds"
+quantity = 15.0
+
+[recipes."Sulfur (Coal)"]
+building = "Converter"
+name = "Sulfur (Coal)"
+craft_time = 6.0
+is_alt = false
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Sulfur (Coal)".in_1]
+part = "Reanimated SAM"
+quantity = 10.0
+
+[recipes."Sulfur (Coal)".in_2]
+part = "Coal"
+quantity = 200.0
+
+[recipes."Sulfur (Coal)".out_1]
+part = "Sulfur"
+quantity = 120.0
+
+[recipes."Dark Matter Trap"]
+building = "Particle Accelerator"
+name = "Dark Matter Trap"
+craft_time = 2.0
+is_alt = true
+unlocks = "9|2"
+is_unlocked = true
+
+[recipes."Dark Matter Trap".in_1]
+part = "Time Crystal"
+quantity = 30.0
+
+[recipes."Dark Matter Trap".in_2]
+part = "Dark Matter Residue"
+quantity = 150.0
+
+[recipes."Dark Matter Trap".out_1]
+part = "Dark Matter Crystal"
+quantity = 60.0
+
+[recipes."Copper Powder"]
+building = "Constructor"
+name = "Copper Powder"
+craft_time = 6.0
+is_alt = false
+unlocks = "8|5"
+is_unlocked = true
+
+[recipes."Copper Powder".in_1]
+part = "Copper Ingot"
+quantity = 300.0
+
+[recipes."Copper Powder".out_1]
+part = "Copper Powder"
+quantity = 50.0
+
+[recipes."Plutonium Pellet"]
+building = "Particle Accelerator"
+name = "Plutonium Pellet"
+craft_time = 60.0
+is_alt = false
+unlocks = "8|5"
+is_unlocked = true
+
+[recipes."Plutonium Pellet".in_1]
+part = "Non-fissile Uranium"
+quantity = 100.0
+
+[recipes."Plutonium Pellet".in_2]
+part = "Uranium Waste"
+quantity = 25.0
+
+[recipes."Plutonium Pellet".out_1]
+part = "Plutonium Pellet"
+quantity = 30.0
+
+[recipes."Electromagnetic Connection Rod"]
+building = "Assembler"
+name = "Electromagnetic Connection Rod"
+craft_time = 15.0
+is_alt = true
+unlocks = "8|2"
+is_unlocked = true
+
+[recipes."Electromagnetic Connection Rod".in_1]
+part = "Stator"
+quantity = 8.0
+
+[recipes."Electromagnetic Connection Rod".in_2]
+part = "High-Speed Connector"
+quantity = 4.0
+
+[recipes."Electromagnetic Connection Rod".out_1]
+part = "Electromagnetic Control Rod"
+quantity = 8.0
+
+[recipes."Rubber Concrete"]
+building = "Assembler"
+name = "Rubber Concrete"
+craft_time = 6.0
+is_alt = true
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Rubber Concrete".in_1]
+part = "Limestone"
+quantity = 100.0
+
+[recipes."Rubber Concrete".in_2]
+part = "Rubber"
+quantity = 20.0
+
+[recipes."Rubber Concrete".out_1]
+part = "Concrete"
+quantity = 90.0
+
+[recipes."Infused Uranium Cell"]
+building = "Manufacturer"
+name = "Infused Uranium Cell"
+craft_time = 12.0
+is_alt = true
+unlocks = "8|2"
+is_unlocked = true
+
+[recipes."Infused Uranium Cell".in_1]
+part = "Uranium"
+quantity = 25.0
+
+[recipes."Infused Uranium Cell".in_2]
+part = "Silica"
+quantity = 15.0
+
+[recipes."Infused Uranium Cell".in_3]
+part = "Sulfur"
+quantity = 25.0
+
+[recipes."Infused Uranium Cell".in_4]
+part = "Quickwire"
+quantity = 75.0
+
+[recipes."Infused Uranium Cell".out_1]
+part = "Encased Uranium Cell"
+quantity = 20.0
+
+[recipes."Pulse Nobelisk"]
+building = "Assembler"
+name = "Pulse Nobelisk"
+craft_time = 60.0
+is_alt = false
+unlocks = "Q|8"
+is_unlocked = true
+
+[recipes."Pulse Nobelisk".in_1]
+part = "Nobelisk"
+quantity = 5.0
+
+[recipes."Pulse Nobelisk".in_2]
+part = "Crystal Oscillator"
+quantity = 1.0
+
+[recipes."Pulse Nobelisk".out_1]
+part = "Pulse Nobelisk"
+quantity = 5.0
+
+[recipes."Dark Matter Crystallisation"]
+building = "Particle Accelerator"
+name = "Dark Matter Crystallisation"
+craft_time = 3.0
+is_alt = true
+unlocks = "9|2"
+is_unlocked = true
+
+[recipes."Dark Matter Crystallisation".in_1]
+part = "Dark Matter Residue"
+quantity = 200.0
+
+[recipes."Dark Matter Crystallisation".out_1]
+part = "Dark Matter Crystal"
+quantity = 20.0
+
+[recipes."Packaged Nitrogen Gas"]
+building = "Packager"
+name = "Packaged Nitrogen Gas"
+craft_time = 1.0
+is_alt = false
+unlocks = "8|3"
+is_unlocked = true
+
+[recipes."Packaged Nitrogen Gas".in_1]
+part = "Nitrogen Gas"
+quantity = 240.0
+
+[recipes."Packaged Nitrogen Gas".in_2]
+part = "Empty Fluid Tank"
+quantity = 60.0
+
+[recipes."Packaged Nitrogen Gas".out_1]
+part = "Nitrogen Gas (Packaged)"
+quantity = 60.0
+
+[recipes."Moulded Beam"]
+building = "Foundry"
+name = "Moulded Beam"
+craft_time = 12.0
+is_alt = true
+unlocks = "3|3"
+is_unlocked = true
+
+[recipes."Moulded Beam".in_1]
+part = "Steel Ingot"
+quantity = 120.0
+
+[recipes."Moulded Beam".in_2]
+part = "Concrete"
+quantity = 80.0
+
+[recipes."Moulded Beam".out_1]
+part = "Steel Beam"
+quantity = 45.0
+
+[recipes."Unpackage Heavy Oil Residue"]
+building = "Packager"
+name = "Unpackage Heavy Oil Residue"
+craft_time = 6.0
+is_alt = false
+unlocks = "5|4"
+is_unlocked = true
+
+[recipes."Unpackage Heavy Oil Residue".in_1]
+part = "Heavy Oil Residue (Packaged)"
+quantity = 20.0
+
+[recipes."Unpackage Heavy Oil Residue".out_1]
+part = "Heavy Oil Residue"
+quantity = 20.0
+
+[recipes."Unpackage Heavy Oil Residue".out_2]
+part = "Empty Canister"
+quantity = 20.0
+
+[recipes."Nitrogen Gas (Caterium)"]
+building = "Converter"
+name = "Nitrogen Gas (Caterium)"
+craft_time = 6.0
+is_alt = false
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Nitrogen Gas (Caterium)".in_1]
+part = "Reanimated SAM"
+quantity = 10.0
+
+[recipes."Nitrogen Gas (Caterium)".in_2]
+part = "Caterium Ore"
+quantity = 120.0
+
+[recipes."Nitrogen Gas (Caterium)".out_1]
+part = "Nitrogen Gas"
+quantity = 120.0
+
+[recipes."Sweet Fireworks"]
+building = "Assembler"
+name = "Sweet Fireworks"
+craft_time = 24.0
+is_alt = false
+unlocks = "F|1"
+is_unlocked = true
+
+[recipes."Sweet Fireworks".in_1]
+part = "FICSMAS Tree Branch"
+quantity = 15.0
+
+[recipes."Sweet Fireworks".in_2]
+part = "Candy Cane"
+quantity = 7.5
+
+[recipes."Sweet Fireworks".out_1]
+part = "Sweet Fireworks"
+quantity = 2.5
+
+[recipes."Instant Scrap"]
+building = "Blender"
+name = "Instant Scrap"
+craft_time = 6.0
+is_alt = true
+unlocks = "7|5"
+is_unlocked = true
+
+[recipes."Instant Scrap".in_1]
+part = "Bauxite"
+quantity = 150.0
+
+[recipes."Instant Scrap".in_2]
+part = "Coal"
+quantity = 100.0
+
+[recipes."Instant Scrap".in_3]
+part = "Sulfuric Acid"
+quantity = 50.0
+
+[recipes."Instant Scrap".in_4]
+part = "Water"
+quantity = 60.0
+
+[recipes."Instant Scrap".out_1]
+part = "Aluminium Scrap"
+quantity = 300.0
+
+[recipes."Instant Scrap".out_2]
+part = "Water"
+quantity = 50.0
+
+[recipes."Empty Fluid Tank"]
+building = "Constructor"
+name = "Empty Fluid Tank"
+craft_time = 1.0
+is_alt = false
+unlocks = "8|3"
+is_unlocked = true
+
+[recipes."Empty Fluid Tank".in_1]
+part = "Aluminium Ingot"
+quantity = 60.0
+
+[recipes."Empty Fluid Tank".out_1]
+part = "Empty Fluid Tank"
+quantity = 60.0
+
+[recipes."Packaged Oil"]
+building = "Packager"
+name = "Packaged Oil"
+craft_time = 4.0
+is_alt = false
+unlocks = "5|4"
+is_unlocked = true
+
+[recipes."Packaged Oil".in_1]
+part = "Crude Oil"
+quantity = 30.0
+
+[recipes."Packaged Oil".in_2]
+part = "Empty Canister"
+quantity = 30.0
+
+[recipes."Packaged Oil".out_1]
+part = "Crude Oil (Packaged)"
+quantity = 30.0
+
+[recipes."Power Shard (1)"]
+building = "Constructor"
+name = "Power Shard (1)"
+craft_time = 8.0
+is_alt = false
+unlocks = "P|1"
+is_unlocked = true
+
+[recipes."Power Shard (1)".in_1]
+part = "Power Slug (Blue)"
+quantity = 7.5
+
+[recipes."Power Shard (1)".out_1]
+part = "Power Shard"
+quantity = 7.5
+
+[recipes."Cooling Device"]
+building = "Blender"
+name = "Cooling Device"
+craft_time = 24.0
+is_alt = true
+unlocks = "8|3"
+is_unlocked = true
+
+[recipes."Cooling Device".in_1]
+part = "Heat Sink"
+quantity = 10.0
+
+[recipes."Cooling Device".in_2]
+part = "Motor"
+quantity = 2.5
+
+[recipes."Cooling Device".in_3]
+part = "Nitrogen Gas"
+quantity = 60.0
+
+[recipes."Cooling Device".out_1]
+part = "Cooling System"
+quantity = 5.0
+
+[recipes."Biomass (Alien Protein)"]
+building = "Constructor"
+name = "Biomass (Alien Protein)"
+craft_time = 4.0
+is_alt = false
+unlocks = "A|5"
+is_unlocked = true
+
+[recipes."Biomass (Alien Protein)".in_1]
+part = "Alien Protein"
+quantity = 15.0
+
+[recipes."Biomass (Alien Protein)".out_1]
+part = "Biomass"
+quantity = 1500.0
+
+[recipes."Cooling System"]
+building = "Blender"
+name = "Cooling System"
+craft_time = 10.0
+is_alt = false
+unlocks = "8|3"
+is_unlocked = true
+
+[recipes."Cooling System".in_1]
+part = "Heat Sink"
+quantity = 12.0
+
+[recipes."Cooling System".in_2]
+part = "Rubber"
+quantity = 12.0
+
+[recipes."Cooling System".in_3]
+part = "Water"
+quantity = 30.0
+
+[recipes."Cooling System".in_4]
+part = "Nitrogen Gas"
+quantity = 150.0
+
+[recipes."Cooling System".out_1]
+part = "Cooling System"
+quantity = 6.0
+
+[recipes."Dark Matter Crystal"]
+building = "Particle Accelerator"
+name = "Dark Matter Crystal"
+craft_time = 2.0
+is_alt = false
+unlocks = "9|2"
+is_unlocked = true
+
+[recipes."Dark Matter Crystal".in_1]
+part = "Diamonds"
+quantity = 30.0
+
+[recipes."Dark Matter Crystal".in_2]
+part = "Dark Matter Residue"
+quantity = 150.0
+
+[recipes."Dark Matter Crystal".out_1]
+part = "Dark Matter Crystal"
+quantity = 30.0
+
+[recipes."Copper Ore (Quartz)"]
+building = "Converter"
+name = "Copper Ore (Quartz)"
+craft_time = 6.0
+is_alt = false
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Copper Ore (Quartz)".in_1]
+part = "Reanimated SAM"
+quantity = 10.0
+
+[recipes."Copper Ore (Quartz)".in_2]
+part = "Raw Quartz"
+quantity = 100.0
+
+[recipes."Copper Ore (Quartz)".out_1]
+part = "Copper Ore"
+quantity = 120.0
+
+[recipes."Silicon Circuit Board"]
+building = "Assembler"
+name = "Silicon Circuit Board"
+craft_time = 24.0
+is_alt = true
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Silicon Circuit Board".in_1]
+part = "Copper Sheet"
+quantity = 27.5
+
+[recipes."Silicon Circuit Board".in_2]
+part = "Silica"
+quantity = 27.5
+
+[recipes."Silicon Circuit Board".out_1]
+part = "Circuit Board"
+quantity = 12.5
+
+[recipes."Moulded Steel Pipe"]
+building = "Foundry"
+name = "Moulded Steel Pipe"
+craft_time = 6.0
+is_alt = true
+unlocks = "3|3"
+is_unlocked = true
+
+[recipes."Moulded Steel Pipe".in_1]
+part = "Steel Ingot"
+quantity = 50.0
+
+[recipes."Moulded Steel Pipe".in_2]
+part = "Concrete"
+quantity = 30.0
+
+[recipes."Moulded Steel Pipe".out_1]
+part = "Steel Pipe"
+quantity = 50.0
+
+[recipes."Power Shard (2)"]
+building = "Constructor"
+name = "Power Shard (2)"
+craft_time = 12.0
+is_alt = false
+unlocks = "P|3"
+is_unlocked = true
+
+[recipes."Power Shard (2)".in_1]
+part = "Power Slug (Yellow)"
+quantity = 5.0
+
+[recipes."Power Shard (2)".out_1]
+part = "Power Shard"
+quantity = 10.0
+
+[recipes."Packaged Rocket Fuel"]
+building = "Packager"
+name = "Packaged Rocket Fuel"
+craft_time = 1.0
+is_alt = false
+unlocks = "S|6"
+is_unlocked = true
+
+[recipes."Packaged Rocket Fuel".in_1]
+part = "Rocket Fuel"
+quantity = 120.0
+
+[recipes."Packaged Rocket Fuel".in_2]
+part = "Empty Fluid Tank"
+quantity = 60.0
+
+[recipes."Packaged Rocket Fuel".out_1]
+part = "Rocket Fuel (Packaged)"
+quantity = 60.0
+
+[recipes.Concrete]
+building = "Constructor"
+name = "Concrete"
+craft_time = 4.0
+is_alt = false
+unlocks = "0|3"
+is_unlocked = true
+
+[recipes.Concrete.in_1]
+part = "Limestone"
+quantity = 45.0
+
+[recipes.Concrete.out_1]
+part = "Concrete"
+quantity = 15.0
+
+[recipes."Limestone (Sulfur)"]
+building = "Converter"
+name = "Limestone (Sulfur)"
+craft_time = 6.0
+is_alt = false
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Limestone (Sulfur)".in_1]
+part = "Reanimated SAM"
+quantity = 10.0
+
+[recipes."Limestone (Sulfur)".in_2]
+part = "Sulfur"
+quantity = 20.0
+
+[recipes."Limestone (Sulfur)".out_1]
+part = "Limestone"
+quantity = 120.0
+
+[recipes."Copper Alloy Ingot"]
+building = "Foundry"
+name = "Copper Alloy Ingot"
+craft_time = 6.0
+is_alt = true
+unlocks = "3|3"
+is_unlocked = true
+
+[recipes."Copper Alloy Ingot".in_1]
+part = "Copper Ore"
+quantity = 50.0
+
+[recipes."Copper Alloy Ingot".in_2]
+part = "Iron Ore"
+quantity = 50.0
+
+[recipes."Copper Alloy Ingot".out_1]
+part = "Copper Ingot"
+quantity = 100.0
+
+[recipes."Packaged Sulfuric Acid"]
+building = "Packager"
+name = "Packaged Sulfuric Acid"
+craft_time = 3.0
+is_alt = false
+unlocks = "7|5"
+is_unlocked = true
+
+[recipes."Packaged Sulfuric Acid".in_1]
+part = "Sulfuric Acid"
+quantity = 40.0
+
+[recipes."Packaged Sulfuric Acid".in_2]
+part = "Empty Canister"
+quantity = 40.0
+
+[recipes."Packaged Sulfuric Acid".out_1]
+part = "Sulfuric Acid (Packaged)"
+quantity = 40.0
+
+[recipes."Packaged Water"]
+building = "Packager"
+name = "Packaged Water"
+craft_time = 2.0
+is_alt = false
+unlocks = "5|4"
+is_unlocked = true
+
+[recipes."Packaged Water".in_1]
+part = "Water"
+quantity = 60.0
+
+[recipes."Packaged Water".in_2]
+part = "Empty Canister"
+quantity = 60.0
+
+[recipes."Packaged Water".out_1]
+part = "Water (Packaged)"
+quantity = 60.0
+
+[recipes."Nitro Rocket Fuel"]
+building = "Blender"
+name = "Nitro Rocket Fuel"
+craft_time = 2.4
+is_alt = true
+unlocks = "S|6"
+is_unlocked = true
+
+[recipes."Nitro Rocket Fuel".in_1]
+part = "Fuel"
+quantity = 100.0
+
+[recipes."Nitro Rocket Fuel".in_2]
+part = "Nitrogen Gas"
+quantity = 75.0
+
+[recipes."Nitro Rocket Fuel".in_3]
+part = "Sulfur"
+quantity = 100.0
+
+[recipes."Nitro Rocket Fuel".in_4]
+part = "Coal"
+quantity = 50.0
+
+[recipes."Nitro Rocket Fuel".out_1]
+part = "Rocket Fuel"
+quantity = 150.0
+
+[recipes."Nitro Rocket Fuel".out_2]
+part = "Compacted Coal"
+quantity = 25.0
+
+[recipes."Copper FICSMAS Ornament"]
+building = "Foundry"
+name = "Copper FICSMAS Ornament"
+craft_time = 12.0
+is_alt = false
+unlocks = "F|6"
+is_unlocked = true
+
+[recipes."Copper FICSMAS Ornament".in_1]
+part = "FICSMAS Ornament (Red)"
+quantity = 10.0
+
+[recipes."Copper FICSMAS Ornament".in_2]
+part = "Copper Ingot"
+quantity = 10.0
+
+[recipes."Copper FICSMAS Ornament".out_1]
+part = "FICSMAS Ornament (Copper)"
+quantity = 5.0
+
+[recipes."Steel Rod"]
+building = "Constructor"
+name = "Steel Rod"
+craft_time = 5.0
+is_alt = true
+unlocks = "3|3"
+is_unlocked = true
+
+[recipes."Steel Rod".in_1]
+part = "Steel Ingot"
+quantity = 12.0
+
+[recipes."Steel Rod".out_1]
+part = "Iron Rod"
+quantity = 48.0
+
+[recipes."Copper Ore (Sulfur)"]
+building = "Converter"
+name = "Copper Ore (Sulfur)"
+craft_time = 6.0
+is_alt = false
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Copper Ore (Sulfur)".in_1]
+part = "Reanimated SAM"
+quantity = 10.0
+
+[recipes."Copper Ore (Sulfur)".in_2]
+part = "Sulfur"
+quantity = 120.0
+
+[recipes."Copper Ore (Sulfur)".out_1]
+part = "Copper Ore"
+quantity = 120.0
+
+[recipes."Copper Rotor"]
+building = "Assembler"
+name = "Copper Rotor"
+craft_time = 16.0
+is_alt = true
+unlocks = "2|1"
+is_unlocked = true
+
+[recipes."Copper Rotor".in_1]
+part = "Copper Sheet"
+quantity = 22.5
+
+[recipes."Copper Rotor".in_2]
+part = "Screw"
+quantity = 195.0
+
+[recipes."Copper Rotor".out_1]
+part = "Rotor"
+quantity = 11.25
+
+[recipes."Iron Plate"]
+building = "Constructor"
+name = "Iron Plate"
+craft_time = 6.0
+is_alt = false
+unlocks = "0|3"
+is_unlocked = true
+
+[recipes."Iron Plate".in_1]
+part = "Iron Ingot"
+quantity = 30.0
+
+[recipes."Iron Plate".out_1]
+part = "Iron Plate"
+quantity = 20.0
+
+[recipes."Empty Canister"]
+building = "Constructor"
+name = "Empty Canister"
+craft_time = 4.0
+is_alt = false
+unlocks = "5|4"
+is_unlocked = true
+
+[recipes."Empty Canister".in_1]
+part = "Plastic"
+quantity = 30.0
+
+[recipes."Empty Canister".out_1]
+part = "Empty Canister"
+quantity = 60.0
+
+[recipes."Polymer Resin"]
+building = "Refinery"
+name = "Polymer Resin"
+craft_time = 6.0
+is_alt = true
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Polymer Resin".in_1]
+part = "Crude Oil"
+quantity = 60.0
+
+[recipes."Polymer Resin".out_1]
+part = "Polymer Resin"
+quantity = 130.0
+
+[recipes."Polymer Resin".out_2]
+part = "Heavy Oil Residue"
+quantity = 20.0
+
+[recipes.Screw]
+building = "Constructor"
+name = "Screw"
+craft_time = 6.0
+is_alt = false
+unlocks = "0|3"
+is_unlocked = true
+
+[recipes.Screw.in_1]
+part = "Iron Rod"
+quantity = 10.0
+
+[recipes.Screw.out_1]
+part = "Screw"
+quantity = 40.0
+
+[recipes."Adhered Iron Plate"]
+building = "Assembler"
+name = "Adhered Iron Plate"
+craft_time = 16.0
+is_alt = true
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Adhered Iron Plate".in_1]
+part = "Iron Plate"
+quantity = 11.25
+
+[recipes."Adhered Iron Plate".in_2]
+part = "Rubber"
+quantity = 3.75
+
+[recipes."Adhered Iron Plate".out_1]
+part = "Reinforced Iron Plate"
+quantity = 3.75
+
+[recipes."Plastic Smart Plating"]
+building = "Manufacturer"
+name = "Plastic Smart Plating"
+craft_time = 24.0
+is_alt = true
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Plastic Smart Plating".in_1]
+part = "Reinforced Iron Plate"
+quantity = 2.5
+
+[recipes."Plastic Smart Plating".in_2]
+part = "Rotor"
+quantity = 2.5
+
+[recipes."Plastic Smart Plating".in_3]
+part = "Plastic"
+quantity = 7.5
+
+[recipes."Plastic Smart Plating".out_1]
+part = "Smart Plating"
+quantity = 5.0
+
+[recipes."Packaged Liquid Biofuel"]
+building = "Packager"
+name = "Packaged Liquid Biofuel"
+craft_time = 3.0
+is_alt = false
+unlocks = "5|4"
+is_unlocked = true
+
+[recipes."Packaged Liquid Biofuel".in_1]
+part = "Liquid Biofuel"
+quantity = 40.0
+
+[recipes."Packaged Liquid Biofuel".in_2]
+part = "Empty Canister"
+quantity = 40.0
+
+[recipes."Packaged Liquid Biofuel".out_1]
+part = "Liquid Biofuel (Packaged)"
+quantity = 40.0
+
+[recipes."Electrode Circuit Board"]
+building = "Assembler"
+name = "Electrode Circuit Board"
+craft_time = 12.0
+is_alt = true
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Electrode Circuit Board".in_1]
+part = "Rubber"
+quantity = 20.0
+
+[recipes."Electrode Circuit Board".in_2]
+part = "Petroleum Coke"
+quantity = 40.0
+
+[recipes."Electrode Circuit Board".out_1]
+part = "Circuit Board"
+quantity = 5.0
+
+[recipes."Caterium Wire"]
+building = "Constructor"
+name = "Caterium Wire"
+craft_time = 4.0
+is_alt = true
+unlocks = "C|2"
+is_unlocked = true
+
+[recipes."Caterium Wire".in_1]
+part = "Caterium Ingot"
+quantity = 15.0
+
+[recipes."Caterium Wire".out_1]
+part = "Wire"
+quantity = 120.0
+
+[recipes."Candy Cane"]
+building = "Constructor"
+name = "Candy Cane"
+craft_time = 12.0
+is_alt = false
+unlocks = "F|2"
+is_unlocked = true
+
+[recipes."Candy Cane".in_1]
+part = "FICSMAS Gift"
+quantity = 15.0
+
+[recipes."Candy Cane".out_1]
+part = "Candy Cane"
+quantity = 5.0
+
+[recipes."Reinforced Iron Plate"]
+building = "Assembler"
+name = "Reinforced Iron Plate"
+craft_time = 12.0
+is_alt = false
+unlocks = "0|3"
+is_unlocked = true
+
+[recipes."Reinforced Iron Plate".in_1]
+part = "Iron Plate"
+quantity = 30.0
+
+[recipes."Reinforced Iron Plate".in_2]
+part = "Screw"
+quantity = 60.0
+
+[recipes."Reinforced Iron Plate".out_1]
+part = "Reinforced Iron Plate"
+quantity = 5.0
+
+[recipes."Plastic AI Limiter"]
+building = "Assembler"
+name = "Plastic AI Limiter"
+craft_time = 15.0
+is_alt = true
+unlocks = "C|7"
+is_unlocked = true
+
+[recipes."Plastic AI Limiter".in_1]
+part = "Quickwire"
+quantity = 120.0
+
+[recipes."Plastic AI Limiter".in_2]
+part = "Plastic"
+quantity = 28.0
+
+[recipes."Plastic AI Limiter".out_1]
+part = "AI Limiter"
+quantity = 8.0
+
+[recipes.Stator]
+building = "Assembler"
+name = "Stator"
+craft_time = 12.0
+is_alt = false
+unlocks = "4|3"
+is_unlocked = true
+
+[recipes.Stator.in_1]
+part = "Steel Pipe"
+quantity = 15.0
+
+[recipes.Stator.in_2]
+part = "Wire"
+quantity = 40.0
+
+[recipes.Stator.out_1]
+part = "Stator"
+quantity = 5.0
+
+[recipes."Aluminium Scrap"]
+building = "Refinery"
+name = "Aluminium Scrap"
+craft_time = 1.0
+is_alt = false
+unlocks = "7|1"
+is_unlocked = true
+
+[recipes."Aluminium Scrap".in_1]
+part = "Alumina Solution"
+quantity = 240.0
+
+[recipes."Aluminium Scrap".in_2]
+part = "Coal"
+quantity = 120.0
+
+[recipes."Aluminium Scrap".out_1]
+part = "Aluminium Scrap"
+quantity = 360.0
+
+[recipes."Aluminium Scrap".out_2]
+part = "Water"
+quantity = 120.0
+
+[recipes."Smokeless Powder"]
+building = "Refinery"
+name = "Smokeless Powder"
+craft_time = 6.0
+is_alt = false
+unlocks = "S|10"
+is_unlocked = true
+
+[recipes."Smokeless Powder".in_1]
+part = "Black Powder"
+quantity = 20.0
+
+[recipes."Smokeless Powder".in_2]
+part = "Heavy Oil Residue"
+quantity = 10.0
+
+[recipes."Smokeless Powder".out_1]
+part = "Smokeless Powder"
+quantity = 20.0
+
+[recipes."Uranium (Bauxite)"]
+building = "Converter"
+name = "Uranium (Bauxite)"
+craft_time = 6.0
+is_alt = false
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Uranium (Bauxite)".in_1]
+part = "Reanimated SAM"
+quantity = 10.0
+
+[recipes."Uranium (Bauxite)".in_2]
+part = "Bauxite"
+quantity = 480.0
+
+[recipes."Uranium (Bauxite)".out_1]
+part = "Uranium"
+quantity = 120.0
+
+[recipes."Leached Copper Ingot"]
+building = "Refinery"
+name = "Leached Copper Ingot"
+craft_time = 12.0
+is_alt = true
+unlocks = "7|5"
+is_unlocked = true
+
+[recipes."Leached Copper Ingot".in_1]
+part = "Copper Ore"
+quantity = 45.0
+
+[recipes."Leached Copper Ingot".in_2]
+part = "Sulfuric Acid"
+quantity = 25.0
+
+[recipes."Leached Copper Ingot".out_1]
+part = "Copper Ingot"
+quantity = 110.0
+
+[recipes.Silica]
+building = "Constructor"
+name = "Silica"
+craft_time = 8.0
+is_alt = false
+unlocks = "Q|3"
+is_unlocked = true
+
+[recipes.Silica.in_1]
+part = "Raw Quartz"
+quantity = 22.5
+
+[recipes.Silica.out_1]
+part = "Silica"
+quantity = 37.5
+
+[recipes."Neural-Quantum Processor"]
+building = "Quantum Encoder"
+name = "Neural-Quantum Processor"
+craft_time = 20.0
+is_alt = false
+unlocks = "9|2"
+is_unlocked = true
+
+[recipes."Neural-Quantum Processor".in_1]
+part = "Time Crystal"
+quantity = 15.0
+
+[recipes."Neural-Quantum Processor".in_2]
+part = "Supercomputer"
+quantity = 3.0
+
+[recipes."Neural-Quantum Processor".in_3]
+part = "Ficsite Trigon"
+quantity = 45.0
+
+[recipes."Neural-Quantum Processor".in_4]
+part = "Excited Photonic Material"
+quantity = 75.0
+
+[recipes."Neural-Quantum Processor".out_1]
+part = "Neural-Quantum Processor"
+quantity = 3.0
+
+[recipes."Neural-Quantum Processor".out_2]
+part = "Dark Matter Residue"
+quantity = 75.0
+
+[recipes."Caterium Ingot"]
+building = "Smelter"
+name = "Caterium Ingot"
+craft_time = 4.0
+is_alt = false
+unlocks = "C|2"
+is_unlocked = true
+
+[recipes."Caterium Ingot".in_1]
+part = "Caterium Ore"
+quantity = 45.0
+
+[recipes."Caterium Ingot".out_1]
+part = "Caterium Ingot"
+quantity = 15.0
+
+[recipes."Recycled Plastic"]
+building = "Refinery"
+name = "Recycled Plastic"
+craft_time = 12.0
+is_alt = true
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Recycled Plastic".in_1]
+part = "Rubber"
+quantity = 30.0
+
+[recipes."Recycled Plastic".in_2]
+part = "Fuel"
+quantity = 30.0
+
+[recipes."Recycled Plastic".out_1]
+part = "Plastic"
+quantity = 60.0
+
+[recipes."Unpackage Turbofuel"]
+building = "Packager"
+name = "Unpackage Turbofuel"
+craft_time = 6.0
+is_alt = false
+unlocks = "S|5"
+is_unlocked = true
+
+[recipes."Unpackage Turbofuel".in_1]
+part = "Turbofuel (Packaged)"
+quantity = 20.0
+
+[recipes."Unpackage Turbofuel".out_1]
+part = "Turbofuel"
+quantity = 20.0
+
+[recipes."Unpackage Turbofuel".out_2]
+part = "Empty Canister"
+quantity = 20.0
+
+[recipes."Steel Canister"]
+building = "Constructor"
+name = "Steel Canister"
+craft_time = 6.0
+is_alt = true
+unlocks = "5|4"
+is_unlocked = true
+
+[recipes."Steel Canister".in_1]
+part = "Steel Ingot"
+quantity = 40.0
+
+[recipes."Steel Canister".out_1]
+part = "Empty Canister"
+quantity = 40.0
+
+[recipes.Wire]
+building = "Constructor"
+name = "Wire"
+craft_time = 4.0
+is_alt = false
+unlocks = "0|3"
+is_unlocked = true
+
+[recipes.Wire.in_1]
+part = "Copper Ingot"
+quantity = 15.0
+
+[recipes.Wire.out_1]
+part = "Wire"
+quantity = 30.0
+
+[recipes."Steel Ingot"]
+building = "Foundry"
+name = "Steel Ingot"
+craft_time = 4.0
+is_alt = false
+unlocks = "3|3"
+is_unlocked = true
+
+[recipes."Steel Ingot".in_1]
+part = "Iron Ore"
+quantity = 45.0
+
+[recipes."Steel Ingot".in_2]
+part = "Coal"
+quantity = 45.0
+
+[recipes."Steel Ingot".out_1]
+part = "Steel Ingot"
+quantity = 45.0
+
+[recipes."Caterium Circuit Board"]
+building = "Assembler"
+name = "Caterium Circuit Board"
+craft_time = 48.0
+is_alt = true
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Caterium Circuit Board".in_1]
+part = "Plastic"
+quantity = 12.5
+
+[recipes."Caterium Circuit Board".in_2]
+part = "Quickwire"
+quantity = 37.5
+
+[recipes."Caterium Circuit Board".out_1]
+part = "Circuit Board"
+quantity = 8.75
+
+[recipes."Caterium Computer"]
+building = "Manufacturer"
+name = "Caterium Computer"
+craft_time = 16.0
+is_alt = true
+unlocks = "6|1"
+is_unlocked = true
+
+[recipes."Caterium Computer".in_1]
+part = "Circuit Board"
+quantity = 15.0
+
+[recipes."Caterium Computer".in_2]
+part = "Quickwire"
+quantity = 52.5
+
+[recipes."Caterium Computer".in_3]
+part = "Rubber"
+quantity = 22.5
+
+[recipes."Caterium Computer".out_1]
+part = "Computer"
+quantity = 3.75
+
+[recipes."Ballistic Warp Drive"]
+building = "Manufacturer"
+name = "Ballistic Warp Drive"
+craft_time = 60.0
+is_alt = false
+unlocks = "9|4"
+is_unlocked = true
+
+[recipes."Ballistic Warp Drive".in_1]
+part = "Thermal Propulsion Rocket"
+quantity = 1.0
+
+[recipes."Ballistic Warp Drive".in_2]
+part = "Singularity Cell"
+quantity = 5.0
+
+[recipes."Ballistic Warp Drive".in_3]
+part = "Superposition Oscillator"
+quantity = 2.0
+
+[recipes."Ballistic Warp Drive".in_4]
+part = "Dark Matter Crystal"
+quantity = 40.0
+
+[recipes."Ballistic Warp Drive".out_1]
+part = "Ballistic Warp Drive"
+quantity = 1.0
+
+[recipes."Unpackage Sulfuric Acid"]
+building = "Packager"
+name = "Unpackage Sulfuric Acid"
+craft_time = 1.0
+is_alt = false
+unlocks = "7|5"
+is_unlocked = true
+
+[recipes."Unpackage Sulfuric Acid".in_1]
+part = "Sulfuric Acid (Packaged)"
+quantity = 60.0
+
+[recipes."Unpackage Sulfuric Acid".out_1]
+part = "Sulfuric Acid"
+quantity = 60.0
+
+[recipes."Unpackage Sulfuric Acid".out_2]
+part = "Empty Canister"
+quantity = 60.0
+
+[recipes."Leached Caterium Ingot"]
+building = "Refinery"
+name = "Leached Caterium Ingot"
+craft_time = 10.0
+is_alt = true
+unlocks = "7|5"
+is_unlocked = true
+
+[recipes."Leached Caterium Ingot".in_1]
+part = "Caterium Ore"
+quantity = 54.0
+
+[recipes."Leached Caterium Ingot".in_2]
+part = "Sulfuric Acid"
+quantity = 30.0
+
+[recipes."Leached Caterium Ingot".out_1]
+part = "Caterium Ingot"
+quantity = 36.0
+
+[recipes."Packaged Heavy Oil Residue"]
+building = "Packager"
+name = "Packaged Heavy Oil Residue"
+craft_time = 4.0
+is_alt = false
+unlocks = "5|4"
+is_unlocked = true
+
+[recipes."Packaged Heavy Oil Residue".in_1]
+part = "Heavy Oil Residue"
+quantity = 30.0
+
+[recipes."Packaged Heavy Oil Residue".in_2]
+part = "Empty Canister"
+quantity = 30.0
+
+[recipes."Packaged Heavy Oil Residue".out_1]
+part = "Heavy Oil Residue (Packaged)"
+quantity = 30.0
+
+[recipes."Sulfuric Acid"]
+building = "Refinery"
+name = "Sulfuric Acid"
+craft_time = 6.0
+is_alt = false
+unlocks = "7|5"
+is_unlocked = true
+
+[recipes."Sulfuric Acid".in_1]
+part = "Sulfur"
+quantity = 50.0
+
+[recipes."Sulfuric Acid".in_2]
+part = "Water"
+quantity = 50.0
+
+[recipes."Sulfuric Acid".out_1]
+part = "Sulfuric Acid"
+quantity = 50.0
+
+[recipes."Silicon High-Speed Connector"]
+building = "Manufacturer"
+name = "Silicon High-Speed Connector"
+craft_time = 40.0
+is_alt = true
+unlocks = "C|9"
+is_unlocked = true
+
+[recipes."Silicon High-Speed Connector".in_1]
+part = "Quickwire"
+quantity = 90.0
+
+[recipes."Silicon High-Speed Connector".in_2]
+part = "Silica"
+quantity = 37.5
+
+[recipes."Silicon High-Speed Connector".in_3]
+part = "Circuit Board"
+quantity = 3.0
+
+[recipes."Silicon High-Speed Connector".out_1]
+part = "High-Speed Connector"
+quantity = 3.0
+
+[recipes."Diluted Fuel"]
+building = "Blender"
+name = "Diluted Fuel"
+craft_time = 6.0
+is_alt = true
+unlocks = "7|5"
+is_unlocked = true
+
+[recipes."Diluted Fuel".in_1]
+part = "Heavy Oil Residue"
+quantity = 50.0
+
+[recipes."Diluted Fuel".in_2]
+part = "Water"
+quantity = 100.0
+
+[recipes."Diluted Fuel".out_1]
+part = "Fuel"
+quantity = 100.0
+
+[recipes."Iron Ingot"]
+building = "Smelter"
+name = "Iron Ingot"
+craft_time = 2.0
+is_alt = false
+unlocks = "0|1"
+is_unlocked = true
+
+[recipes."Iron Ingot".in_1]
+part = "Iron Ore"
+quantity = 30.0
+
+[recipes."Iron Ingot".out_1]
+part = "Iron Ingot"
+quantity = 30.0
+
+[recipes."Rocket Fuel"]
+building = "Blender"
+name = "Rocket Fuel"
+craft_time = 6.0
+is_alt = false
+unlocks = "S|6"
+is_unlocked = true
+
+[recipes."Rocket Fuel".in_1]
+part = "Turbofuel"
+quantity = 60.0
+
+[recipes."Rocket Fuel".in_2]
+part = "Nitric Acid"
+quantity = 10.0
+
+[recipes."Rocket Fuel".out_1]
+part = "Rocket Fuel"
+quantity = 100.0
+
+[recipes."Rocket Fuel".out_2]
+part = "Compacted Coal"
+quantity = 10.0
+
+[recipes."Adaptive Control Unit"]
+building = "Manufacturer"
+name = "Adaptive Control Unit"
+craft_time = 60.0
+is_alt = false
+unlocks = "6|1"
+is_unlocked = true
+
+[recipes."Adaptive Control Unit".in_1]
+part = "Automated Wiring"
+quantity = 5.0
+
+[recipes."Adaptive Control Unit".in_2]
+part = "Circuit Board"
+quantity = 5.0
+
+[recipes."Adaptive Control Unit".in_3]
+part = "Heavy Modular Frame"
+quantity = 1.0
+
+[recipes."Adaptive Control Unit".in_4]
+part = "Computer"
+quantity = 2.0
+
+[recipes."Adaptive Control Unit".out_1]
+part = "Adaptive Control Unit"
+quantity = 1.0
+
+[recipes."Homing Rifle Ammo"]
+building = "Assembler"
+name = "Homing Rifle Ammo"
+craft_time = 24.0
+is_alt = false
+unlocks = "C|15"
+is_unlocked = true
+
+[recipes."Homing Rifle Ammo".in_1]
+part = "Rifle Ammo"
+quantity = 50.0
+
+[recipes."Homing Rifle Ammo".in_2]
+part = "High-Speed Connector"
+quantity = 2.5
+
+[recipes."Homing Rifle Ammo".out_1]
+part = "Homing Rifle Ammo"
+quantity = 25.0
+
+[recipes."Recycled Rubber"]
+building = "Refinery"
+name = "Recycled Rubber"
+craft_time = 12.0
+is_alt = true
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Recycled Rubber".in_1]
+part = "Plastic"
+quantity = 30.0
+
+[recipes."Recycled Rubber".in_2]
+part = "Fuel"
+quantity = 30.0
+
+[recipes."Recycled Rubber".out_1]
+part = "Rubber"
+quantity = 60.0
+
+[recipes."Encased Uranium Cell"]
+building = "Blender"
+name = "Encased Uranium Cell"
+craft_time = 12.0
+is_alt = false
+unlocks = "8|2"
+is_unlocked = true
+
+[recipes."Encased Uranium Cell".in_1]
+part = "Uranium"
+quantity = 50.0
+
+[recipes."Encased Uranium Cell".in_2]
+part = "Concrete"
+quantity = 15.0
+
+[recipes."Encased Uranium Cell".in_3]
+part = "Sulfuric Acid"
+quantity = 40.0
+
+[recipes."Encased Uranium Cell".out_1]
+part = "Encased Uranium Cell"
+quantity = 25.0
+
+[recipes."Encased Uranium Cell".out_2]
+part = "Sulfuric Acid"
+quantity = 10.0
+
+[recipes.Diamonds]
+building = "Particle Accelerator"
+name = "Diamonds"
+craft_time = 2.0
+is_alt = false
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes.Diamonds.in_1]
+part = "Coal"
+quantity = 600.0
+
+[recipes.Diamonds.out_1]
+part = "Diamonds"
+quantity = 30.0
+
+[recipes."Heat Sink"]
+building = "Assembler"
+name = "Heat Sink"
+craft_time = 8.0
+is_alt = false
+unlocks = "8|3"
+is_unlocked = true
+
+[recipes."Heat Sink".in_1]
+part = "Alclad Aluminium Sheet"
+quantity = 37.5
+
+[recipes."Heat Sink".in_2]
+part = "Copper Sheet"
+quantity = 22.5
+
+[recipes."Heat Sink".out_1]
+part = "Heat Sink"
+quantity = 7.5
+
+[recipes."Radio Control System"]
+building = "Manufacturer"
+name = "Radio Control System"
+craft_time = 40.0
+is_alt = true
+unlocks = "7|1"
+is_unlocked = true
+
+[recipes."Radio Control System".in_1]
+part = "Crystal Oscillator"
+quantity = 1.5
+
+[recipes."Radio Control System".in_2]
+part = "Circuit Board"
+quantity = 15.0
+
+[recipes."Radio Control System".in_3]
+part = "Aluminium Casing"
+quantity = 90.0
+
+[recipes."Radio Control System".in_4]
+part = "Rubber"
+quantity = 45.0
+
+[recipes."Radio Control System".out_1]
+part = "Radio Control Unit"
+quantity = 4.5
+
+[recipes."Turbo Diamonds"]
+building = "Particle Accelerator"
+name = "Turbo Diamonds"
+craft_time = 3.0
+is_alt = true
+unlocks = "S|5"
+is_unlocked = true
+
+[recipes."Turbo Diamonds".in_1]
+part = "Coal"
+quantity = 600.0
+
+[recipes."Turbo Diamonds".in_2]
+part = "Turbofuel (Packaged)"
+quantity = 40.0
+
+[recipes."Turbo Diamonds".out_1]
+part = "Diamonds"
+quantity = 60.0
+
+[recipes."Sulfur (Iron)"]
+building = "Converter"
+name = "Sulfur (Iron)"
+craft_time = 6.0
+is_alt = false
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Sulfur (Iron)".in_1]
+part = "Reanimated SAM"
+quantity = 10.0
+
+[recipes."Sulfur (Iron)".in_2]
+part = "Iron Ore"
+quantity = 300.0
+
+[recipes."Sulfur (Iron)".out_1]
+part = "Sulfur"
+quantity = 120.0
+
+[recipes."Alien DNA Capsule"]
+building = "Constructor"
+name = "Alien DNA Capsule"
+craft_time = 6.0
+is_alt = false
+unlocks = "A|5"
+is_unlocked = true
+
+[recipes."Alien DNA Capsule".in_1]
+part = "Alien Protein"
+quantity = 10.0
+
+[recipes."Alien DNA Capsule".out_1]
+part = "Alien DNA Capsules"
+quantity = 10.0
+
+[recipes."Quartz Purification"]
+building = "Refinery"
+name = "Quartz Purification"
+craft_time = 12.0
+is_alt = true
+unlocks = "8|5"
+is_unlocked = true
+
+[recipes."Quartz Purification".in_1]
+part = "Raw Quartz"
+quantity = 120.0
+
+[recipes."Quartz Purification".in_2]
+part = "Nitric Acid"
+quantity = 10.0
+
+[recipes."Quartz Purification".out_1]
+part = "Quartz Crystal"
+quantity = 75.0
+
+[recipes."Quartz Purification".out_2]
+part = "Dissolved Silica"
+quantity = 60.0
+
+[recipes."Blue FICSMAS Ornament"]
+building = "Smelter"
+name = "Blue FICSMAS Ornament"
+craft_time = 12.0
+is_alt = false
+unlocks = "F|4"
+is_unlocked = true
+
+[recipes."Blue FICSMAS Ornament".in_1]
+part = "FICSMAS Gift"
+quantity = 5.0
+
+[recipes."Blue FICSMAS Ornament".out_1]
+part = "FICSMAS Ornament (Blue)"
+quantity = 10.0
+
+[recipes."Thermal Propulsion Rocket"]
+building = "Manufacturer"
+name = "Thermal Propulsion Rocket"
+craft_time = 120.0
+is_alt = false
+unlocks = "8|4"
+is_unlocked = true
+
+[recipes."Thermal Propulsion Rocket".in_1]
+part = "Modular Engine"
+quantity = 2.5
+
+[recipes."Thermal Propulsion Rocket".in_2]
+part = "Turbo Motor"
+quantity = 1.0
+
+[recipes."Thermal Propulsion Rocket".in_3]
+part = "Cooling System"
+quantity = 3.0
+
+[recipes."Thermal Propulsion Rocket".in_4]
+part = "Fused Modular Frame"
+quantity = 1.0
+
+[recipes."Thermal Propulsion Rocket".out_1]
+part = "Thermal Propulsion Rocket"
+quantity = 1.0
+
+[recipes."Steeled Frame"]
+building = "Assembler"
+name = "Steeled Frame"
+craft_time = 60.0
+is_alt = true
+unlocks = "3|3"
+is_unlocked = true
+
+[recipes."Steeled Frame".in_1]
+part = "Reinforced Iron Plate"
+quantity = 2.0
+
+[recipes."Steeled Frame".in_2]
+part = "Steel Pipe"
+quantity = 10.0
+
+[recipes."Steeled Frame".out_1]
+part = "Modular Frame"
+quantity = 3.0
+
+[recipes."Unpackage Nitrogen Gas"]
+building = "Packager"
+name = "Unpackage Nitrogen Gas"
+craft_time = 1.0
+is_alt = false
+unlocks = "8|3"
+is_unlocked = true
+
+[recipes."Unpackage Nitrogen Gas".in_1]
+part = "Nitrogen Gas (Packaged)"
+quantity = 60.0
+
+[recipes."Unpackage Nitrogen Gas".out_1]
+part = "Nitrogen Gas"
+quantity = 240.0
+
+[recipes."Unpackage Nitrogen Gas".out_2]
+part = "Empty Fluid Tank"
+quantity = 60.0
+
+[recipes."Power Shard (5)"]
+building = "Constructor"
+name = "Power Shard (5)"
+craft_time = 24.0
+is_alt = false
+unlocks = "P|5"
+is_unlocked = true
+
+[recipes."Power Shard (5)".in_1]
+part = "Power Slug (Purple)"
+quantity = 2.5
+
+[recipes."Power Shard (5)".out_1]
+part = "Power Shard"
+quantity = 12.5
+
+[recipes."Unpackage Water"]
+building = "Packager"
+name = "Unpackage Water"
+craft_time = 1.0
+is_alt = false
+unlocks = "5|4"
+is_unlocked = true
+
+[recipes."Unpackage Water".in_1]
+part = "Water (Packaged)"
+quantity = 120.0
+
+[recipes."Unpackage Water".out_1]
+part = "Water"
+quantity = 120.0
+
+[recipes."Unpackage Water".out_2]
+part = "Empty Canister"
+quantity = 120.0
+
+[recipes.Ficsonium]
+building = "Particle Accelerator"
+name = "Ficsonium"
+craft_time = 6.0
+is_alt = false
+unlocks = "9|5"
+is_unlocked = true
+
+[recipes.Ficsonium.in_1]
+part = "Plutonium Waste"
+quantity = 10.0
+
+[recipes.Ficsonium.in_2]
+part = "Singularity Cell"
+quantity = 10.0
+
+[recipes.Ficsonium.in_3]
+part = "Dark Matter Residue"
+quantity = 200.0
+
+[recipes.Ficsonium.out_1]
+part = "Ficsonium"
+quantity = 10.0
+
+[recipes."Alclad Casing"]
+building = "Assembler"
+name = "Alclad Casing"
+craft_time = 8.0
+is_alt = true
+unlocks = "7|1"
+is_unlocked = true
+
+[recipes."Alclad Casing".in_1]
+part = "Aluminium Ingot"
+quantity = 150.0
+
+[recipes."Alclad Casing".in_2]
+part = "Copper Ingot"
+quantity = 75.0
+
+[recipes."Alclad Casing".out_1]
+part = "Aluminium Casing"
+quantity = 112.5
+
+[recipes.Fabric]
+building = "Assembler"
+name = "Fabric"
+craft_time = 4.0
+is_alt = false
+unlocks = "M|2"
+is_unlocked = true
+
+[recipes.Fabric.in_1]
+part = "Mycelia"
+quantity = 15.0
+
+[recipes.Fabric.in_2]
+part = "Biomass"
+quantity = 75.0
+
+[recipes.Fabric.out_1]
+part = "Fabric"
+quantity = 15.0
+
+[recipes."Gas Filter"]
+building = "Manufacturer"
+name = "Gas Filter"
+craft_time = 8.0
+is_alt = false
+unlocks = "M|10"
+is_unlocked = true
+
+[recipes."Gas Filter".in_1]
+part = "Fabric"
+quantity = 15.0
+
+[recipes."Gas Filter".in_2]
+part = "Coal"
+quantity = 30.0
+
+[recipes."Gas Filter".in_3]
+part = "Iron Plate"
+quantity = 15.0
+
+[recipes."Gas Filter".out_1]
+part = "Gas Filter"
+quantity = 7.5
+
+[recipes."Spitter Protein"]
+building = "Constructor"
+name = "Spitter Protein"
+craft_time = 3.0
+is_alt = false
+unlocks = "A|4"
+is_unlocked = true
+
+[recipes."Spitter Protein".in_1]
+part = "Plasma Spitter Remains"
+quantity = 20.0
+
+[recipes."Spitter Protein".out_1]
+part = "Alien Protein"
+quantity = 20.0
+
+[recipes."Plutonium Fuel Rod"]
+building = "Manufacturer"
+name = "Plutonium Fuel Rod"
+craft_time = 240.0
+is_alt = false
+unlocks = "8|5"
+is_unlocked = true
+
+[recipes."Plutonium Fuel Rod".in_1]
+part = "Encased Plutonium Cell"
+quantity = 7.5
+
+[recipes."Plutonium Fuel Rod".in_2]
+part = "Steel Beam"
+quantity = 4.5
+
+[recipes."Plutonium Fuel Rod".in_3]
+part = "Electromagnetic Control Rod"
+quantity = 1.5
+
+[recipes."Plutonium Fuel Rod".in_4]
+part = "Heat Sink"
+quantity = 2.5
+
+[recipes."Plutonium Fuel Rod".out_1]
+part = "Plutonium Fuel Rod"
+quantity = 0.25
+
+[recipes.Fuel]
+building = "Refinery"
+name = "Fuel"
+craft_time = 6.0
+is_alt = false
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes.Fuel.in_1]
+part = "Crude Oil"
+quantity = 60.0
+
+[recipes.Fuel.out_1]
+part = "Fuel"
+quantity = 40.0
+
+[recipes.Fuel.out_2]
+part = "Polymer Resin"
+quantity = 30.0
+
+[recipes."Flexible Framework"]
+building = "Manufacturer"
+name = "Flexible Framework"
+craft_time = 16.0
+is_alt = true
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Flexible Framework".in_1]
+part = "Modular Frame"
+quantity = 3.75
+
+[recipes."Flexible Framework".in_2]
+part = "Steel Beam"
+quantity = 22.5
+
+[recipes."Flexible Framework".in_3]
+part = "Rubber"
+quantity = 30.0
+
+[recipes."Flexible Framework".out_1]
+part = "Versatile Framework"
+quantity = 7.5
+
+[recipes."Stinger Protein"]
+building = "Constructor"
+name = "Stinger Protein"
+craft_time = 3.0
+is_alt = false
+unlocks = "A|3"
+is_unlocked = true
+
+[recipes."Stinger Protein".in_1]
+part = "Stinger Remains"
+quantity = 20.0
+
+[recipes."Stinger Protein".out_1]
+part = "Alien Protein"
+quantity = 20.0
+
+[recipes."Coated Iron Plate"]
+building = "Assembler"
+name = "Coated Iron Plate"
+craft_time = 8.0
+is_alt = true
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Coated Iron Plate".in_1]
+part = "Iron Ingot"
+quantity = 37.5
+
+[recipes."Coated Iron Plate".in_2]
+part = "Plastic"
+quantity = 7.5
+
+[recipes."Coated Iron Plate".out_1]
+part = "Iron Plate"
+quantity = 75.0
+
+[recipes.Rubber]
+building = "Refinery"
+name = "Rubber"
+craft_time = 6.0
+is_alt = false
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes.Rubber.in_1]
+part = "Crude Oil"
+quantity = 30.0
+
+[recipes.Rubber.out_1]
+part = "Rubber"
+quantity = 20.0
+
+[recipes.Rubber.out_2]
+part = "Heavy Oil Residue"
+quantity = 20.0
+
+[recipes.Supercomputer]
+building = "Manufacturer"
+name = "Supercomputer"
+craft_time = 32.0
+is_alt = false
+unlocks = "7|5"
+is_unlocked = true
+
+[recipes.Supercomputer.in_1]
+part = "Computer"
+quantity = 7.5
+
+[recipes.Supercomputer.in_2]
+part = "AI Limiter"
+quantity = 3.75
+
+[recipes.Supercomputer.in_3]
+part = "High-Speed Connector"
+quantity = 5.625
+
+[recipes.Supercomputer.in_4]
+part = "Plastic"
+quantity = 52.5
+
+[recipes.Supercomputer.out_1]
+part = "Supercomputer"
+quantity = 1.875
+
+[recipes."Bauxite (Caterium)"]
+building = "Converter"
+name = "Bauxite (Caterium)"
+craft_time = 6.0
+is_alt = false
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Bauxite (Caterium)".in_1]
+part = "Reanimated SAM"
+quantity = 10.0
+
+[recipes."Bauxite (Caterium)".in_2]
+part = "Caterium Ore"
+quantity = 150.0
+
+[recipes."Bauxite (Caterium)".out_1]
+part = "Bauxite"
+quantity = 120.0
+
+[recipes."Cast Screw"]
+building = "Constructor"
+name = "Cast Screw"
+craft_time = 24.0
+is_alt = true
+unlocks = "0|3"
+is_unlocked = true
+
+[recipes."Cast Screw".in_1]
+part = "Iron Ingot"
+quantity = 12.5
+
+[recipes."Cast Screw".out_1]
+part = "Screw"
+quantity = 50.0
+
+[recipes."Actual Snow"]
+building = "Constructor"
+name = "Actual Snow"
+craft_time = 12.0
+is_alt = false
+unlocks = "F|5"
+is_unlocked = true
+
+[recipes."Actual Snow".in_1]
+part = "FICSMAS Gift"
+quantity = 25.0
+
+[recipes."Actual Snow".out_1]
+part = "Actual Snow"
+quantity = 10.0
+
+[recipes."Aluminium Rod"]
+building = "Constructor"
+name = "Aluminium Rod"
+craft_time = 8.0
+is_alt = true
+unlocks = "7|1"
+is_unlocked = true
+
+[recipes."Aluminium Rod".in_1]
+part = "Aluminium Ingot"
+quantity = 7.5
+
+[recipes."Aluminium Rod".out_1]
+part = "Iron Rod"
+quantity = 52.5
+
+[recipes.Cable]
+building = "Constructor"
+name = "Cable"
+craft_time = 2.0
+is_alt = false
+unlocks = "0|2"
+is_unlocked = true
+
+[recipes.Cable.in_1]
+part = "Wire"
+quantity = 60.0
+
+[recipes.Cable.out_1]
+part = "Cable"
+quantity = 30.0
+
+[recipes."Packaged Nitric Acid"]
+building = "Packager"
+name = "Packaged Nitric Acid"
+craft_time = 2.0
+is_alt = false
+unlocks = "8|5"
+is_unlocked = true
+
+[recipes."Packaged Nitric Acid".in_1]
+part = "Nitric Acid"
+quantity = 30.0
+
+[recipes."Packaged Nitric Acid".in_2]
+part = "Empty Fluid Tank"
+quantity = 30.0
+
+[recipes."Packaged Nitric Acid".out_1]
+part = "Nitric Acid (Packaged)"
+quantity = 30.0
+
+[recipes."Pure Caterium Ingot"]
+building = "Refinery"
+name = "Pure Caterium Ingot"
+craft_time = 5.0
+is_alt = true
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Pure Caterium Ingot".in_1]
+part = "Caterium Ore"
+quantity = 24.0
+
+[recipes."Pure Caterium Ingot".in_2]
+part = "Water"
+quantity = 24.0
+
+[recipes."Pure Caterium Ingot".out_1]
+part = "Caterium Ingot"
+quantity = 12.0
+
+[recipes."Shatter Rebar"]
+building = "Assembler"
+name = "Shatter Rebar"
+craft_time = 12.0
+is_alt = false
+unlocks = "Q|4"
+is_unlocked = true
+
+[recipes."Shatter Rebar".in_1]
+part = "Iron Rebar"
+quantity = 10.0
+
+[recipes."Shatter Rebar".in_2]
+part = "Quartz Crystal"
+quantity = 15.0
+
+[recipes."Shatter Rebar".out_1]
+part = "Shatter Rebar"
+quantity = 5.0
+
+[recipes."Steel Rotor"]
+building = "Assembler"
+name = "Steel Rotor"
+craft_time = 12.0
+is_alt = true
+unlocks = "3|3"
+is_unlocked = true
+
+[recipes."Steel Rotor".in_1]
+part = "Steel Pipe"
+quantity = 10.0
+
+[recipes."Steel Rotor".in_2]
+part = "Wire"
+quantity = 30.0
+
+[recipes."Steel Rotor".out_1]
+part = "Rotor"
+quantity = 5.0
+
+[recipes."Classic Battery"]
+building = "Manufacturer"
+name = "Classic Battery"
+craft_time = 8.0
+is_alt = true
+unlocks = "7|5"
+is_unlocked = true
+
+[recipes."Classic Battery".in_1]
+part = "Sulfur"
+quantity = 45.0
+
+[recipes."Classic Battery".in_2]
+part = "Alclad Aluminium Sheet"
+quantity = 52.5
+
+[recipes."Classic Battery".in_3]
+part = "Plastic"
+quantity = 60.0
+
+[recipes."Classic Battery".in_4]
+part = "Wire"
+quantity = 90.0
+
+[recipes."Classic Battery".out_1]
+part = "Battery"
+quantity = 30.0
+
+[recipes."Iron Alloy Ingot"]
+building = "Foundry"
+name = "Iron Alloy Ingot"
+craft_time = 12.0
+is_alt = true
+unlocks = "3|3"
+is_unlocked = true
+
+[recipes."Iron Alloy Ingot".in_1]
+part = "Iron Ore"
+quantity = 40.0
+
+[recipes."Iron Alloy Ingot".in_2]
+part = "Copper Ore"
+quantity = 10.0
+
+[recipes."Iron Alloy Ingot".out_1]
+part = "Iron Ingot"
+quantity = 75.0
+
+[recipes."Heavy Modular Frame"]
+building = "Manufacturer"
+name = "Heavy Modular Frame"
+craft_time = 30.0
+is_alt = false
+unlocks = "6|1"
+is_unlocked = true
+
+[recipes."Heavy Modular Frame".in_1]
+part = "Modular Frame"
+quantity = 10.0
+
+[recipes."Heavy Modular Frame".in_2]
+part = "Steel Pipe"
+quantity = 40.0
+
+[recipes."Heavy Modular Frame".in_3]
+part = "Encased Industrial Beam"
+quantity = 10.0
+
+[recipes."Heavy Modular Frame".in_4]
+part = "Screw"
+quantity = 240.0
+
+[recipes."Heavy Modular Frame".out_1]
+part = "Heavy Modular Frame"
+quantity = 2.0
+
+[recipes."Pure Copper Ingot"]
+building = "Refinery"
+name = "Pure Copper Ingot"
+craft_time = 24.0
+is_alt = true
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Pure Copper Ingot".in_1]
+part = "Copper Ore"
+quantity = 15.0
+
+[recipes."Pure Copper Ingot".in_2]
+part = "Water"
+quantity = 10.0
+
+[recipes."Pure Copper Ingot".out_1]
+part = "Copper Ingot"
+quantity = 37.5
+
+[recipes."Basic Iron Ingot"]
+building = "Foundry"
+name = "Basic Iron Ingot"
+craft_time = 12.0
+is_alt = true
+unlocks = "3|3"
+is_unlocked = true
+
+[recipes."Basic Iron Ingot".in_1]
+part = "Iron Ore"
+quantity = 25.0
+
+[recipes."Basic Iron Ingot".in_2]
+part = "Limestone"
+quantity = 40.0
+
+[recipes."Basic Iron Ingot".out_1]
+part = "Iron Ingot"
+quantity = 50.0
+
+[recipes."Coal (Iron)"]
+building = "Converter"
+name = "Coal (Iron)"
+craft_time = 6.0
+is_alt = false
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Coal (Iron)".in_1]
+part = "Reanimated SAM"
+quantity = 10.0
+
+[recipes."Coal (Iron)".in_2]
+part = "Iron Ore"
+quantity = 180.0
+
+[recipes."Coal (Iron)".out_1]
+part = "Coal"
+quantity = 120.0
+
+[recipes.Plastic]
+building = "Refinery"
+name = "Plastic"
+craft_time = 6.0
+is_alt = false
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes.Plastic.in_1]
+part = "Crude Oil"
+quantity = 30.0
+
+[recipes.Plastic.out_1]
+part = "Plastic"
+quantity = 20.0
+
+[recipes.Plastic.out_2]
+part = "Heavy Oil Residue"
+quantity = 10.0
+
+[recipes."Solid Steel Ingot"]
+building = "Foundry"
+name = "Solid Steel Ingot"
+craft_time = 3.0
+is_alt = true
+unlocks = "3|3"
+is_unlocked = true
+
+[recipes."Solid Steel Ingot".in_1]
+part = "Iron Ingot"
+quantity = 40.0
+
+[recipes."Solid Steel Ingot".in_2]
+part = "Coal"
+quantity = 40.0
+
+[recipes."Solid Steel Ingot".out_1]
+part = "Steel Ingot"
+quantity = 60.0
+
+[recipes.Quickwire]
+building = "Constructor"
+name = "Quickwire"
+craft_time = 5.0
+is_alt = false
+unlocks = "C|3"
+is_unlocked = true
+
+[recipes.Quickwire.in_1]
+part = "Caterium Ingot"
+quantity = 12.0
+
+[recipes.Quickwire.out_1]
+part = "Quickwire"
+quantity = 60.0
+
+[recipes."Modular Frame"]
+building = "Assembler"
+name = "Modular Frame"
+craft_time = 60.0
+is_alt = false
+unlocks = "2|1"
+is_unlocked = true
+
+[recipes."Modular Frame".in_1]
+part = "Reinforced Iron Plate"
+quantity = 3.0
+
+[recipes."Modular Frame".in_2]
+part = "Iron Rod"
+quantity = 12.0
+
+[recipes."Modular Frame".out_1]
+part = "Modular Frame"
+quantity = 2.0
+
+[recipes."Packaged Turbofuel"]
+building = "Packager"
+name = "Packaged Turbofuel"
+craft_time = 6.0
+is_alt = false
+unlocks = "S|5"
+is_unlocked = true
+
+[recipes."Packaged Turbofuel".in_1]
+part = "Turbofuel"
+quantity = 20.0
+
+[recipes."Packaged Turbofuel".in_2]
+part = "Empty Canister"
+quantity = 20.0
+
+[recipes."Packaged Turbofuel".out_1]
+part = "Turbofuel (Packaged)"
+quantity = 20.0
+
+[recipes."Electric Motor"]
+building = "Assembler"
+name = "Electric Motor"
+craft_time = 16.0
+is_alt = true
+unlocks = "8|2"
+is_unlocked = true
+
+[recipes."Electric Motor".in_1]
+part = "Electromagnetic Control Rod"
+quantity = 3.75
+
+[recipes."Electric Motor".in_2]
+part = "Rotor"
+quantity = 7.5
+
+[recipes."Electric Motor".out_1]
+part = "Motor"
+quantity = 7.5
+
+[recipes."Electrode - Aluminium Scrap"]
+building = "Refinery"
+name = "Electrode - Aluminium Scrap"
+craft_time = 4.0
+is_alt = true
+unlocks = "7|1"
+is_unlocked = true
+
+[recipes."Electrode - Aluminium Scrap".in_1]
+part = "Alumina Solution"
+quantity = 180.0
+
+[recipes."Electrode - Aluminium Scrap".in_2]
+part = "Petroleum Coke"
+quantity = 60.0
+
+[recipes."Electrode - Aluminium Scrap".out_1]
+part = "Aluminium Scrap"
+quantity = 300.0
+
+[recipes."Electrode - Aluminium Scrap".out_2]
+part = "Water"
+quantity = 105.0
+
+[recipes."Encased Plutonium Cell"]
+building = "Assembler"
+name = "Encased Plutonium Cell"
+craft_time = 12.0
+is_alt = false
+unlocks = "8|5"
+is_unlocked = true
+
+[recipes."Encased Plutonium Cell".in_1]
+part = "Plutonium Pellet"
+quantity = 10.0
+
+[recipes."Encased Plutonium Cell".in_2]
+part = "Concrete"
+quantity = 20.0
+
+[recipes."Encased Plutonium Cell".out_1]
+part = "Encased Plutonium Cell"
+quantity = 5.0
+
+[recipes."Residual Rubber"]
+building = "Refinery"
+name = "Residual Rubber"
+craft_time = 6.0
+is_alt = false
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Residual Rubber".in_1]
+part = "Polymer Resin"
+quantity = 40.0
+
+[recipes."Residual Rubber".in_2]
+part = "Water"
+quantity = 40.0
+
+[recipes."Residual Rubber".out_1]
+part = "Rubber"
+quantity = 20.0
+
+[recipes."Solid Biofuel"]
+building = "Constructor"
+name = "Solid Biofuel"
+craft_time = 4.0
+is_alt = false
+unlocks = "2|2"
+is_unlocked = true
+
+[recipes."Solid Biofuel".in_1]
+part = "Biomass"
+quantity = 120.0
+
+[recipes."Solid Biofuel".out_1]
+part = "Solid Biofuel"
+quantity = 60.0
+
+[recipes."Turbo Heavy Fuel"]
+building = "Refinery"
+name = "Turbo Heavy Fuel"
+craft_time = 8.0
+is_alt = true
+unlocks = "S|5"
+is_unlocked = true
+
+[recipes."Turbo Heavy Fuel".in_1]
+part = "Heavy Oil Residue"
+quantity = 37.5
+
+[recipes."Turbo Heavy Fuel".in_2]
+part = "Compacted Coal"
+quantity = 30.0
+
+[recipes."Turbo Heavy Fuel".out_1]
+part = "Turbofuel"
+quantity = 30.0
+
+[recipes."Magnetic Field Generator"]
+building = "Assembler"
+name = "Magnetic Field Generator"
+craft_time = 120.0
+is_alt = false
+unlocks = "8|2"
+is_unlocked = true
+
+[recipes."Magnetic Field Generator".in_1]
+part = "Versatile Framework"
+quantity = 2.5
+
+[recipes."Magnetic Field Generator".in_2]
+part = "Electromagnetic Control Rod"
+quantity = 1.0
+
+[recipes."Magnetic Field Generator".out_1]
+part = "Magnetic Field Generator"
+quantity = 1.0
+
+[recipes."Explosive Rebar"]
+building = "Manufacturer"
+name = "Explosive Rebar"
+craft_time = 12.0
+is_alt = false
+unlocks = "S|12"
+is_unlocked = true
+
+[recipes."Explosive Rebar".in_1]
+part = "Iron Rebar"
+quantity = 10.0
+
+[recipes."Explosive Rebar".in_2]
+part = "Smokeless Powder"
+quantity = 10.0
+
+[recipes."Explosive Rebar".in_3]
+part = "Steel Pipe"
+quantity = 10.0
+
+[recipes."Explosive Rebar".out_1]
+part = "Explosive Rebar"
+quantity = 5.0
+
+[recipes."Steel Screw"]
+building = "Constructor"
+name = "Steel Screw"
+craft_time = 12.0
+is_alt = true
+unlocks = "3|3"
+is_unlocked = true
+
+[recipes."Steel Screw".in_1]
+part = "Steel Beam"
+quantity = 5.0
+
+[recipes."Steel Screw".out_1]
+part = "Screw"
+quantity = 260.0
+
+[recipes."Turbo Electric Motor"]
+building = "Manufacturer"
+name = "Turbo Electric Motor"
+craft_time = 64.0
+is_alt = true
+unlocks = "8|4"
+is_unlocked = true
+
+[recipes."Turbo Electric Motor".in_1]
+part = "Motor"
+quantity = 6.5625
+
+[recipes."Turbo Electric Motor".in_2]
+part = "Radio Control Unit"
+quantity = 8.4375
+
+[recipes."Turbo Electric Motor".in_3]
+part = "Electromagnetic Control Rod"
+quantity = 4.6875
+
+[recipes."Turbo Electric Motor".in_4]
+part = "Rotor"
+quantity = 6.5625
+
+[recipes."Turbo Electric Motor".out_1]
+part = "Turbo Motor"
+quantity = 2.8125
+
+[recipes."Fused Wire"]
+building = "Assembler"
+name = "Fused Wire"
+craft_time = 20.0
+is_alt = true
+unlocks = "C|2"
+is_unlocked = true
+
+[recipes."Fused Wire".in_1]
+part = "Copper Ingot"
+quantity = 12.0
+
+[recipes."Fused Wire".in_2]
+part = "Caterium Ingot"
+quantity = 3.0
+
+[recipes."Fused Wire".out_1]
+part = "Wire"
+quantity = 90.0
+
+[recipes."FICSMAS Decoration"]
+building = "Assembler"
+name = "FICSMAS Decoration"
+craft_time = 60.0
+is_alt = false
+unlocks = "F|9"
+is_unlocked = true
+
+[recipes."FICSMAS Decoration".in_1]
+part = "FICSMAS Tree Branch"
+quantity = 15.0
+
+[recipes."FICSMAS Decoration".in_2]
+part = "FICSMAS Ornament Bundle"
+quantity = 6.0
+
+[recipes."FICSMAS Decoration".out_1]
+part = "FICSMAS Decoration"
+quantity = 2.0
+
+[recipes."Pure Quartz Crystal"]
+building = "Refinery"
+name = "Pure Quartz Crystal"
+craft_time = 8.0
+is_alt = true
+unlocks = "Q|2"
+is_unlocked = true
+
+[recipes."Pure Quartz Crystal".in_1]
+part = "Raw Quartz"
+quantity = 67.5
+
+[recipes."Pure Quartz Crystal".in_2]
+part = "Water"
+quantity = 37.5
+
+[recipes."Pure Quartz Crystal".out_1]
+part = "Quartz Crystal"
+quantity = 52.5
+
+[recipes.Charcoal]
+building = "Constructor"
+name = "Charcoal"
+craft_time = 4.0
+is_alt = true
+unlocks = "S|4"
+is_unlocked = true
+
+[recipes.Charcoal.in_1]
+part = "Wood"
+quantity = 15.0
+
+[recipes.Charcoal.out_1]
+part = "Coal"
+quantity = 150.0
+
+[recipes."Assembly Director System"]
+building = "Assembler"
+name = "Assembly Director System"
+craft_time = 80.0
+is_alt = false
+unlocks = "7|5"
+is_unlocked = true
+
+[recipes."Assembly Director System".in_1]
+part = "Adaptive Control Unit"
+quantity = 1.5
+
+[recipes."Assembly Director System".in_2]
+part = "Supercomputer"
+quantity = 0.75
+
+[recipes."Assembly Director System".out_1]
+part = "Assembly Director System"
+quantity = 0.75
+
+[recipes."Copper Sheet"]
+building = "Constructor"
+name = "Copper Sheet"
+craft_time = 6.0
+is_alt = false
+unlocks = "2|1"
+is_unlocked = true
+
+[recipes."Copper Sheet".in_1]
+part = "Copper Ingot"
+quantity = 20.0
+
+[recipes."Copper Sheet".out_1]
+part = "Copper Sheet"
+quantity = 10.0
+
+[recipes."Stitched Iron Plate"]
+building = "Assembler"
+name = "Stitched Iron Plate"
+craft_time = 32.0
+is_alt = true
+unlocks = "2|1"
+is_unlocked = true
+
+[recipes."Stitched Iron Plate".in_1]
+part = "Iron Plate"
+quantity = 18.75
+
+[recipes."Stitched Iron Plate".in_2]
+part = "Wire"
+quantity = 37.5
+
+[recipes."Stitched Iron Plate".out_1]
+part = "Reinforced Iron Plate"
+quantity = 5.625
+
+[recipes."Rigour Motor"]
+building = "Manufacturer"
+name = "Rigour Motor"
+craft_time = 48.0
+is_alt = true
+unlocks = "Q|5"
+is_unlocked = true
+
+[recipes."Rigour Motor".in_1]
+part = "Rotor"
+quantity = 3.75
+
+[recipes."Rigour Motor".in_2]
+part = "Stator"
+quantity = 3.75
+
+[recipes."Rigour Motor".in_3]
+part = "Crystal Oscillator"
+quantity = 1.25
+
+[recipes."Rigour Motor".out_1]
+part = "Motor"
+quantity = 7.5
+
+[recipes."Steel Beam"]
+building = "Constructor"
+name = "Steel Beam"
+craft_time = 4.0
+is_alt = false
+unlocks = "3|3"
+is_unlocked = true
+
+[recipes."Steel Beam".in_1]
+part = "Steel Ingot"
+quantity = 60.0
+
+[recipes."Steel Beam".out_1]
+part = "Steel Beam"
+quantity = 15.0
+
+[recipes."Residual Fuel"]
+building = "Refinery"
+name = "Residual Fuel"
+craft_time = 6.0
+is_alt = false
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Residual Fuel".in_1]
+part = "Heavy Oil Residue"
+quantity = 60.0
+
+[recipes."Residual Fuel".out_1]
+part = "Fuel"
+quantity = 40.0
+
+[recipes."Turbo Blend Fuel"]
+building = "Blender"
+name = "Turbo Blend Fuel"
+craft_time = 8.0
+is_alt = true
+unlocks = "7|5"
+is_unlocked = true
+
+[recipes."Turbo Blend Fuel".in_1]
+part = "Fuel"
+quantity = 15.0
+
+[recipes."Turbo Blend Fuel".in_2]
+part = "Heavy Oil Residue"
+quantity = 30.0
+
+[recipes."Turbo Blend Fuel".in_3]
+part = "Sulfur"
+quantity = 22.5
+
+[recipes."Turbo Blend Fuel".in_4]
+part = "Petroleum Coke"
+quantity = 22.5
+
+[recipes."Turbo Blend Fuel".out_1]
+part = "Turbofuel"
+quantity = 45.0
+
+[recipes."Alien Power Matrix"]
+building = "Quantum Encoder"
+name = "Alien Power Matrix"
+craft_time = 24.0
+is_alt = false
+unlocks = "T|3"
+is_unlocked = true
+
+[recipes."Alien Power Matrix".in_1]
+part = "SAM Fluctuator"
+quantity = 12.5
+
+[recipes."Alien Power Matrix".in_2]
+part = "Power Shard"
+quantity = 7.5
+
+[recipes."Alien Power Matrix".in_3]
+part = "Superposition Oscillator"
+quantity = 7.5
+
+[recipes."Alien Power Matrix".in_4]
+part = "Excited Photonic Material"
+quantity = 60.0
+
+[recipes."Alien Power Matrix".out_1]
+part = "Alien Power Matrix"
+quantity = 2.5
+
+[recipes."Alien Power Matrix".out_2]
+part = "Dark Matter Residue"
+quantity = 60.0
+
+[recipes."FICSMAS Ornament Bundle"]
+building = "Assembler"
+name = "FICSMAS Ornament Bundle"
+craft_time = 12.0
+is_alt = false
+unlocks = "F|8"
+is_unlocked = true
+
+[recipes."FICSMAS Ornament Bundle".in_1]
+part = "FICSMAS Ornament (Copper)"
+quantity = 5.0
+
+[recipes."FICSMAS Ornament Bundle".in_2]
+part = "FICSMAS Ornament (Iron)"
+quantity = 5.0
+
+[recipes."FICSMAS Ornament Bundle".out_1]
+part = "FICSMAS Ornament Bundle"
+quantity = 5.0
+
+[recipes."High-Speed Connector"]
+building = "Manufacturer"
+name = "High-Speed Connector"
+craft_time = 16.0
+is_alt = false
+unlocks = "C|9"
+is_unlocked = true
+
+[recipes."High-Speed Connector".in_1]
+part = "Quickwire"
+quantity = 210.0
+
+[recipes."High-Speed Connector".in_2]
+part = "Cable"
+quantity = 37.5
+
+[recipes."High-Speed Connector".in_3]
+part = "Circuit Board"
+quantity = 3.75
+
+[recipes."High-Speed Connector".out_1]
+part = "High-Speed Connector"
+quantity = 3.75
+
+[recipes."Heat Exchanger"]
+building = "Assembler"
+name = "Heat Exchanger"
+craft_time = 6.0
+is_alt = true
+unlocks = "8|3"
+is_unlocked = true
+
+[recipes."Heat Exchanger".in_1]
+part = "Aluminium Casing"
+quantity = 30.0
+
+[recipes."Heat Exchanger".in_2]
+part = "Rubber"
+quantity = 30.0
+
+[recipes."Heat Exchanger".out_1]
+part = "Heat Sink"
+quantity = 10.0
+
+[recipes."Insulated Cable"]
+building = "Assembler"
+name = "Insulated Cable"
+craft_time = 12.0
+is_alt = true
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Insulated Cable".in_1]
+part = "Wire"
+quantity = 45.0
+
+[recipes."Insulated Cable".in_2]
+part = "Rubber"
+quantity = 30.0
+
+[recipes."Insulated Cable".out_1]
+part = "Cable"
+quantity = 100.0
+
+[recipes."Caterium Ore (Quartz)"]
+building = "Converter"
+name = "Caterium Ore (Quartz)"
+craft_time = 6.0
+is_alt = false
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Caterium Ore (Quartz)".in_1]
+part = "Reanimated SAM"
+quantity = 10.0
+
+[recipes."Caterium Ore (Quartz)".in_2]
+part = "Raw Quartz"
+quantity = 120.0
+
+[recipes."Caterium Ore (Quartz)".out_1]
+part = "Caterium Ore"
+quantity = 120.0
+
+[recipes."Raw Quartz (Bauxite)"]
+building = "Converter"
+name = "Raw Quartz (Bauxite)"
+craft_time = 6.0
+is_alt = false
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Raw Quartz (Bauxite)".in_1]
+part = "Reanimated SAM"
+quantity = 10.0
+
+[recipes."Raw Quartz (Bauxite)".in_2]
+part = "Bauxite"
+quantity = 100.0
+
+[recipes."Raw Quartz (Bauxite)".out_1]
+part = "Raw Quartz"
+quantity = 120.0
+
+[recipes."FICSMAS Wonder Star"]
+building = "Assembler"
+name = "FICSMAS Wonder Star"
+craft_time = 60.0
+is_alt = false
+unlocks = "F|11"
+is_unlocked = true
+
+[recipes."FICSMAS Wonder Star".in_1]
+part = "FICSMAS Decoration"
+quantity = 5.0
+
+[recipes."FICSMAS Wonder Star".in_2]
+part = "Candy Cane"
+quantity = 20.0
+
+[recipes."FICSMAS Wonder Star".out_1]
+part = "FICSMAS Wonder Star"
+quantity = 1.0
+
+[recipes.Battery]
+building = "Blender"
+name = "Battery"
+craft_time = 3.0
+is_alt = false
+unlocks = "7|5"
+is_unlocked = true
+
+[recipes.Battery.in_1]
+part = "Sulfuric Acid"
+quantity = 50.0
+
+[recipes.Battery.in_2]
+part = "Alumina Solution"
+quantity = 40.0
+
+[recipes.Battery.in_3]
+part = "Aluminium Casing"
+quantity = 20.0
+
+[recipes.Battery.out_1]
+part = "Battery"
+quantity = 20.0
+
+[recipes.Battery.out_2]
+part = "Water"
+quantity = 30.0
+
+[recipes."Gas Nobelisk"]
+building = "Assembler"
+name = "Gas Nobelisk"
+craft_time = 12.0
+is_alt = false
+unlocks = "M|3"
+is_unlocked = true
+
+[recipes."Gas Nobelisk".in_1]
+part = "Nobelisk"
+quantity = 5.0
+
+[recipes."Gas Nobelisk".in_2]
+part = "Biomass"
+quantity = 50.0
+
+[recipes."Gas Nobelisk".out_1]
+part = "Gas Nobelisk"
+quantity = 5.0
+
+[recipes."Nitric Acid"]
+building = "Blender"
+name = "Nitric Acid"
+craft_time = 6.0
+is_alt = false
+unlocks = "8|5"
+is_unlocked = true
+
+[recipes."Nitric Acid".in_1]
+part = "Nitrogen Gas"
+quantity = 120.0
+
+[recipes."Nitric Acid".in_2]
+part = "Water"
+quantity = 30.0
+
+[recipes."Nitric Acid".in_3]
+part = "Iron Plate"
+quantity = 10.0
+
+[recipes."Nitric Acid".out_1]
+part = "Nitric Acid"
+quantity = 30.0
+
+[recipes."Encased Industrial Pipe"]
+building = "Assembler"
+name = "Encased Industrial Pipe"
+craft_time = 15.0
+is_alt = true
+unlocks = "4|3"
+is_unlocked = true
+
+[recipes."Encased Industrial Pipe".in_1]
+part = "Steel Pipe"
+quantity = 24.0
+
+[recipes."Encased Industrial Pipe".in_2]
+part = "Concrete"
+quantity = 20.0
+
+[recipes."Encased Industrial Pipe".out_1]
+part = "Encased Industrial Beam"
+quantity = 4.0
+
+[recipes."Residual Plastic"]
+building = "Refinery"
+name = "Residual Plastic"
+craft_time = 6.0
+is_alt = false
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Residual Plastic".in_1]
+part = "Polymer Resin"
+quantity = 60.0
+
+[recipes."Residual Plastic".in_2]
+part = "Water"
+quantity = 20.0
+
+[recipes."Residual Plastic".out_1]
+part = "Plastic"
+quantity = 20.0
+
+[recipes."Iron FICSMAS Ornament"]
+building = "Foundry"
+name = "Iron FICSMAS Ornament"
+craft_time = 12.0
+is_alt = false
+unlocks = "F|6"
+is_unlocked = true
+
+[recipes."Iron FICSMAS Ornament".in_1]
+part = "FICSMAS Ornament (Blue)"
+quantity = 15.0
+
+[recipes."Iron FICSMAS Ornament".in_2]
+part = "Iron Ingot"
+quantity = 15.0
+
+[recipes."Iron FICSMAS Ornament".out_1]
+part = "FICSMAS Ornament (Iron)"
+quantity = 5.0
+
+[recipes."Ficsite Ingot (Caterium)"]
+building = "Converter"
+name = "Ficsite Ingot (Caterium)"
+craft_time = 4.0
+is_alt = false
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Ficsite Ingot (Caterium)".in_1]
+part = "Reanimated SAM"
+quantity = 45.0
+
+[recipes."Ficsite Ingot (Caterium)".in_2]
+part = "Caterium Ingot"
+quantity = 60.0
+
+[recipes."Ficsite Ingot (Caterium)".out_1]
+part = "Ficsite Ingot"
+quantity = 15.0
+
+[recipes."Ficsite Ingot (Iron)"]
+building = "Converter"
+name = "Ficsite Ingot (Iron)"
+craft_time = 6.0
+is_alt = false
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Ficsite Ingot (Iron)".in_1]
+part = "Reanimated SAM"
+quantity = 40.0
+
+[recipes."Ficsite Ingot (Iron)".in_2]
+part = "Iron Ingot"
+quantity = 240.0
+
+[recipes."Ficsite Ingot (Iron)".out_1]
+part = "Ficsite Ingot"
+quantity = 10.0
+
+[recipes."Alclad Aluminium Sheet"]
+building = "Assembler"
+name = "Alclad Aluminium Sheet"
+craft_time = 6.0
+is_alt = false
+unlocks = "7|1"
+is_unlocked = true
+
+[recipes."Alclad Aluminium Sheet".in_1]
+part = "Aluminium Ingot"
+quantity = 30.0
+
+[recipes."Alclad Aluminium Sheet".in_2]
+part = "Copper Ingot"
+quantity = 10.0
+
+[recipes."Alclad Aluminium Sheet".out_1]
+part = "Alclad Aluminium Sheet"
+quantity = 30.0
+
+[recipes."Copper Ingot"]
+building = "Smelter"
+name = "Copper Ingot"
+craft_time = 2.0
+is_alt = false
+unlocks = "0|1"
+is_unlocked = true
+
+[recipes."Copper Ingot".in_1]
+part = "Copper Ore"
+quantity = 30.0
+
+[recipes."Copper Ingot".out_1]
+part = "Copper Ingot"
+quantity = 30.0
+
+[recipes."Quickwire Stator"]
+building = "Assembler"
+name = "Quickwire Stator"
+craft_time = 15.0
+is_alt = true
+unlocks = "4|3"
+is_unlocked = true
+
+[recipes."Quickwire Stator".in_1]
+part = "Steel Pipe"
+quantity = 16.0
+
+[recipes."Quickwire Stator".in_2]
+part = "Quickwire"
+quantity = 60.0
+
+[recipes."Quickwire Stator".out_1]
+part = "Stator"
+quantity = 8.0
+
+[recipes."Pure Aluminium Ingot"]
+building = "Smelter"
+name = "Pure Aluminium Ingot"
+craft_time = 2.0
+is_alt = true
+unlocks = "7|1"
+is_unlocked = true
+
+[recipes."Pure Aluminium Ingot".in_1]
+part = "Aluminium Scrap"
+quantity = 60.0
+
+[recipes."Pure Aluminium Ingot".out_1]
+part = "Aluminium Ingot"
+quantity = 30.0
+
+[recipes."Liquid Biofuel"]
+building = "Refinery"
+name = "Liquid Biofuel"
+craft_time = 4.0
+is_alt = false
+unlocks = "5|4"
+is_unlocked = true
+
+[recipes."Liquid Biofuel".in_1]
+part = "Solid Biofuel"
+quantity = 90.0
+
+[recipes."Liquid Biofuel".in_2]
+part = "Water"
+quantity = 45.0
+
+[recipes."Liquid Biofuel".out_1]
+part = "Liquid Biofuel"
+quantity = 60.0
+
+[recipes."Cloudy Diamonds"]
+building = "Particle Accelerator"
+name = "Cloudy Diamonds"
+craft_time = 3.0
+is_alt = true
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Cloudy Diamonds".in_1]
+part = "Coal"
+quantity = 240.0
+
+[recipes."Cloudy Diamonds".in_2]
+part = "Limestone"
+quantity = 480.0
+
+[recipes."Cloudy Diamonds".out_1]
+part = "Diamonds"
+quantity = 20.0
+
+[recipes."Excited Photonic Matter"]
+building = "Converter"
+name = "Excited Photonic Matter"
+craft_time = 3.0
+is_alt = false
+unlocks = "9|2"
+is_unlocked = true
+
+[recipes."Excited Photonic Matter".out_1]
+part = "Excited Photonic Material"
+quantity = 200.0
+
+[recipes."Heat-Fused Frame"]
+building = "Blender"
+name = "Heat-Fused Frame"
+craft_time = 20.0
+is_alt = true
+unlocks = "8|5"
+is_unlocked = true
+
+[recipes."Heat-Fused Frame".in_1]
+part = "Heavy Modular Frame"
+quantity = 3.0
+
+[recipes."Heat-Fused Frame".in_2]
+part = "Aluminium Ingot"
+quantity = 150.0
+
+[recipes."Heat-Fused Frame".in_3]
+part = "Nitric Acid"
+quantity = 24.0
+
+[recipes."Heat-Fused Frame".in_4]
+part = "Fuel"
+quantity = 30.0
+
+[recipes."Heat-Fused Frame".out_1]
+part = "Fused Modular Frame"
+quantity = 3.0
+
+[recipes."Insulated Crystal Oscillator"]
+building = "Manufacturer"
+name = "Insulated Crystal Oscillator"
+craft_time = 32.0
+is_alt = true
+unlocks = "5|1"
+is_unlocked = true
+
+[recipes."Insulated Crystal Oscillator".in_1]
+part = "Quartz Crystal"
+quantity = 18.75
+
+[recipes."Insulated Crystal Oscillator".in_2]
+part = "Rubber"
+quantity = 13.125
+
+[recipes."Insulated Crystal Oscillator".in_3]
+part = "AI Limiter"
+quantity = 1.875
+
+[recipes."Insulated Crystal Oscillator".out_1]
+part = "Crystal Oscillator"
+quantity = 1.875
+
+[recipes."Uranium Fuel Unit"]
+building = "Manufacturer"
+name = "Uranium Fuel Unit"
+craft_time = 300.0
+is_alt = true
+unlocks = "8|2"
+is_unlocked = true
+
+[recipes."Uranium Fuel Unit".in_1]
+part = "Encased Uranium Cell"
+quantity = 20.0
+
+[recipes."Uranium Fuel Unit".in_2]
+part = "Electromagnetic Control Rod"
+quantity = 2.0
+
+[recipes."Uranium Fuel Unit".in_3]
+part = "Crystal Oscillator"
+quantity = 0.6
+
+[recipes."Uranium Fuel Unit".in_4]
+part = "Rotor"
+quantity = 2.0
+
+[recipes."Uranium Fuel Unit".out_1]
+part = "Uranium Fuel Rod"
+quantity = 0.6
+
+[recipes."Packaged Fuel"]
+building = "Packager"
+name = "Packaged Fuel"
+craft_time = 3.0
+is_alt = false
+unlocks = "5|4"
+is_unlocked = true
+
+[recipes."Packaged Fuel".in_1]
+part = "Fuel"
+quantity = 40.0
+
+[recipes."Packaged Fuel".in_2]
+part = "Empty Canister"
+quantity = 40.0
+
+[recipes."Packaged Fuel".out_1]
+part = "Fuel (Packaged)"
+quantity = 40.0
+
+[recipes."Raw Quartz (Coal)"]
+building = "Converter"
+name = "Raw Quartz (Coal)"
+craft_time = 6.0
+is_alt = false
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Raw Quartz (Coal)".in_1]
+part = "Reanimated SAM"
+quantity = 10.0
+
+[recipes."Raw Quartz (Coal)".in_2]
+part = "Coal"
+quantity = 240.0
+
+[recipes."Raw Quartz (Coal)".out_1]
+part = "Raw Quartz"
+quantity = 120.0
+
+[recipes."Superposition Oscillator"]
+building = "Quantum Encoder"
+name = "Superposition Oscillator"
+craft_time = 12.0
+is_alt = false
+unlocks = "9|2"
+is_unlocked = true
+
+[recipes."Superposition Oscillator".in_1]
+part = "Dark Matter Crystal"
+quantity = 30.0
+
+[recipes."Superposition Oscillator".in_2]
+part = "Crystal Oscillator"
+quantity = 5.0
+
+[recipes."Superposition Oscillator".in_3]
+part = "Alclad Aluminium Sheet"
+quantity = 45.0
+
+[recipes."Superposition Oscillator".in_4]
+part = "Excited Photonic Material"
+quantity = 125.0
+
+[recipes."Superposition Oscillator".out_1]
+part = "Superposition Oscillator"
+quantity = 5.0
+
+[recipes."Superposition Oscillator".out_2]
+part = "Dark Matter Residue"
+quantity = 125.0
+
+[recipes."Time Crystal"]
+building = "Converter"
+name = "Time Crystal"
+craft_time = 10.0
+is_alt = false
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Time Crystal".in_1]
+part = "Diamonds"
+quantity = 10.0
+
+[recipes."Time Crystal".out_1]
+part = "Time Crystal"
+quantity = 6.0
+
+[recipes."Ficsite Ingot (Aluminium)"]
+building = "Converter"
+name = "Ficsite Ingot (Aluminium)"
+craft_time = 2.0
+is_alt = false
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Ficsite Ingot (Aluminium)".in_1]
+part = "Reanimated SAM"
+quantity = 60.0
+
+[recipes."Ficsite Ingot (Aluminium)".in_2]
+part = "Aluminium Ingot"
+quantity = 120.0
+
+[recipes."Ficsite Ingot (Aluminium)".out_1]
+part = "Ficsite Ingot"
+quantity = 30.0
+
+[recipes."Hatcher Protein"]
+building = "Constructor"
+name = "Hatcher Protein"
+craft_time = 3.0
+is_alt = false
+unlocks = "A|2"
+is_unlocked = true
+
+[recipes."Hatcher Protein".in_1]
+part = "Hatcher Remains"
+quantity = 20.0
+
+[recipes."Hatcher Protein".out_1]
+part = "Alien Protein"
+quantity = 20.0
+
+[recipes."Non-fissile Uranium"]
+building = "Blender"
+name = "Non-fissile Uranium"
+craft_time = 24.0
+is_alt = false
+unlocks = "8|5"
+is_unlocked = true
+
+[recipes."Non-fissile Uranium".in_1]
+part = "Uranium Waste"
+quantity = 37.5
+
+[recipes."Non-fissile Uranium".in_2]
+part = "Silica"
+quantity = 25.0
+
+[recipes."Non-fissile Uranium".in_3]
+part = "Nitric Acid"
+quantity = 15.0
+
+[recipes."Non-fissile Uranium".in_4]
+part = "Sulfuric Acid"
+quantity = 15.0
+
+[recipes."Non-fissile Uranium".out_1]
+part = "Non-fissile Uranium"
+quantity = 50.0
+
+[recipes."Non-fissile Uranium".out_2]
+part = "Water"
+quantity = 15.0
+
+[recipes."Pressure Conversion Cube"]
+building = "Assembler"
+name = "Pressure Conversion Cube"
+craft_time = 60.0
+is_alt = false
+unlocks = "8|5"
+is_unlocked = true
+
+[recipes."Pressure Conversion Cube".in_1]
+part = "Fused Modular Frame"
+quantity = 1.0
+
+[recipes."Pressure Conversion Cube".in_2]
+part = "Radio Control Unit"
+quantity = 2.0
+
+[recipes."Pressure Conversion Cube".out_1]
+part = "Pressure Conversion Cube"
+quantity = 1.0
+
+[recipes."Coke Steel Ingot"]
+building = "Foundry"
+name = "Coke Steel Ingot"
+craft_time = 12.0
+is_alt = true
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Coke Steel Ingot".in_1]
+part = "Iron Ore"
+quantity = 75.0
+
+[recipes."Coke Steel Ingot".in_2]
+part = "Petroleum Coke"
+quantity = 75.0
+
+[recipes."Coke Steel Ingot".out_1]
+part = "Steel Ingot"
+quantity = 100.0
+
+[recipes."Ficsonium Fuel Rod"]
+building = "Quantum Encoder"
+name = "Ficsonium Fuel Rod"
+craft_time = 24.0
+is_alt = false
+unlocks = "9|5"
+is_unlocked = true
+
+[recipes."Ficsonium Fuel Rod".in_1]
+part = "Ficsonium"
+quantity = 5.0
+
+[recipes."Ficsonium Fuel Rod".in_2]
+part = "Electromagnetic Control Rod"
+quantity = 5.0
+
+[recipes."Ficsonium Fuel Rod".in_3]
+part = "Ficsite Trigon"
+quantity = 100.0
+
+[recipes."Ficsonium Fuel Rod".in_4]
+part = "Excited Photonic Material"
+quantity = 50.0
+
+[recipes."Ficsonium Fuel Rod".out_1]
+part = "Ficsonium Fuel Rod"
+quantity = 2.5
+
+[recipes."Ficsonium Fuel Rod".out_2]
+part = "Dark Matter Residue"
+quantity = 50.0
+
+[recipes."Instant Plutonium Cell"]
+building = "Particle Accelerator"
+name = "Instant Plutonium Cell"
+craft_time = 120.0
+is_alt = true
+unlocks = "8|5"
+is_unlocked = true
+
+[recipes."Instant Plutonium Cell".in_1]
+part = "Non-fissile Uranium"
+quantity = 75.0
+
+[recipes."Instant Plutonium Cell".in_2]
+part = "Aluminium Casing"
+quantity = 10.0
+
+[recipes."Instant Plutonium Cell".out_1]
+part = "Encased Plutonium Cell"
+quantity = 10.0
+
+[recipes."Dark-Ion Fuel"]
+building = "Converter"
+name = "Dark-Ion Fuel"
+craft_time = 3.0
+is_alt = true
+unlocks = "S|7"
+is_unlocked = true
+
+[recipes."Dark-Ion Fuel".in_1]
+part = "Rocket Fuel (Packaged)"
+quantity = 240.0
+
+[recipes."Dark-Ion Fuel".in_2]
+part = "Dark Matter Crystal"
+quantity = 80.0
+
+[recipes."Dark-Ion Fuel".out_1]
+part = "Ionised Fuel"
+quantity = 200.0
+
+[recipes."Dark-Ion Fuel".out_2]
+part = "Compacted Coal"
+quantity = 40.0
+
+[recipes.Rotor]
+building = "Assembler"
+name = "Rotor"
+craft_time = 15.0
+is_alt = false
+unlocks = "2|1"
+is_unlocked = true
+
+[recipes.Rotor.in_1]
+part = "Iron Rod"
+quantity = 20.0
+
+[recipes.Rotor.in_2]
+part = "Screw"
+quantity = 100.0
+
+[recipes.Rotor.out_1]
+part = "Rotor"
+quantity = 4.0
+
+[recipes."Turbo Motor"]
+building = "Manufacturer"
+name = "Turbo Motor"
+craft_time = 32.0
+is_alt = false
+unlocks = "8|4"
+is_unlocked = true
+
+[recipes."Turbo Motor".in_1]
+part = "Cooling System"
+quantity = 7.5
+
+[recipes."Turbo Motor".in_2]
+part = "Radio Control Unit"
+quantity = 3.75
+
+[recipes."Turbo Motor".in_3]
+part = "Motor"
+quantity = 7.5
+
+[recipes."Turbo Motor".in_4]
+part = "Rubber"
+quantity = 45.0
+
+[recipes."Turbo Motor".out_1]
+part = "Turbo Motor"
+quantity = 1.875
+
+[recipes."Ficsite Trigon"]
+building = "Constructor"
+name = "Ficsite Trigon"
+craft_time = 6.0
+is_alt = false
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Ficsite Trigon".in_1]
+part = "Ficsite Ingot"
+quantity = 10.0
+
+[recipes."Ficsite Trigon".out_1]
+part = "Ficsite Trigon"
+quantity = 30.0
+
+[recipes."Black Powder"]
+building = "Assembler"
+name = "Black Powder"
+craft_time = 4.0
+is_alt = false
+unlocks = "S|2"
+is_unlocked = true
+
+[recipes."Black Powder".in_1]
+part = "Coal"
+quantity = 15.0
+
+[recipes."Black Powder".in_2]
+part = "Sulfur"
+quantity = 15.0
+
+[recipes."Black Powder".out_1]
+part = "Black Powder"
+quantity = 30.0
+
+[recipes."Bolted Frame"]
+building = "Assembler"
+name = "Bolted Frame"
+craft_time = 24.0
+is_alt = true
+unlocks = "2|1"
+is_unlocked = true
+
+[recipes."Bolted Frame".in_1]
+part = "Reinforced Iron Plate"
+quantity = 7.5
+
+[recipes."Bolted Frame".in_2]
+part = "Screw"
+quantity = 140.0
+
+[recipes."Bolted Frame".out_1]
+part = "Modular Frame"
+quantity = 5.0
+
+[recipes."Iron Rod"]
+building = "Constructor"
+name = "Iron Rod"
+craft_time = 4.0
+is_alt = false
+unlocks = "0|3"
+is_unlocked = true
+
+[recipes."Iron Rod".in_1]
+part = "Iron Ingot"
+quantity = 15.0
+
+[recipes."Iron Rod".out_1]
+part = "Iron Rod"
+quantity = 15.0
+
+[recipes."Nuclear Pasta"]
+building = "Particle Accelerator"
+name = "Nuclear Pasta"
+craft_time = 120.0
+is_alt = false
+unlocks = "8|5"
+is_unlocked = true
+
+[recipes."Nuclear Pasta".in_1]
+part = "Copper Powder"
+quantity = 100.0
+
+[recipes."Nuclear Pasta".in_2]
+part = "Pressure Conversion Cube"
+quantity = 0.5
+
+[recipes."Nuclear Pasta".out_1]
+part = "Nuclear Pasta"
+quantity = 0.5
+
+[recipes."Biochemical Sculptor"]
+building = "Blender"
+name = "Biochemical Sculptor"
+craft_time = 120.0
+is_alt = true
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Biochemical Sculptor".in_1]
+part = "Assembly Director System"
+quantity = 0.5
+
+[recipes."Biochemical Sculptor".in_2]
+part = "Ficsite Trigon"
+quantity = 40.0
+
+[recipes."Biochemical Sculptor".in_3]
+part = "Water"
+quantity = 10.0
+
+[recipes."Biochemical Sculptor".out_1]
+part = "Biochemical Sculptor"
+quantity = 2.0
+
+[recipes."Packaged Ionised Fuel"]
+building = "Packager"
+name = "Packaged Ionised Fuel"
+craft_time = 3.0
+is_alt = false
+unlocks = "S|7"
+is_unlocked = true
+
+[recipes."Packaged Ionised Fuel".in_1]
+part = "Ionised Fuel"
+quantity = 80.0
+
+[recipes."Packaged Ionised Fuel".in_2]
+part = "Empty Fluid Tank"
+quantity = 40.0
+
+[recipes."Packaged Ionised Fuel".out_1]
+part = "Ionised Fuel (Packaged)"
+quantity = 40.0
+
+[recipes."Unpackage Fuel"]
+building = "Packager"
+name = "Unpackage Fuel"
+craft_time = 2.0
+is_alt = false
+unlocks = "5|4"
+is_unlocked = true
+
+[recipes."Unpackage Fuel".in_1]
+part = "Fuel (Packaged)"
+quantity = 60.0
+
+[recipes."Unpackage Fuel".out_1]
+part = "Fuel"
+quantity = 60.0
+
+[recipes."Unpackage Fuel".out_2]
+part = "Empty Canister"
+quantity = 60.0
+
+[recipes."Wet Concrete"]
+building = "Refinery"
+name = "Wet Concrete"
+craft_time = 3.0
+is_alt = true
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Wet Concrete".in_1]
+part = "Limestone"
+quantity = 120.0
+
+[recipes."Wet Concrete".in_2]
+part = "Water"
+quantity = 100.0
+
+[recipes."Wet Concrete".out_1]
+part = "Concrete"
+quantity = 80.0
+
+[recipes."Iron Ore (Limestone)"]
+building = "Converter"
+name = "Iron Ore (Limestone)"
+craft_time = 6.0
+is_alt = false
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Iron Ore (Limestone)".in_1]
+part = "Reanimated SAM"
+quantity = 10.0
+
+[recipes."Iron Ore (Limestone)".in_2]
+part = "Limestone"
+quantity = 240.0
+
+[recipes."Iron Ore (Limestone)".out_1]
+part = "Iron Ore"
+quantity = 120.0
+
+[recipes."Singularity Cell"]
+building = "Manufacturer"
+name = "Singularity Cell"
+craft_time = 60.0
+is_alt = false
+unlocks = "9|4"
+is_unlocked = true
+
+[recipes."Singularity Cell".in_1]
+part = "Nuclear Pasta"
+quantity = 1.0
+
+[recipes."Singularity Cell".in_2]
+part = "Dark Matter Crystal"
+quantity = 20.0
+
+[recipes."Singularity Cell".in_3]
+part = "Iron Plate"
+quantity = 100.0
+
+[recipes."Singularity Cell".in_4]
+part = "Concrete"
+quantity = 200.0
+
+[recipes."Singularity Cell".out_1]
+part = "Singularity Cell"
+quantity = 10.0
+
+[recipes."Fused Modular Frame"]
+building = "Blender"
+name = "Fused Modular Frame"
+craft_time = 40.0
+is_alt = false
+unlocks = "8|3"
+is_unlocked = true
+
+[recipes."Fused Modular Frame".in_1]
+part = "Heavy Modular Frame"
+quantity = 1.5
+
+[recipes."Fused Modular Frame".in_2]
+part = "Aluminium Casing"
+quantity = 75.0
+
+[recipes."Fused Modular Frame".in_3]
+part = "Nitrogen Gas"
+quantity = 37.5
+
+[recipes."Fused Modular Frame".out_1]
+part = "Fused Modular Frame"
+quantity = 1.5
+
+[recipes."Sparkly Fireworks"]
+building = "Assembler"
+name = "Sparkly Fireworks"
+craft_time = 24.0
+is_alt = false
+unlocks = "F|1"
+is_unlocked = true
+
+[recipes."Sparkly Fireworks".in_1]
+part = "FICSMAS Tree Branch"
+quantity = 7.5
+
+[recipes."Sparkly Fireworks".in_2]
+part = "Actual Snow"
+quantity = 5.0
+
+[recipes."Sparkly Fireworks".out_1]
+part = "Sparkly Fireworks"
+quantity = 2.5
+
+[recipes."Biomass (Mycelia)"]
+building = "Constructor"
+name = "Biomass (Mycelia)"
+craft_time = 4.0
+is_alt = false
+unlocks = "M|1"
+is_unlocked = true
+
+[recipes."Biomass (Mycelia)".in_1]
+part = "Mycelia"
+quantity = 15.0
+
+[recipes."Biomass (Mycelia)".out_1]
+part = "Biomass"
+quantity = 150.0
+
+[recipes."Fused Quickwire"]
+building = "Assembler"
+name = "Fused Quickwire"
+craft_time = 8.0
+is_alt = true
+unlocks = "C|3"
+is_unlocked = true
+
+[recipes."Fused Quickwire".in_1]
+part = "Caterium Ingot"
+quantity = 7.5
+
+[recipes."Fused Quickwire".in_2]
+part = "Copper Ingot"
+quantity = 37.5
+
+[recipes."Fused Quickwire".out_1]
+part = "Quickwire"
+quantity = 90.0
+
+[recipes."Fertile Uranium"]
+building = "Blender"
+name = "Fertile Uranium"
+craft_time = 12.0
+is_alt = true
+unlocks = "8|5"
+is_unlocked = true
+
+[recipes."Fertile Uranium".in_1]
+part = "Uranium"
+quantity = 25.0
+
+[recipes."Fertile Uranium".in_2]
+part = "Uranium Waste"
+quantity = 25.0
+
+[recipes."Fertile Uranium".in_3]
+part = "Nitric Acid"
+quantity = 15.0
+
+[recipes."Fertile Uranium".in_4]
+part = "Sulfuric Acid"
+quantity = 25.0
+
+[recipes."Fertile Uranium".out_1]
+part = "Non-fissile Uranium"
+quantity = 100.0
+
+[recipes."Fertile Uranium".out_2]
+part = "Water"
+quantity = 40.0
+
+[recipes."Crystal Computer"]
+building = "Assembler"
+name = "Crystal Computer"
+craft_time = 36.0
+is_alt = true
+unlocks = "Q|2"
+is_unlocked = true
+
+[recipes."Crystal Computer".in_1]
+part = "Circuit Board"
+quantity = 5.0
+
+[recipes."Crystal Computer".in_2]
+part = "Crystal Oscillator"
+quantity = 1.667
+
+[recipes."Crystal Computer".out_1]
+part = "Computer"
+quantity = 3.333
+
+[recipes."Reanimated SAM"]
+building = "Constructor"
+name = "Reanimated SAM"
+craft_time = 2.0
+is_alt = false
+unlocks = "T|2"
+is_unlocked = true
+
+[recipes."Reanimated SAM".in_1]
+part = "SAM"
+quantity = 120.0
+
+[recipes."Reanimated SAM".out_1]
+part = "Reanimated SAM"
+quantity = 30.0
+
+[recipes."Unpackage Oil"]
+building = "Packager"
+name = "Unpackage Oil"
+craft_time = 2.0
+is_alt = false
+unlocks = "5|4"
+is_unlocked = true
+
+[recipes."Unpackage Oil".in_1]
+part = "Crude Oil (Packaged)"
+quantity = 60.0
+
+[recipes."Unpackage Oil".out_1]
+part = "Crude Oil"
+quantity = 60.0
+
+[recipes."Unpackage Oil".out_2]
+part = "Empty Canister"
+quantity = 60.0
+
+[recipes."Steel Cast Plate"]
+building = "Foundry"
+name = "Steel Cast Plate"
+craft_time = 4.0
+is_alt = true
+unlocks = "3|3"
+is_unlocked = true
+
+[recipes."Steel Cast Plate".in_1]
+part = "Iron Ingot"
+quantity = 15.0
+
+[recipes."Steel Cast Plate".in_2]
+part = "Steel Ingot"
+quantity = 15.0
+
+[recipes."Steel Cast Plate".out_1]
+part = "Iron Plate"
+quantity = 45.0
+
+[recipes."Synthetic Power Shard"]
+building = "Quantum Encoder"
+name = "Synthetic Power Shard"
+craft_time = 12.0
+is_alt = false
+unlocks = "P|6"
+is_unlocked = true
+
+[recipes."Synthetic Power Shard".in_1]
+part = "Time Crystal"
+quantity = 10.0
+
+[recipes."Synthetic Power Shard".in_2]
+part = "Dark Matter Crystal"
+quantity = 10.0
+
+[recipes."Synthetic Power Shard".in_3]
+part = "Quartz Crystal"
+quantity = 60.0
+
+[recipes."Synthetic Power Shard".in_4]
+part = "Excited Photonic Material"
+quantity = 60.0
+
+[recipes."Synthetic Power Shard".out_1]
+part = "Power Shard"
+quantity = 5.0
+
+[recipes."Synthetic Power Shard".out_2]
+part = "Dark Matter Residue"
+quantity = 60.0
+
+[recipes."Bolted Iron Plate"]
+building = "Assembler"
+name = "Bolted Iron Plate"
+craft_time = 12.0
+is_alt = true
+unlocks = "2|1"
+is_unlocked = true
+
+[recipes."Bolted Iron Plate".in_1]
+part = "Iron Plate"
+quantity = 90.0
+
+[recipes."Bolted Iron Plate".in_2]
+part = "Screw"
+quantity = 250.0
+
+[recipes."Bolted Iron Plate".out_1]
+part = "Reinforced Iron Plate"
+quantity = 15.0
+
+[recipes."Automated Speed Wiring"]
+building = "Manufacturer"
+name = "Automated Speed Wiring"
+craft_time = 32.0
+is_alt = true
+unlocks = "C|9"
+is_unlocked = true
+
+[recipes."Automated Speed Wiring".in_1]
+part = "Stator"
+quantity = 3.75
+
+[recipes."Automated Speed Wiring".in_2]
+part = "Wire"
+quantity = 75.0
+
+[recipes."Automated Speed Wiring".in_3]
+part = "High-Speed Connector"
+quantity = 1.875
+
+[recipes."Automated Speed Wiring".out_1]
+part = "Automated Wiring"
+quantity = 7.5
+
+[recipes."Tempered Caterium Ingot"]
+building = "Foundry"
+name = "Tempered Caterium Ingot"
+craft_time = 8.0
+is_alt = true
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Tempered Caterium Ingot".in_1]
+part = "Caterium Ore"
+quantity = 45.0
+
+[recipes."Tempered Caterium Ingot".in_2]
+part = "Petroleum Coke"
+quantity = 15.0
+
+[recipes."Tempered Caterium Ingot".out_1]
+part = "Caterium Ingot"
+quantity = 22.5
+
+[recipes."FICSMAS Bow"]
+building = "Constructor"
+name = "FICSMAS Bow"
+craft_time = 12.0
+is_alt = false
+unlocks = "F|3"
+is_unlocked = true
+
+[recipes."FICSMAS Bow".in_1]
+part = "FICSMAS Gift"
+quantity = 10.0
+
+[recipes."FICSMAS Bow".out_1]
+part = "FICSMAS Bow"
+quantity = 5.0
+
+[recipes."Coated Iron Canister"]
+building = "Assembler"
+name = "Coated Iron Canister"
+craft_time = 4.0
+is_alt = true
+unlocks = "5|4"
+is_unlocked = true
+
+[recipes."Coated Iron Canister".in_1]
+part = "Iron Plate"
+quantity = 30.0
+
+[recipes."Coated Iron Canister".in_2]
+part = "Copper Sheet"
+quantity = 15.0
+
+[recipes."Coated Iron Canister".out_1]
+part = "Empty Canister"
+quantity = 60.0
+
+[recipes."Fused Quartz Crystal"]
+building = "Foundry"
+name = "Fused Quartz Crystal"
+craft_time = 20.0
+is_alt = true
+unlocks = "Q|2"
+is_unlocked = true
+
+[recipes."Fused Quartz Crystal".in_1]
+part = "Raw Quartz"
+quantity = 75.0
+
+[recipes."Fused Quartz Crystal".in_2]
+part = "Coal"
+quantity = 36.0
+
+[recipes."Fused Quartz Crystal".out_1]
+part = "Quartz Crystal"
+quantity = 54.0
+
+[recipes."Biomass (Leaves)"]
+building = "Constructor"
+name = "Biomass (Leaves)"
+craft_time = 5.0
+is_alt = false
+unlocks = "0|6"
+is_unlocked = true
+
+[recipes."Biomass (Leaves)".in_1]
+part = "Leaves"
+quantity = 120.0
+
+[recipes."Biomass (Leaves)".out_1]
+part = "Biomass"
+quantity = 60.0
+
+[recipes."Turbo Rifle Ammo"]
+building = "Blender"
+name = "Turbo Rifle Ammo"
+craft_time = 12.0
+is_alt = false
+unlocks = "S|15"
+is_unlocked = true
+
+[recipes."Turbo Rifle Ammo".in_1]
+part = "Rifle Ammo"
+quantity = 125.0
+
+[recipes."Turbo Rifle Ammo".in_2]
+part = "Aluminium Casing"
+quantity = 15.0
+
+[recipes."Turbo Rifle Ammo".in_3]
+part = "Turbofuel"
+quantity = 15.0
+
+[recipes."Turbo Rifle Ammo".out_1]
+part = "Turbo Rifle Ammo"
+quantity = 250.0
+
+[recipes."Diluted Packaged Fuel"]
+building = "Refinery"
+name = "Diluted Packaged Fuel"
+craft_time = 2.0
+is_alt = true
+unlocks = "5|4"
+is_unlocked = true
+
+[recipes."Diluted Packaged Fuel".in_1]
+part = "Heavy Oil Residue"
+quantity = 30.0
+
+[recipes."Diluted Packaged Fuel".in_2]
+part = "Water (Packaged)"
+quantity = 60.0
+
+[recipes."Diluted Packaged Fuel".out_1]
+part = "Fuel (Packaged)"
+quantity = 60.0
+
+[recipes."Tempered Copper Ingot"]
+building = "Foundry"
+name = "Tempered Copper Ingot"
+craft_time = 12.0
+is_alt = true
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Tempered Copper Ingot".in_1]
+part = "Copper Ore"
+quantity = 25.0
+
+[recipes."Tempered Copper Ingot".in_2]
+part = "Petroleum Coke"
+quantity = 40.0
+
+[recipes."Tempered Copper Ingot".out_1]
+part = "Copper Ingot"
+quantity = 60.0
+
+[recipes."Biomass (Wood)"]
+building = "Constructor"
+name = "Biomass (Wood)"
+craft_time = 4.0
+is_alt = false
+unlocks = "0|6"
+is_unlocked = true
+
+[recipes."Biomass (Wood)".in_1]
+part = "Wood"
+quantity = 60.0
+
+[recipes."Biomass (Wood)".out_1]
+part = "Biomass"
+quantity = 300.0
+
+[recipes."Quartz Crystal"]
+building = "Constructor"
+name = "Quartz Crystal"
+craft_time = 8.0
+is_alt = false
+unlocks = "Q|2"
+is_unlocked = true
+
+[recipes."Quartz Crystal".in_1]
+part = "Raw Quartz"
+quantity = 37.5
+
+[recipes."Quartz Crystal".out_1]
+part = "Quartz Crystal"
+quantity = 22.5
+
+[recipes."Circuit Board"]
+building = "Assembler"
+name = "Circuit Board"
+craft_time = 8.0
+is_alt = false
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Circuit Board".in_1]
+part = "Copper Sheet"
+quantity = 15.0
+
+[recipes."Circuit Board".in_2]
+part = "Plastic"
+quantity = 30.0
+
+[recipes."Circuit Board".out_1]
+part = "Circuit Board"
+quantity = 7.5
+
+[recipes."Hog Protein"]
+building = "Constructor"
+name = "Hog Protein"
+craft_time = 3.0
+is_alt = false
+unlocks = "A|1"
+is_unlocked = true
+
+[recipes."Hog Protein".in_1]
+part = "Hog Remains"
+quantity = 20.0
+
+[recipes."Hog Protein".out_1]
+part = "Alien Protein"
+quantity = 20.0
+
+[recipes."Quickwire Cable"]
+building = "Assembler"
+name = "Quickwire Cable"
+craft_time = 24.0
+is_alt = true
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Quickwire Cable".in_1]
+part = "Quickwire"
+quantity = 7.5
+
+[recipes."Quickwire Cable".in_2]
+part = "Rubber"
+quantity = 5.0
+
+[recipes."Quickwire Cable".out_1]
+part = "Cable"
+quantity = 27.5
+
+[recipes."Distilled Silica"]
+building = "Blender"
+name = "Distilled Silica"
+craft_time = 6.0
+is_alt = true
+unlocks = "7|5"
+is_unlocked = true
+
+[recipes."Distilled Silica".in_1]
+part = "Dissolved Silica"
+quantity = 120.0
+
+[recipes."Distilled Silica".in_2]
+part = "Limestone"
+quantity = 50.0
+
+[recipes."Distilled Silica".in_3]
+part = "Water"
+quantity = 100.0
+
+[recipes."Distilled Silica".out_1]
+part = "Silica"
+quantity = 270.0
+
+[recipes."Distilled Silica".out_2]
+part = "Water"
+quantity = 80.0
+
+[recipes."Super-State Computer"]
+building = "Manufacturer"
+name = "Super-State Computer"
+craft_time = 25.0
+is_alt = true
+unlocks = "8|2"
+is_unlocked = true
+
+[recipes."Super-State Computer".in_1]
+part = "Computer"
+quantity = 7.2
+
+[recipes."Super-State Computer".in_2]
+part = "Electromagnetic Control Rod"
+quantity = 2.4
+
+[recipes."Super-State Computer".in_3]
+part = "Battery"
+quantity = 24.0
+
+[recipes."Super-State Computer".in_4]
+part = "Wire"
+quantity = 60.0
+
+[recipes."Super-State Computer".out_1]
+part = "Supercomputer"
+quantity = 2.4
+
+[recipes."Iron Wire"]
+building = "Constructor"
+name = "Iron Wire"
+craft_time = 24.0
+is_alt = true
+unlocks = "0|3"
+is_unlocked = true
+
+[recipes."Iron Wire".in_1]
+part = "Iron Ingot"
+quantity = 12.5
+
+[recipes."Iron Wire".out_1]
+part = "Wire"
+quantity = 22.5
+
+[recipes."Smart Plating"]
+building = "Assembler"
+name = "Smart Plating"
+craft_time = 30.0
+is_alt = false
+unlocks = "2|1"
+is_unlocked = true
+
+[recipes."Smart Plating".in_1]
+part = "Reinforced Iron Plate"
+quantity = 2.0
+
+[recipes."Smart Plating".in_2]
+part = "Rotor"
+quantity = 2.0
+
+[recipes."Smart Plating".out_1]
+part = "Smart Plating"
+quantity = 2.0
+
+[recipes."Crystal Oscillator"]
+building = "Manufacturer"
+name = "Crystal Oscillator"
+craft_time = 120.0
+is_alt = false
+unlocks = "Q|5"
+is_unlocked = true
+
+[recipes."Crystal Oscillator".in_1]
+part = "Quartz Crystal"
+quantity = 18.0
+
+[recipes."Crystal Oscillator".in_2]
+part = "Cable"
+quantity = 14.0
+
+[recipes."Crystal Oscillator".in_3]
+part = "Reinforced Iron Plate"
+quantity = 2.5
+
+[recipes."Crystal Oscillator".out_1]
+part = "Crystal Oscillator"
+quantity = 1.0
+
+[recipes."Automated Wiring"]
+building = "Assembler"
+name = "Automated Wiring"
+craft_time = 24.0
+is_alt = false
+unlocks = "4|3"
+is_unlocked = true
+
+[recipes."Automated Wiring".in_1]
+part = "Stator"
+quantity = 2.5
+
+[recipes."Automated Wiring".in_2]
+part = "Cable"
+quantity = 50.0
+
+[recipes."Automated Wiring".out_1]
+part = "Automated Wiring"
+quantity = 2.5
+
+[recipes."Coated Cable"]
+building = "Refinery"
+name = "Coated Cable"
+craft_time = 8.0
+is_alt = true
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Coated Cable".in_1]
+part = "Wire"
+quantity = 37.5
+
+[recipes."Coated Cable".in_2]
+part = "Heavy Oil Residue"
+quantity = 15.0
+
+[recipes."Coated Cable".out_1]
+part = "Cable"
+quantity = 67.5
+
+[recipes."Compacted Steel Ingot"]
+building = "Foundry"
+name = "Compacted Steel Ingot"
+craft_time = 24.0
+is_alt = true
+unlocks = "S|4"
+is_unlocked = true
+
+[recipes."Compacted Steel Ingot".in_1]
+part = "Iron Ore"
+quantity = 5.0
+
+[recipes."Compacted Steel Ingot".in_2]
+part = "Compacted Coal"
+quantity = 2.5
+
+[recipes."Compacted Steel Ingot".out_1]
+part = "Steel Ingot"
+quantity = 10.0
+
+[recipes."Caterium Ore (Copper)"]
+building = "Converter"
+name = "Caterium Ore (Copper)"
+craft_time = 6.0
+is_alt = false
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Caterium Ore (Copper)".in_1]
+part = "Reanimated SAM"
+quantity = 10.0
+
+[recipes."Caterium Ore (Copper)".in_2]
+part = "Copper Ore"
+quantity = 150.0
+
+[recipes."Caterium Ore (Copper)".out_1]
+part = "Caterium Ore"
+quantity = 120.0
+
+[recipes.Snowball]
+building = "Constructor"
+name = "Snowball"
+craft_time = 12.0
+is_alt = false
+unlocks = "F|12"
+is_unlocked = true
+
+[recipes.Snowball.in_1]
+part = "Actual Snow"
+quantity = 15.0
+
+[recipes.Snowball.out_1]
+part = "Snowball"
+quantity = 5.0
+
+[recipes."Unpackage Rocket Fuel"]
+building = "Packager"
+name = "Unpackage Rocket Fuel"
+craft_time = 1.0
+is_alt = false
+unlocks = "S|6"
+is_unlocked = true
+
+[recipes."Unpackage Rocket Fuel".in_1]
+part = "Rocket Fuel (Packaged)"
+quantity = 60.0
+
+[recipes."Unpackage Rocket Fuel".out_1]
+part = "Rocket Fuel"
+quantity = 120.0
+
+[recipes."Unpackage Rocket Fuel".out_2]
+part = "Empty Fluid Tank"
+quantity = 60.0
+
+[recipes."Iron Pipe"]
+building = "Constructor"
+name = "Iron Pipe"
+craft_time = 12.0
+is_alt = true
+unlocks = "3|3"
+is_unlocked = true
+
+[recipes."Iron Pipe".in_1]
+part = "Iron Ingot"
+quantity = 100.0
+
+[recipes."Iron Pipe".out_1]
+part = "Steel Pipe"
+quantity = 25.0
+
+[recipes."Cheap Silica"]
+building = "Assembler"
+name = "Cheap Silica"
+craft_time = 8.0
+is_alt = true
+unlocks = "Q|3"
+is_unlocked = true
+
+[recipes."Cheap Silica".in_1]
+part = "Raw Quartz"
+quantity = 22.5
+
+[recipes."Cheap Silica".in_2]
+part = "Limestone"
+quantity = 37.5
+
+[recipes."Cheap Silica".out_1]
+part = "Silica"
+quantity = 52.5
+
+[recipes."Pure Iron Ingot"]
+building = "Refinery"
+name = "Pure Iron Ingot"
+craft_time = 12.0
+is_alt = true
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Pure Iron Ingot".in_1]
+part = "Iron Ore"
+quantity = 35.0
+
+[recipes."Pure Iron Ingot".in_2]
+part = "Water"
+quantity = 20.0
+
+[recipes."Pure Iron Ingot".out_1]
+part = "Iron Ingot"
+quantity = 65.0
+
+[recipes."Electromagnetic Control Rod"]
+building = "Assembler"
+name = "Electromagnetic Control Rod"
+craft_time = 30.0
+is_alt = false
+unlocks = "8|2"
+is_unlocked = true
+
+[recipes."Electromagnetic Control Rod".in_1]
+part = "Stator"
+quantity = 6.0
+
+[recipes."Electromagnetic Control Rod".in_2]
+part = "AI Limiter"
+quantity = 4.0
+
+[recipes."Electromagnetic Control Rod".out_1]
+part = "Electromagnetic Control Rod"
+quantity = 4.0
+
+[recipes."Unpackage Liquid Biofuel"]
+building = "Packager"
+name = "Unpackage Liquid Biofuel"
+craft_time = 2.0
+is_alt = false
+unlocks = "5|4"
+is_unlocked = true
+
+[recipes."Unpackage Liquid Biofuel".in_1]
+part = "Liquid Biofuel (Packaged)"
+quantity = 60.0
+
+[recipes."Unpackage Liquid Biofuel".out_1]
+part = "Liquid Biofuel"
+quantity = 60.0
+
+[recipes."Unpackage Liquid Biofuel".out_2]
+part = "Empty Canister"
+quantity = 60.0
+
+[recipes."AI Expansion Server"]
+building = "Quantum Encoder"
+name = "AI Expansion Server"
+craft_time = 15.0
+is_alt = false
+unlocks = "9|2"
+is_unlocked = true
+
+[recipes."AI Expansion Server".in_1]
+part = "Magnetic Field Generator"
+quantity = 4.0
+
+[recipes."AI Expansion Server".in_2]
+part = "Neural-Quantum Processor"
+quantity = 4.0
+
+[recipes."AI Expansion Server".in_3]
+part = "Superposition Oscillator"
+quantity = 4.0
+
+[recipes."AI Expansion Server".in_4]
+part = "Excited Photonic Material"
+quantity = 100.0
+
+[recipes."AI Expansion Server".out_1]
+part = "AI Expansion Server"
+quantity = 4.0
+
+[recipes."AI Expansion Server".out_2]
+part = "Dark Matter Residue"
+quantity = 100.0
+
+[recipes."Dark Matter Residue"]
+building = "Converter"
+name = "Dark Matter Residue"
+craft_time = 6.0
+is_alt = false
+unlocks = "9|2"
+is_unlocked = true
+
+[recipes."Dark Matter Residue".in_1]
+part = "Reanimated SAM"
+quantity = 50.0
+
+[recipes."Dark Matter Residue".out_1]
+part = "Dark Matter Residue"
+quantity = 100.0
+
+[recipes."Uranium Fuel Rod"]
+building = "Manufacturer"
+name = "Uranium Fuel Rod"
+craft_time = 150.0
+is_alt = false
+unlocks = "8|2"
+is_unlocked = true
+
+[recipes."Uranium Fuel Rod".in_1]
+part = "Encased Uranium Cell"
+quantity = 20.0
+
+[recipes."Uranium Fuel Rod".in_2]
+part = "Encased Industrial Beam"
+quantity = 1.2
+
+[recipes."Uranium Fuel Rod".in_3]
+part = "Electromagnetic Control Rod"
+quantity = 2.0
+
+[recipes."Uranium Fuel Rod".out_1]
+part = "Uranium Fuel Rod"
+quantity = 0.4
+
+[recipes."Nuke Nobelisk"]
+building = "Manufacturer"
+name = "Nuke Nobelisk"
+craft_time = 120.0
+is_alt = false
+unlocks = "S|14"
+is_unlocked = true
+
+[recipes."Nuke Nobelisk".in_1]
+part = "Nobelisk"
+quantity = 2.5
+
+[recipes."Nuke Nobelisk".in_2]
+part = "Encased Uranium Cell"
+quantity = 10.0
+
+[recipes."Nuke Nobelisk".in_3]
+part = "Smokeless Powder"
+quantity = 5.0
+
+[recipes."Nuke Nobelisk".in_4]
+part = "AI Limiter"
+quantity = 3.0
+
+[recipes."Nuke Nobelisk".out_1]
+part = "Nuke Nobelisk"
+quantity = 0.5
+
+[recipes."Petroleum Coke"]
+building = "Refinery"
+name = "Petroleum Coke"
+craft_time = 6.0
+is_alt = false
+unlocks = "5|2"
+is_unlocked = true
+
+[recipes."Petroleum Coke".in_1]
+part = "Heavy Oil Residue"
+quantity = 40.0
+
+[recipes."Petroleum Coke".out_1]
+part = "Petroleum Coke"
+quantity = 120.0
+
+[recipes."Polyester Fabric"]
+building = "Refinery"
+name = "Polyester Fabric"
+craft_time = 2.0
+is_alt = false
+unlocks = "M|7"
+is_unlocked = true
+
+[recipes."Polyester Fabric".in_1]
+part = "Polymer Resin"
+quantity = 30.0
+
+[recipes."Polyester Fabric".in_2]
+part = "Water"
+quantity = 30.0
+
+[recipes."Polyester Fabric".out_1]
+part = "Fabric"
+quantity = 30.0
+
+[recipes."Stun Rebar"]
+building = "Assembler"
+name = "Stun Rebar"
+craft_time = 6.0
+is_alt = false
+unlocks = "C|6"
+is_unlocked = true
+
+[recipes."Stun Rebar".in_1]
+part = "Iron Rebar"
+quantity = 10.0
+
+[recipes."Stun Rebar".in_2]
+part = "Quickwire"
+quantity = 50.0
+
+[recipes."Stun Rebar".out_1]
+part = "Stun Rebar"
+quantity = 10.0
+
+[recipes.Motor]
+building = "Assembler"
+name = "Motor"
+craft_time = 12.0
+is_alt = false
+unlocks = "4|3"
+is_unlocked = true
+
+[recipes.Motor.in_1]
+part = "Rotor"
+quantity = 10.0
+
+[recipes.Motor.in_2]
+part = "Stator"
+quantity = 10.0
+
+[recipes.Motor.out_1]
+part = "Motor"
+quantity = 5.0
+
+[recipes."Rifle Ammo"]
+building = "Assembler"
+name = "Rifle Ammo"
+craft_time = 12.0
+is_alt = false
+unlocks = "S|13"
+is_unlocked = true
+
+[recipes."Rifle Ammo".in_1]
+part = "Copper Sheet"
+quantity = 15.0
+
+[recipes."Rifle Ammo".in_2]
+part = "Smokeless Powder"
+quantity = 10.0
+
+[recipes."Rifle Ammo".out_1]
+part = "Rifle Ammo"
+quantity = 75.0
+
+[recipes."Alumina Solution"]
+building = "Refinery"
+name = "Alumina Solution"
+craft_time = 6.0
+is_alt = false
+unlocks = "7|1"
+is_unlocked = true
+
+[recipes."Alumina Solution".in_1]
+part = "Bauxite"
+quantity = 120.0
+
+[recipes."Alumina Solution".in_2]
+part = "Water"
+quantity = 180.0
+
+[recipes."Alumina Solution".out_1]
+part = "Alumina Solution"
+quantity = 120.0
+
+[recipes."Alumina Solution".out_2]
+part = "Silica"
+quantity = 50.0
+
+[recipes."Aluminium Casing"]
+building = "Constructor"
+name = "Aluminium Casing"
+craft_time = 2.0
+is_alt = false
+unlocks = "7|1"
+is_unlocked = true
+
+[recipes."Aluminium Casing".in_1]
+part = "Aluminium Ingot"
+quantity = 90.0
+
+[recipes."Aluminium Casing".out_1]
+part = "Aluminium Casing"
+quantity = 60.0
+
+[recipes."Cluster Nobelisk"]
+building = "Assembler"
+name = "Cluster Nobelisk"
+craft_time = 24.0
+is_alt = false
+unlocks = "S|14"
+is_unlocked = true
+
+[recipes."Cluster Nobelisk".in_1]
+part = "Nobelisk"
+quantity = 7.5
+
+[recipes."Cluster Nobelisk".in_2]
+part = "Smokeless Powder"
+quantity = 10.0
+
+[recipes."Cluster Nobelisk".out_1]
+part = "Cluster Nobelisk"
+quantity = 2.5
+
+[recipes."Plutonium Fuel Unit"]
+building = "Assembler"
+name = "Plutonium Fuel Unit"
+craft_time = 120.0
+is_alt = true
+unlocks = "8|5"
+is_unlocked = true
+
+[recipes."Plutonium Fuel Unit".in_1]
+part = "Encased Plutonium Cell"
+quantity = 10.0
+
+[recipes."Plutonium Fuel Unit".in_2]
+part = "Pressure Conversion Cube"
+quantity = 0.5
+
+[recipes."Plutonium Fuel Unit".out_1]
+part = "Plutonium Fuel Rod"
+quantity = 0.5
+
+[recipes."Petroleum Diamonds"]
+building = "Particle Accelerator"
+name = "Petroleum Diamonds"
+craft_time = 2.0
+is_alt = true
+unlocks = "9|1"
+is_unlocked = true
+
+[recipes."Petroleum Diamonds".in_1]
+part = "Petroleum Coke"
+quantity = 720.0
+
+[recipes."Petroleum Diamonds".out_1]
+part = "Diamonds"
+quantity = 30.0
+
+[recipes."Radio Control Unit"]
+building = "Manufacturer"
+name = "Radio Control Unit"
+craft_time = 48.0
+is_alt = false
+unlocks = "7|1"
+is_unlocked = true
+
+[recipes."Radio Control Unit".in_1]
+part = "Aluminium Casing"
+quantity = 40.0
+
+[recipes."Radio Control Unit".in_2]
+part = "Crystal Oscillator"
+quantity = 1.25
+
+[recipes."Radio Control Unit".in_3]
+part = "Computer"
+quantity = 2.5
+
+[recipes."Radio Control Unit".out_1]
+part = "Radio Control Unit"
+quantity = 2.5
+
+[recipes."Heavy Flexible Frame"]
+building = "Manufacturer"
+name = "Heavy Flexible Frame"
+craft_time = 16.0
+is_alt = true
+unlocks = "6|1"
+is_unlocked = true
+
+[recipes."Heavy Flexible Frame".in_1]
+part = "Modular Frame"
+quantity = 18.75
+
+[recipes."Heavy Flexible Frame".in_2]
+part = "Encased Industrial Beam"
+quantity = 11.25
+
+[recipes."Heavy Flexible Frame".in_3]
+part = "Rubber"
+quantity = 75.0
+
+[recipes."Heavy Flexible Frame".in_4]
+part = "Screw"
+quantity = 390.0
+
+[recipes."Heavy Flexible Frame".out_1]
+part = "Heavy Modular Frame"
+quantity = 3.75
+
+[recipes."OC Supercomputer"]
+building = "Assembler"
+name = "OC Supercomputer"
+craft_time = 20.0
+is_alt = true
+unlocks = "8|3"
+is_unlocked = true
+
+[recipes."OC Supercomputer".in_1]
+part = "Radio Control Unit"
+quantity = 6.0
+
+[recipes."OC Supercomputer".in_2]
+part = "Cooling System"
+quantity = 6.0
+
+[recipes."OC Supercomputer".out_1]
+part = "Supercomputer"
+quantity = 3.0
+
