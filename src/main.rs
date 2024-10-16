@@ -57,8 +57,6 @@ impl Recipe {
             clock,
         } = self.calc(state)?;
 
-        let in_out_modifier = clock * n_boxes * pref_mult;
-
         println!("\n{:12}{:>39}", self.building, self.name);
         println!("\n  --  IN  --");
         print_ingredient(&self.in_1, None);
@@ -91,19 +89,26 @@ impl Recipe {
             );
         }
 
+        let print_parts = |modifier: f64| {
+            println!("Out:");
+            print_ingredient(&self.out_1, Some(modifier));
+            print_ingredient(&self.out_2, Some(modifier));
+            println!("In:");
+            print_ingredient(&self.in_1, Some(modifier));
+            print_ingredient(&self.in_2, Some(modifier));
+            print_ingredient(&self.in_3, Some(modifier));
+            print_ingredient(&self.in_4, Some(modifier));
+        };
+
         println!("\n  --  BP  --");
         println!("{} [{:.0}]", self.name, n_boxes);
         println!("Num {} per instance: {}", self.building, pref_mult);
         println!("Clock: {:5.2} %", clock * 100.0);
-        println!("Out:");
-        print_ingredient(&self.out_1, Some(in_out_modifier));
-        print_ingredient(&self.out_2, Some(in_out_modifier));
-        println!("In:");
-        print_ingredient(&self.in_1, Some(in_out_modifier));
-        print_ingredient(&self.in_2, Some(in_out_modifier));
-        print_ingredient(&self.in_3, Some(in_out_modifier));
-        print_ingredient(&self.in_4, Some(in_out_modifier));
-
+        print_parts(clock * n_boxes * pref_mult);
+        println!("\n{:>34}", "Per Instance");
+        print_parts(clock * pref_mult);
+        println!("\n{:>34}", "Per Building");
+        print_parts(clock);
         Ok(())
     }
 
