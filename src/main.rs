@@ -102,13 +102,14 @@ impl Recipe {
 
         println!("\n  --  BP  --");
         println!("{} [{:.0}]", self.name, n_boxes);
-        println!("Num {} per instance: {}", self.building, pref_mult);
+        println!("Num {} per BP instance: {}", self.building, pref_mult);
         println!("Clock: {:5.2} %", clock * 100.0);
         print_parts(clock * n_boxes * pref_mult);
-        println!("\n{:>34}", "Per Instance");
+        println!("\n{:>34}", "Per BP Instance");
         print_parts(clock * pref_mult);
-        println!("\n{:>34}", "Per Building");
+        println!("\n{:>34}", format!("Per {}", self.building));
         print_parts(clock);
+
         Ok(())
     }
 
