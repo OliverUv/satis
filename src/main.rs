@@ -1,5 +1,7 @@
 use anyhow::anyhow;
 use clap::{Parser, Subcommand};
+use fuzzy_matcher::FuzzyMatcher;
+use fuzzy_matcher::skim::SkimMatcherV2;
 
 pub mod types;
 use types::*;
@@ -32,14 +34,16 @@ fn main() -> Result<(), anyhow::Error> {
 }
 
 fn calc(state: State, all_recipes: RecipeMap, recipe: &str) -> Result<(), anyhow::Error> {
-    let mut key = None;
-    for k in all_recipes.keys() {
-        let kl = k.as_str().to_lowercase();
-        let search_key = recipe.to_lowercase();
-        if kl == search_key { key = Some(k.clone()); }
-    }
-    let k = key.ok_or(anyhow!("No such recipe: {}", &recipe))?;
-    let r = all_recipes.get(&k).ok_or(anyhow!("Could not find recipe: {k}"))?;
+    let matcher = SkimMatcherV2::default();
+    let mut fuzz: Vec<(&str, i64)> = all_recipes.keys()
+        .map(String::as_str)
+        .map(|key| (key, matcher.fuzzy_match(key, recipe)))
+        .filter(|(_key, score)| score.is_some())
+        .map(|(key, score)| (key, score.expect("Filtered out Nones already")))
+        .collect();
+    fuzz.sort_by_key(|(_key, score)| *score);
+    let best_match_key = fuzz.last().ok_or(anyhow!("Could not find recipe: {recipe}"))?.0;
+    let r = all_recipes.get(best_match_key).ok_or(anyhow!("Could not find recipe: {best_match_key}"))?;
     r.print_calc(&state)?;
     Ok(())
 }
