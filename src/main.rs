@@ -15,7 +15,6 @@ struct Cli {
 #[derive(Subcommand)]
 enum Command {
     Calc{recipe: String},
-    // List,
 }
 
 fn main() -> Result<(), anyhow::Error> {
@@ -33,7 +32,7 @@ fn main() -> Result<(), anyhow::Error> {
     Ok(())
 }
 
-fn calc(state: State, all_recipes: RecipeMap, recipe: &str) -> Result<(), anyhow::Error> {
+fn find_recipe<'a, 'b>(all_recipes: &'a RecipeMap, recipe: &'b str) -> Result<&'a Recipe, anyhow::Error> {
     let matcher = SkimMatcherV2::default();
     let mut fuzz: Vec<(&str, i64)> = all_recipes.keys()
         .map(String::as_str)
@@ -43,7 +42,11 @@ fn calc(state: State, all_recipes: RecipeMap, recipe: &str) -> Result<(), anyhow
         .collect();
     fuzz.sort_by_key(|(_key, score)| *score);
     let best_match_key = fuzz.last().ok_or(anyhow!("Could not find recipe: {recipe}"))?.0;
-    let r = all_recipes.get(best_match_key).ok_or(anyhow!("Could not find recipe: {best_match_key}"))?;
+    all_recipes.get(best_match_key).ok_or(anyhow!("Could not find recipe: {best_match_key}"))
+}
+
+fn calc(state: State, all_recipes: RecipeMap, recipe: &str) -> Result<(), anyhow::Error> {
+    let r = find_recipe(&all_recipes, recipe)?;
     r.print_calc(&state)?;
     Ok(())
 }
@@ -59,6 +62,7 @@ impl Recipe {
             n_boxes,
             pref_mult,
             clock,
+            power_usage_mw,
         } = self.calc(state)?;
 
         println!("\n{:12}{:>39}", self.building, self.name);
@@ -108,6 +112,7 @@ impl Recipe {
         println!("{} [{:.0}]", self.name, n_boxes);
         println!("Num {} per BP instance: {}", self.building, pref_mult);
         println!("Clock: {:5.2} %", clock * 100.0);
+        println!("Power use: {:5.2} MW", power_usage_mw);
         print_parts(clock * n_boxes * pref_mult);
         if n_boxes > 1.0001 {
             println!("\n{:>34}", "Per BP Instance");
@@ -136,4 +141,3 @@ fn print_ingredient(i: &Option<Ingredient>, modify: Option<f64>) {
     }
     
 }
-

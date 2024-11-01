@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use anyhow::anyhow;
+use anyhow::{anyhow, bail};
 use serde::{ Serialize, Deserialize };
 
 #[derive(Debug, Serialize, Deserialize, PartialEq, Eq)]
@@ -20,19 +20,21 @@ pub struct State {
     pub pref_multiple_refinery: f64,
     pub pref_multiple_foundry: f64,
     pub pref_multiple_packager: f64,
+    pub pref_multiple_blender: f64,
 }
 
 impl Default for State {
     fn default() -> Self {
         Self {
-            belt_ipm: 480.0,
+            belt_ipm: 780.0, // 480, ..
             pipe_ipm: 600.0,
-            pref_multiple_constructor: 3.0,
             pref_multiple_assembler: 3.0,
-            pref_multiple_manufacturer: 2.0,
-            pref_multiple_refinery: 4.0,
+            pref_multiple_blender: 4.0,
+            pref_multiple_constructor: 3.0,
             pref_multiple_foundry: 3.0,
+            pref_multiple_manufacturer: 2.0,
             pref_multiple_packager: 4.0,
+            pref_multiple_refinery: 4.0,
         }
     }
 }
@@ -45,7 +47,8 @@ impl State {
             "Manufacturer" => Some(self.pref_multiple_manufacturer),
             "Refinery" => Some(self.pref_multiple_refinery),
             "Foundry" => Some(self.pref_multiple_foundry),
-            // "Packager" => Some(self.pref_multiple_packager),
+            "Blender" => Some(self.pref_multiple_blender),
+            "Packager" => Some(self.pref_multiple_packager),
             _ => None,
         }
     }
@@ -124,6 +127,8 @@ impl Recipe {
             n_boxes = n_boxes_adjusted;
         }
 
+        let power_usage_mw = n_boxes * pref_mult * calc_power_usage_mw(self.building.as_str(), clock)?;
+
         Ok(RecipeCalc {
             use_belt,
             use_pipe,
@@ -132,6 +137,7 @@ impl Recipe {
             n_boxes,
             pref_mult,
             clock,
+            power_usage_mw,
         })
     }
 }
@@ -144,6 +150,7 @@ pub struct RecipeCalc {
     pub n_boxes: f64,
     pub pref_mult: f64,
     pub clock: f64,
+    pub power_usage_mw: f64,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -170,4 +177,24 @@ impl Ingredient {
             _ => Transport::Belt,
         }
     }
+}
+
+/// Returns the power usage in MW if possible
+fn calc_power_usage_mw(building: &str, clock: f64) -> anyhow::Result<f64> {
+    let base_power_usage = match building {
+        "Assembler" => 15.0,
+        "Blender" => 75.0,
+        "Constructor" => 4.0,
+        "Foundry" => 16.0,
+        "Manufacturer" => 55.0,
+        "Packager" => 10.0,
+        "Refinery" => 30.0,
+        "Smelter" => 4.0,
+        _ => bail!("Building {} has no defined base power usage.", building),
+    };
+
+    if clock <= 0.0 { bail!("Clock speed must no be less than 0"); }
+    if clock >= 2.5 { bail!("Clock speed must no be more than 2.5"); }
+
+    Ok(base_power_usage * clock.powf(1.321928))
 }
