@@ -1,26 +1,22 @@
 use std::collections::HashMap;
+use std::fs::File;
 
 /// Imports recipe data.
 /// Uses the google sheets data from this project:
 /// https://steamcommunity.com/sharedfiles/filedetails/?id=2874178191
 /// (go to Production Recipes tab, then export as csv)
+///
+/// You MUST remove the first two header lines from the csv file
 
 use anyhow;
 
-pub mod types;
-use types::*;
+use crate::types::*;
 
-fn main() -> Result<(), anyhow::Error> {
-    let stdin = std::io::stdin();
-    {
-        // Skip two lines, as they are headers which we won't use
-        let mut input = String::new();
-        stdin.read_line(&mut input)?;
-        stdin.read_line(&mut input)?;
-    }
+pub fn get_all_recipes() -> Result<RecipeMap, anyhow::Error> {
+    let recipe_file = File::open("./recipes.csv")?;
     let mut reader = csv::ReaderBuilder::new()
         .has_headers(false)
-        .from_reader(stdin);
+        .from_reader(recipe_file);
     let mut recipes = Vec::new();
     for res in reader.records() {
         let record = res?;
@@ -35,19 +31,13 @@ fn main() -> Result<(), anyhow::Error> {
         }
     }
 
-    // for r in recipes.iter() {
-    //     println!("{:?}", r);
-    // }
-
-    let mut rmap = Recipes { recipes: HashMap::new() };
+    let mut rmap = HashMap::new();
     for r in recipes.into_iter() {
         let name = r.name.clone();
-        rmap.recipes.insert(name, r);
+        rmap.insert(name, r);
     }
-    let toml = toml::to_string_pretty(&rmap)?;
-    println!("{toml}");
 
-    Ok(())
+    Ok(rmap)
 }
 
 fn parse_recipe(record: &csv::StringRecord) -> Result<Option<Recipe>, anyhow::Error> {

@@ -6,6 +6,9 @@ use fuzzy_matcher::skim::SkimMatcherV2;
 pub mod types;
 use types::*;
 
+pub mod import;
+use import::get_all_recipes;
+
 #[derive(Parser)]
 struct Cli {
     #[command(subcommand)]
@@ -18,17 +21,12 @@ enum Command {
 }
 
 fn main() -> Result<(), anyhow::Error> {
-    // println!("Reading recipes");
-    let all_recipes = std::fs::read_to_string("./all_recipes.toml")?;
-    let all_recipes = toml::from_str::<Recipes>(&all_recipes)?.recipes;
-
+    let all_recipes = get_all_recipes()?;
     let state = State::default();
-
     let cli = Cli::parse();
     match &cli.command {
         Command::Calc{recipe} => calc(state, all_recipes, recipe.as_str())?,
     }
-
     Ok(())
 }
 

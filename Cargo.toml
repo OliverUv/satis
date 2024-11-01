@@ -7,10 +7,6 @@ edition = "2021"
 name = "satis"
 path = "src/main.rs"
 
-[[bin]]
-name = "import"
-path = "src/import.rs"
-
 [dependencies]
 anyhow = { version = "1.0.89", features = ["backtrace"] }
 clap = { version = "4.5.20", features = ["derive"] }

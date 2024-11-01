@@ -1,5 +1,3 @@
-Building Information,,,Unlock Information,,,Inputs,,,,,,,,Outputs,,,
-Building,Recipe Name,Craft Time,Alt. Recipe,Unlocks,Unlocked,1,Qty 1,2,Qty 2,3,Qty 3,4,Qty 4,1,Qty 1,2,Qty 2
 Constructor,Actual Snow,12,FALSE,F|5,TRUE,FICSMAS Gift,25,,,,,,,Actual Snow,10,,
 Constructor,Alien DNA Capsule,6,FALSE,A|5,TRUE,Alien Protein,10,,,,,,,Alien DNA Capsules,10,,
 Constructor,Aluminium Beam,8,TRUE,7|1,TRUE,Aluminium Ingot,22.5,,,,,,,Steel Beam,22.5,,

@@ -54,10 +54,6 @@ impl State {
     }
 }
 
-#[derive(Debug, Serialize, Deserialize)]
-pub struct Recipes {
-    pub recipes: RecipeMap,
-}
 pub type RecipeMap = HashMap<String, Recipe>;
 
 #[derive(Debug, Serialize, Deserialize)]
