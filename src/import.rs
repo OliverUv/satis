@@ -1,12 +1,13 @@
+//! Imports recipe data.
+//! Uses the google sheets data from this project:
+//! https://steamcommunity.com/sharedfiles/filedetails/?id=2874178191
+//! (go to Production Recipes tab, then export as csv)
+//!
+//! You MUST remove the first two header lines from the csv file.
+//! You SHOULD remove all the weird ,,,FALSE,,, lines at the bottom of the file.
+
 use std::collections::HashMap;
 use std::fs::File;
-
-/// Imports recipe data.
-/// Uses the google sheets data from this project:
-/// https://steamcommunity.com/sharedfiles/filedetails/?id=2874178191
-/// (go to Production Recipes tab, then export as csv)
-///
-/// You MUST remove the first two header lines from the csv file
 
 use anyhow;
 
@@ -37,7 +38,18 @@ pub fn get_all_recipes() -> Result<RecipeMap, anyhow::Error> {
         rmap.insert(name, r);
     }
 
+    apply_patches(&mut rmap)?;
+
     Ok(rmap)
+}
+
+fn apply_patches(recipes: &mut RecipeMap) -> Result<(), anyhow::Error> {
+    // Diamonds -> Time Crystals, should be 10s 2:1 ratio
+    let err = || anyhow::anyhow!("Could not apply patch to Time Crystal recipe");
+    let tc = recipes.get_mut("Time Crystal").ok_or_else(err)?;
+    let diamonds = tc.in_1.as_mut().ok_or_else(err)?;
+    diamonds.quantity = 12.0;
+    Ok(())
 }
 
 fn parse_recipe(record: &csv::StringRecord) -> Result<Option<Recipe>, anyhow::Error> {

@@ -1,5 +1,5 @@
 Constructor,Actual Snow,12,FALSE,F|5,TRUE,FICSMAS Gift,25,,,,,,,Actual Snow,10,,
-Constructor,Alien DNA Capsule,6,FALSE,A|5,TRUE,Alien Protein,10,,,,,,,Alien DNA Capsule,10,,
+Constructor,Alien DNA Capsule,6,FALSE,A|5,TRUE,Alien Protein,10,,,,,,,Alien DNA Capsules,10,,
 Constructor,Aluminium Beam,8,TRUE,7|1,TRUE,Aluminium Ingot,22.5,,,,,,,Steel Beam,22.5,,
 Constructor,Aluminium Casing,2,FALSE,7|1,TRUE,Aluminium Ingot,90,,,,,,,Aluminium Casing,60,,
 Constructor,Aluminium Rod,8,TRUE,7|1,TRUE,Aluminium Ingot,7.5,,,,,,,Iron Rod,52.5,,
@@ -208,7 +208,7 @@ Refinery,Turbo Heavy Fuel,8,TRUE,S|5,TRUE,Heavy Oil Residue,37.5,Compacted Coal,
 Refinery,Turbofuel,16,FALSE,S|5,TRUE,Fuel,22.5,Compacted Coal,15,,,,,Turbofuel,18.75,,
 Refinery,Wet Concrete,3,TRUE,5|2,TRUE,Limestone,120,Water,100,,,,,Concrete,80,,
 Blender,Battery,3,FALSE,7|5,TRUE,Sulfuric Acid,50,Alumina Solution,40,Aluminium Casing,20,,,Battery,20,Water,30
-Blender,Biochemical Sculptor,120,FALSE,9|1,TRUE,Assembly Director System,0.5,Ficsite Trigon,40,Water,10,,,Biochemical Sculptor,2,,
+Blender,Biochemical Sculptor,120,TRUE,9|1,TRUE,Assembly Director System,0.5,Ficsite Trigon,40,Water,10,,,Biochemical Sculptor,2,,
 Blender,Cooling Device,24,TRUE,8|3,TRUE,Heat Sink,10,Motor,2.5,Nitrogen Gas,60,,,Cooling System,5,,
 Blender,Cooling System,10,FALSE,8|3,TRUE,Heat Sink,12,Rubber,12,Water,30,Nitrogen Gas,150,Cooling System,6,,
 Blender,Diluted Fuel,6,TRUE,7|5,TRUE,Heavy Oil Residue,50,Water,100,,,,,Fuel,100,,
@@ -289,3 +289,10 @@ Quantum Encoder,Ficsonium Fuel Rod,24,FALSE,9|5,TRUE,Ficsonium,5,Electromagnetic
 Quantum Encoder,Neural-Quantum Processor,20,FALSE,9|2,TRUE,Time Crystal,15,Supercomputer,3,Ficsite Trigon,45,Excited Photonic Material,75,Neural-Quantum Processor,3,Dark Matter Residue,75
 Quantum Encoder,Superposition Oscillator,12,FALSE,9|2,TRUE,Dark Matter Crystal,30,Crystal Oscillator,5,Alclad Aluminium Sheet,45,Excited Photonic Material,125,Superposition Oscillator,5,Dark Matter Residue,125
 Quantum Encoder,Synthetic Power Shard,12,FALSE,P|6,TRUE,Time Crystal,10,Dark Matter Crystal,10,Quartz Crystal,60,Excited Photonic Material,60,Power Shard,5,Dark Matter Residue,60
+,,,FALSE,,FALSE,,,,,,,,,,,,
+,,,FALSE,,FALSE,,,,,,,,,,,,
+,,,FALSE,,FALSE,,,,,,,,,,,,
+,,,FALSE,,FALSE,,,,,,,,,,,,
+,,,FALSE,,FALSE,,,,,,,,,,,,
+,,,FALSE,,FALSE,,,,,,,,,,,,
+,,,FALSE,,FALSE,,,,,,,,,,,,

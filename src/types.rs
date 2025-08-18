@@ -14,26 +14,32 @@ pub enum Transport {
 pub struct State {
     pub belt_ipm: f64,
     pub pipe_ipm: f64,
-    pub pref_multiple_constructor: f64,
     pub pref_multiple_assembler: f64,
-    pub pref_multiple_manufacturer: f64,
-    pub pref_multiple_refinery: f64,
-    pub pref_multiple_foundry: f64,
-    pub pref_multiple_packager: f64,
     pub pref_multiple_blender: f64,
+    pub pref_multiple_constructor: f64,
+    pub pref_multiple_converter: f64,
+    pub pref_multiple_foundry: f64,
+    pub pref_multiple_manufacturer: f64,
+    pub pref_multiple_packager: f64,
+    pub pref_multiple_particle_accelerator: f64,
+    pub pref_multiple_refinery: f64,
 }
 
 impl Default for State {
     fn default() -> Self {
         Self {
-            belt_ipm: 780.0, // 480, ..
+            belt_ipm: 780.0,
+            // belt_ipm: 480.0,
             pipe_ipm: 600.0,
+            // pipe_ipm: 300.0,
             pref_multiple_assembler: 3.0,
-            pref_multiple_blender: 4.0,
+            pref_multiple_blender: 2.0,
             pref_multiple_constructor: 3.0,
+            pref_multiple_converter: 1.0,
             pref_multiple_foundry: 3.0,
             pref_multiple_manufacturer: 2.0,
             pref_multiple_packager: 4.0,
+            pref_multiple_particle_accelerator: 1.0,
             pref_multiple_refinery: 4.0,
         }
     }
@@ -42,13 +48,15 @@ impl Default for State {
 impl State {
     pub fn prefered_building_multiple(&self, building: &str) -> Option<f64> {
         match building {
-            "Constructor" => Some(self.pref_multiple_constructor),
             "Assembler" => Some(self.pref_multiple_assembler),
-            "Manufacturer" => Some(self.pref_multiple_manufacturer),
-            "Refinery" => Some(self.pref_multiple_refinery),
-            "Foundry" => Some(self.pref_multiple_foundry),
             "Blender" => Some(self.pref_multiple_blender),
+            "Constructor" => Some(self.pref_multiple_constructor),
+            "Converter" => Some(self.pref_multiple_converter),
+            "Foundry" => Some(self.pref_multiple_foundry),
+            "Manufacturer" => Some(self.pref_multiple_manufacturer),
             "Packager" => Some(self.pref_multiple_packager),
+            "Particle Accelerator" => Some(self.pref_multiple_particle_accelerator),
+            "Refinery" => Some(self.pref_multiple_refinery),
             _ => None,
         }
     }
@@ -175,17 +183,20 @@ impl Ingredient {
     }
 }
 
-/// Returns the power usage in MW if possible
+/// Returns the power usage in MW if possible.
+/// TODO support variable power usage of Particle Accelerator and Converter
 fn calc_power_usage_mw(building: &str, clock: f64) -> anyhow::Result<f64> {
     let base_power_usage = match building {
         "Assembler" => 15.0,
         "Blender" => 75.0,
         "Constructor" => 4.0,
+        "Converter" => 1.0,
         "Foundry" => 16.0,
         "Manufacturer" => 55.0,
         "Packager" => 10.0,
         "Refinery" => 30.0,
         "Smelter" => 4.0,
+        "Particle Accelerator" => 1.0,
         _ => bail!("Building {} has no defined base power usage.", building),
     };
 
