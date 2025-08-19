@@ -1,3 +1,5 @@
+use std::collections::HashSet;
+
 use anyhow::anyhow;
 use clap::{Parser, Subcommand};
 use fuzzy_matcher::FuzzyMatcher;
@@ -20,17 +22,46 @@ enum Command {
     /// Generate a blueprint
     Calc{recipe: String},
     /// See a recipe given a certain amount of an ingredient
-    Mult{recipe: String, ingredient: String, amount: f64}
+    Mult{recipe: String, ingredient: String, amount: f64},
+    /// Show recipe
+    Show{recipe: String},
+    /// Find all recipes that produce the given ingredient
+    Find{ingredient: String},
 }
 
 fn main() -> Result<(), anyhow::Error> {
     let all_recipes = get_all_recipes()?;
+    let all_ingredients = {
+        let mut set = HashSet::new();
+        for (_name, r) in all_recipes.iter() {
+            for i in r.ingredients() {
+                set.insert(i.part.to_lowercase());
+            }
+        }
+        set
+    };
+
     let state = State::default();
     let cli = Cli::parse();
     match &cli.command {
         Command::Calc{recipe} => calc(state, all_recipes, recipe.as_str())?,
         Command::Mult{recipe, ingredient, amount} => {
             mult(state, all_recipes, recipe.as_str(), ingredient.as_str(), *amount)?;
+        }
+        Command::Show{recipe} => {
+            let r = find_recipe(&all_recipes, recipe)?;
+            r.print();
+        }
+        Command::Find{ingredient} => {
+            let i = find_ingredient(&all_ingredients, ingredient)?;
+            all_recipes.iter()
+                .map(|(_, r)| r)
+                .filter(|r| r.outputs().any(|o| o.part.to_lowercase() == i))
+                .for_each(|r| {
+                    println!("=========");
+                    r.print();
+                    println!("");
+                })
         }
     }
     Ok(())
@@ -49,10 +80,22 @@ fn find_recipe<'a, 'b>(all_recipes: &'a RecipeMap, recipe_query: &'b str) -> Res
     all_recipes.get(best_match_key).ok_or(anyhow!("Could not find recipe: {best_match_key}"))
 }
 
-fn find_ingredient<'a, 'b>(recipe: &'a Recipe, ingredient_query: &'b str) -> Result<&'a Ingredient, anyhow::Error> {
+fn find_ingredient_in_recipe<'a, 'b>(recipe: &'a Recipe, ingredient_query: &'b str) -> Result<&'a Ingredient, anyhow::Error> {
     let matcher = SkimMatcherV2::default();
     let mut fuzz: Vec<(&Ingredient, i64)> = recipe.ingredients()
         .map(|i| (i, matcher.fuzzy_match(i.part.as_str(), ingredient_query)))
+        .filter(|(_i, score)| score.is_some())
+        .map(|(i, score)| (i, score.expect("Filtered out Nones already")))
+        .collect();
+    fuzz.sort_by_key(|(_i, score)| *score);
+    let best_match_ingredient = fuzz.last().ok_or(anyhow!("Could not find ingredient: {ingredient_query}"))?.0;
+    Ok(best_match_ingredient)
+}
+
+fn find_ingredient<'a, 'b>(all_ingredients: &'a HashSet<String>, ingredient_query:&'b str) -> Result<&'a str, anyhow::Error> {
+    let matcher = SkimMatcherV2::default();
+    let mut fuzz: Vec<(&String, i64)> = all_ingredients.iter()
+        .map(|i| (i, matcher.fuzzy_match(i.as_str(), ingredient_query)))
         .filter(|(_i, score)| score.is_some())
         .map(|(i, score)| (i, score.expect("Filtered out Nones already")))
         .collect();
@@ -70,7 +113,7 @@ fn calc(state: State, all_recipes: RecipeMap, recipe: &str) -> Result<(), anyhow
 fn mult(_state: State, all_recipes: RecipeMap, recipe: &str, ingredient: &str, amount: f64) -> Result<(), anyhow::Error> {
     let r = find_recipe(&all_recipes, recipe)?;
 
-    let i = find_ingredient(r, ingredient)?;
+    let i = find_ingredient_in_recipe(r, ingredient)?;
     let factor = amount/i.quantity;
 
     println!("Standard Recipe: {}\n", r.name);
@@ -153,6 +196,16 @@ impl Recipe {
         Ok(())
     }
 
+    fn print(&self) {
+        println!("{}", self.name);
+        println!("    Building: {}", self.building);
+        println!("  Cycle time: {}", self.craft_time_s);
+        println!("");
+        println!("Out:");
+        self.outputs().for_each(|i| print_ingredient(i, None));
+        println!("In:");
+        self.inputs().for_each(|i| print_ingredient(i, None));
+    }
 }
 
 fn print_ingredient(i: &Ingredient, modify: Option<f64>) {
