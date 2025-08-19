@@ -215,7 +215,8 @@ impl Ingredient {
             "Sulfuric Acid" => Transport::Pipe,
             "Turbofuel" => Transport::Pipe,
             "Water" => Transport::Pipe,
-            // TODO FIXME add other pipe stuff, like condensed dark matter or whatever
+            "Excited Photonic Matter" => Transport::Pipe,
+            "Dark Matter Residue" => Transport::Pipe,
             _ => Transport::Belt,
         }
     }
