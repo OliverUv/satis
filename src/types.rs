@@ -184,6 +184,10 @@ impl Recipe {
             power_usage_mw,
         })
     }
+
+    pub fn per_minute_factor(&self) -> f64 {
+        self.craft_time_s / 60.
+    }
 }
 
 pub struct BlueprintSuggestion {

@@ -86,11 +86,27 @@ pub fn print_ingredient(i: &Ingredient, modify: Option<f64>) {
 }
 
 pub fn print_chain(chain: &ChainState) {
+    fn print_recipe_ingredient(i: &Ingredient, scale: f64, pmf: f64) {
+        let q = i.quantity;
+        let n = &i.part;
+        let r = (q * pmf).round();
+        let sq = format!("[{:.2}]", q * scale);
+        println!(" {r:4} {n:31} {q:10.2} {sq:>15}");
+    }
     for (_name, g) in chain.groups.iter() {
         println!("\n\nGROUP: {}\n", g.name);
         for (scale, r) in g.recipes.iter() {
-            print!("\n{:4} X ", scale);
-            r.print();
+            let n = &r.name;
+            let b = &r.building;
+            let s = format!("{scale:.2}");
+            let bs = format!("{b} * {s}");
+            println!("\n\n{n:31} {bs:>32}");
+
+            let pmf = r.per_minute_factor();
+            println!("Out:");
+            r.outputs().for_each(|i| print_recipe_ingredient(i, *scale, pmf));
+            println!("In:");
+            r.inputs().for_each(|i| print_recipe_ingredient(i, *scale, pmf));
         }
         println!("\nINPUTS\n");
         for i in g.inputs.iter() {
