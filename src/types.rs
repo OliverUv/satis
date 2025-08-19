@@ -100,7 +100,7 @@ impl Recipe {
     pub fn max_outputs(&self) -> (f64, f64) {
         let mut belt = 0.0;
         let mut pipe = 0.0;
-        let mut max_ing = |i: &Option<Ingredient>| {
+        let max_ing = |i: &Option<Ingredient>| {
             let i = match i {
                 Some(i) => i,
                 None => return,
@@ -114,15 +114,7 @@ impl Recipe {
             }
         };
 
-        for ingredient in self.ingredients() {
-            max_ing(ingredient);
-        }
-        // max_ing(&self.in_1);
-        // max_ing(&self.in_2);
-        // max_ing(&self.in_3);
-        // max_ing(&self.in_4);
-        // max_ing(&self.out_1);
-        // max_ing(&self.out_2);
+        self.ingredients().into_iter().for_each(max_ing);
 
         (belt, pipe)
     }

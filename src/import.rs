@@ -7,17 +7,19 @@
 //! You SHOULD remove all the weird ,,,FALSE,,, lines at the bottom of the file.
 
 use std::collections::HashMap;
-use std::fs::File;
 
 use anyhow;
 
 use crate::types::*;
 
+pub fn recipe_file() -> &'static str {
+    include_str!("../recipes.csv")
+}
+
 pub fn get_all_recipes() -> Result<RecipeMap, anyhow::Error> {
-    let recipe_file = File::open("./recipes.csv")?;
     let mut reader = csv::ReaderBuilder::new()
         .has_headers(false)
-        .from_reader(recipe_file);
+        .from_reader(recipe_file().as_bytes());
     let mut recipes = Vec::new();
     for res in reader.records() {
         let record = res?;
