@@ -30,6 +30,7 @@ pub struct State {
     pub pref_multiple_converter: f64,
     pub pref_multiple_foundry: f64,
     pub pref_multiple_manufacturer: f64,
+    pub pref_multiple_nuclear_power_plant: f64,
     pub pref_multiple_packager: f64,
     pub pref_multiple_particle_accelerator: f64,
     pub pref_multiple_refinery: f64,
@@ -49,6 +50,7 @@ impl Default for State {
             pref_multiple_converter: 1.0,
             pref_multiple_foundry: 3.0,
             pref_multiple_manufacturer: 2.0,
+            pref_multiple_nuclear_power_plant: 1.0,
             pref_multiple_packager: 4.0,
             pref_multiple_particle_accelerator: 1.0,
             pref_multiple_smelter: 4.0,
@@ -70,6 +72,7 @@ impl State {
             "Particle Accelerator" => Some(self.pref_multiple_particle_accelerator),
             "Smelter" => Some(self.pref_multiple_smelter),
             "Refinery" => Some(self.pref_multiple_refinery),
+            "Nuclear Power Plant" => Some(self.pref_multiple_nuclear_power_plant),
             _ => None,
         }
     }
@@ -232,6 +235,7 @@ fn calc_power_usage_mw(building: &str, clock: f64) -> anyhow::Result<f64> {
         "Refinery" => 30.0,
         "Smelter" => 4.0,
         "Particle Accelerator" => 1.0, // fake
+        "Nuclear Power Plant" => -2500.0, // fake ish
         _ => bail!("Building {} has no defined base power usage.", building),
     };
 
