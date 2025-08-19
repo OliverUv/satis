@@ -2,6 +2,7 @@
 name = "satis"
 version = "0.1.0"
 edition = "2021"
+description = "Helps you calculate things for the game Satisfactory"
 
 [[bin]]
 name = "satis"
