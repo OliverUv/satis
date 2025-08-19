@@ -36,17 +36,32 @@ fn main() -> Result<(), anyhow::Error> {
     Ok(())
 }
 
-fn find_recipe<'a, 'b>(all_recipes: &'a RecipeMap, recipe: &'b str) -> Result<&'a Recipe, anyhow::Error> {
+fn find_recipe<'a, 'b>(all_recipes: &'a RecipeMap, recipe_query: &'b str) -> Result<&'a Recipe, anyhow::Error> {
     let matcher = SkimMatcherV2::default();
     let mut fuzz: Vec<(&str, i64)> = all_recipes.keys()
         .map(String::as_str)
-        .map(|key| (key, matcher.fuzzy_match(key, recipe)))
+        .map(|key| (key, matcher.fuzzy_match(key, recipe_query)))
         .filter(|(_key, score)| score.is_some())
         .map(|(key, score)| (key, score.expect("Filtered out Nones already")))
         .collect();
     fuzz.sort_by_key(|(_key, score)| *score);
-    let best_match_key = fuzz.last().ok_or(anyhow!("Could not find recipe: {recipe}"))?.0;
+    let best_match_key = fuzz.last().ok_or(anyhow!("Could not find recipe: {recipe_query}"))?.0;
     all_recipes.get(best_match_key).ok_or(anyhow!("Could not find recipe: {best_match_key}"))
+}
+
+fn find_ingredient<'a, 'b>(recipe: &'a Recipe, ingredient_query: &'b str) -> Result<&'a Ingredient, anyhow::Error> {
+    let matcher = SkimMatcherV2::default();
+    let mut fuzz: Vec<(&Ingredient, i64)> = recipe.ingredients().into_iter()
+        // .filter(|i| i.is_some())
+        // .map(|i| i.as_ref().unwrap())
+        .filter_map(|i| i.as_ref())
+        .map(|i| (i, matcher.fuzzy_match(i.part.as_str(), ingredient_query)))
+        .filter(|(_i, score)| score.is_some())
+        .map(|(i, score)| (i, score.expect("Filtered out Nones already")))
+        .collect();
+    fuzz.sort_by_key(|(_i, score)| *score);
+    let best_match_ingredient = fuzz.last().ok_or(anyhow!("Could not find ingredient: {ingredient_query}"))?.0;
+    Ok(best_match_ingredient)
 }
 
 fn calc(state: State, all_recipes: RecipeMap, recipe: &str) -> Result<(), anyhow::Error> {
@@ -57,15 +72,17 @@ fn calc(state: State, all_recipes: RecipeMap, recipe: &str) -> Result<(), anyhow
 
 fn mult(_state: State, all_recipes: RecipeMap, recipe: &str, ingredient: &str, amount: f64) -> Result<(), anyhow::Error> {
     let r = find_recipe(&all_recipes, recipe)?;
-    println!("{}", r.name);
 
-    let factor = r.ingredients().iter().find_map(|i| match i {
-        Some(Ingredient{ part, quantity }) if part.to_lowercase() == ingredient.to_lowercase() => {
-            Some(amount/quantity)
-        },
-        _ => None
-    }).ok_or_else(|| anyhow::anyhow!("Could not find ingredient {ingredient} in recipe {}", r.name))?;
+    let i = find_ingredient(r, ingredient)?;
+    let factor = amount/i.quantity;
 
+    println!("Standard Recipe: {}\n", r.name);
+    println!("Out:");
+    r.outputs().iter().for_each(|i| print_ingredient(i, None));
+    println!("In:");
+    r.inputs().iter().for_each(|i| print_ingredient(i, None));
+
+    println!("\n{} [{} = {}] ({:.4})", r.name, i.part, amount, factor);
     println!("Out:");
     r.outputs().iter().for_each(|i| print_ingredient(i, Some(factor)));
     println!("In:");

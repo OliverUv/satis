@@ -85,6 +85,7 @@ pub struct Recipe {
 
 impl Recipe {
 
+    // TODO .as_ref all the options
     pub fn inputs(&self) -> [&Option<Ingredient>; 4] {
         [&self.in_1, &self.in_2, &self.in_3, &self.in_4]
     }
