@@ -1,3 +1,4 @@
+use crate::chain::ChainState;
 use crate::types::*;
 
 impl Recipe {
@@ -80,6 +81,33 @@ impl Recipe {
 pub fn print_ingredient(i: &Ingredient, modify: Option<f64>) {
     match modify {
         None => println!("({:4})  {:27} {:15.4}", i.transport(), i.part, i.quantity),
-        Some(m) => println!("  {:24} {:7.2}", i.part, m * i.quantity),
+        Some(m) => println!("  {:31} {:10.2}", i.part, m * i.quantity),
+    }
+}
+
+pub fn print_chain(chain: &ChainState) {
+    for (_name, g) in chain.groups.iter() {
+        println!("\n\nGROUP: {}\n", g.name);
+        for (scale, r) in g.recipes.iter() {
+            print!("\n{:4} X ", scale);
+            r.print();
+        }
+        println!("\nINPUTS\n");
+        for i in g.inputs.iter() {
+            print_ingredient(i, Some(1.0));
+        }
+        println!("\nOUTPUTS\n");
+        for i in g.outputs.iter() {
+            print_ingredient(i, Some(1.0));
+        }
+        let b = g.balances();
+        println!("\nABUNDANCE\n");
+        for i in b.iter().filter(|i| i.quantity >= 0.0001) {
+            print_ingredient(i, Some(1.0));
+        }
+        println!("\nPAUCITY\n");
+        for i in b.iter().filter(|i| i.quantity < -0.0001) {
+            print_ingredient(i, Some(-1.0));
+        }
     }
 }

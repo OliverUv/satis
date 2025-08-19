@@ -100,7 +100,7 @@ fn find_recipe<'a, 'b>(recipe_query: &'b str) -> Result<&'a Recipe> {
     // Otherwise fuzz
     let matcher = SkimMatcherV2::default();
     let mut fuzz: Vec<(&Recipe, i64)> = ALL_RECIPES.iter()
-        .map(|r| (r, matcher.fuzzy_match(&r.name, recipe_query.to_lowercase().as_str())))
+        .map(|r| (r, matcher.fuzzy_match(&r.name, recipe_query)))
         .filter(|(_r, score)| score.is_some())
         .map(|(r, score)| (r, score.expect("Filtered out Nones already")))
         .collect();
@@ -117,7 +117,7 @@ fn find_ingredient_in_recipe<'a, 'b>(recipe: &'a Recipe, ingredient_query: &'b s
     // Otherwise fuzz
     let matcher = SkimMatcherV2::default();
     let mut fuzz: Vec<(&Ingredient, i64)> = recipe.ingredients()
-        .map(|i| (i, matcher.fuzzy_match(i.part.as_str(), ingredient_query.to_lowercase().as_str())))
+        .map(|i| (i, matcher.fuzzy_match(i.part.as_str(), ingredient_query)))
         .filter(|(_i, score)| score.is_some())
         .map(|(i, score)| (i, score.expect("Filtered out Nones already")))
         .collect();
@@ -134,7 +134,7 @@ fn find_ingredient_name<'a, 'b>(ingredient_query:&'b str) -> Result<&'a str> {
     // Otherwise fuzz
     let matcher = SkimMatcherV2::default();
     let mut fuzz: Vec<(&String, i64)> = ALL_INGREDIENTS.iter()
-        .map(|i| (i, matcher.fuzzy_match(i.as_str(), ingredient_query.to_lowercase().as_str())))
+        .map(|i| (i, matcher.fuzzy_match(i.as_str(), ingredient_query)))
         .filter(|(_i, score)| score.is_some())
         .map(|(i, score)| (i, score.expect("Filtered out Nones already")))
         .collect();

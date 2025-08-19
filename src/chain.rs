@@ -2,7 +2,7 @@ use std::collections::HashMap;
 use std::sync::LazyLock;
 
 use anyhow::{anyhow, bail, Context as _, Result};
-use crate::output::print_ingredient;
+use crate::output::{print_chain, print_ingredient};
 use crate::{find_ingredient_in_recipe, find_ingredient_name, find_recipe, types::*};
 
 use regex::Regex;
@@ -38,7 +38,7 @@ enum Action {
 }
 
 #[derive(Debug, Default)]
-struct Group {
+pub struct Group {
     pub name: String,
     pub inputs: Vec<Ingredient>,
     pub outputs: Vec<Ingredient>,
@@ -59,7 +59,7 @@ impl Group {
 }
 
 #[derive(Debug, Default)]
-struct ChainState {
+pub struct ChainState {
     pub groups: HashMap<String, Group>,
     pub current_group: Option<String>,
 }
@@ -114,9 +114,8 @@ pub fn process_chain(_state: State, chain: Vec<String>) -> Result<()> {
         Ok(())
     };
 
-    for (l, a) in chain.into_iter() {
+    for (_l, a) in chain.into_iter() {
         let a = a.expect("Already errored out if anything went wrong.");
-        dbg!(&l);
         match a {
             Action::Comment(_) => (),
             Action::Group { name } => { state.set_or_make_group(&name) },
@@ -131,7 +130,7 @@ pub fn process_chain(_state: State, chain: Vec<String>) -> Result<()> {
             },
             Action::Unknown(x) => panic!("Encountered unknown directive {x}"),
         }
-        print_chain(&state);
+        // print_chain(&state); // For debug
     }
 
     print_chain(&state);
@@ -200,31 +199,4 @@ fn get_ingredient_from<'a, 'b>(
 ) -> Result<&'b Ingredient> {
     collection.find(|i| i.part == query.part)
         .ok_or(anyhow!("Could not find ingredient of type {}", query.part))
-}
-
-fn print_chain(chain: &ChainState) {
-    for (_name, g) in chain.groups.iter() {
-        println!("\n\nGROUP: {}\n", g.name);
-        for (scale, r) in g.recipes.iter() {
-            print!("\n{:4} X ", scale);
-            r.print();
-        }
-        println!("\nINPUTS\n");
-        for i in g.inputs.iter() {
-            print_ingredient(i, Some(1.0));
-        }
-        println!("\nOUTPUTS\n");
-        for i in g.outputs.iter() {
-            print_ingredient(i, Some(1.0));
-        }
-        let b = g.balances();
-        println!("\nABUNDANCE\n");
-        for i in b.iter().filter(|i| i.quantity >= 0.0001) {
-            print_ingredient(i, Some(1.0));
-        }
-        println!("\nPAUCITY\n");
-        for i in b.iter().filter(|i| i.quantity < -0.0001) {
-            print_ingredient(i, Some(-1.0));
-        }
-    }
 }
