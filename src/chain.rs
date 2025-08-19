@@ -1,7 +1,7 @@
 use std::sync::LazyLock;
 
 use anyhow::{anyhow, bail, Result};
-use crate::{find_ingredient_name, types::*};
+use crate::{find_ingredient_name, find_recipe, types::*};
 
 use regex::Regex;
 
@@ -13,9 +13,11 @@ macro_rules! re {
     }
 }
 
-re!(RE_COMMENT, r"^#\s*(.*)$");
-re!(RE_GROUP, r"^group\s*(.*)$");
-re!(RE_MINE, r"^mine\s*(\d*)\s*(.*)$");
+re!(RE_COMMENT, r"^#\s*(.+)$");
+re!(RE_GROUP, r"^group\s+(.+)$");
+re!(RE_MINE, r"^mine\s+([\d|\.]+)\s+(.+)$");
+re!(RE_ALL_INTO, r"^all\s+(.+)\s+into\s+(.+)$");
+re!(RE_USE_INTO, r"^use\s+([\d|\.]+)\s+(.+)\s+into\s+(.+)$");
 
 #[derive(Debug, Clone)]
 enum Action {
@@ -47,7 +49,7 @@ pub fn process_chain(_state: State, chain: Vec<String>) -> Result<()> {
     if any_err { bail!("Could not parse chain file."); }
 
     for a in chain.into_iter().filter_map(|a| a.ok()) {
-        println!("{:?}", a);
+        println!("\n{:?}", a);
     }
 
     todo!()
@@ -64,21 +66,45 @@ impl Action {
         if let Some(caps) = RE_MINE.captures(v) {
             return Ok(Action::Mine{ ingredient: parse_ingredient(&caps[2], Some(&caps[1]))? });
         }
+        if let Some(caps) = RE_ALL_INTO.captures(v) {
+            return Ok(Action::AllInto {
+                ingredient: parse_ingredient(&caps[1], None)?,
+                recipe: parse_recipe(&caps[2])?,
+            });
+        }
+        if let Some(caps) = RE_USE_INTO.captures(v) {
+            return Ok(Action::Use {
+                fraction: parse_float(&caps[1])?,
+                ingredient: parse_ingredient(&caps[2], None)?,
+                recipe: parse_recipe(&caps[3])?,
+            });
+        }
 
         // Err(anyhow!("Could not parse chain command: {}", v))
         Ok(Action::Unknown(v.into()))
     }
 }
 
+fn parse_float(n: &str) -> Result<f64> {
+    Ok(n.parse::<f64>()?)
+}
+
 fn parse_ingredient(part: &str, number: Option<&str>) -> Result<Ingredient> {
     let amount = if let Some(n) = number {
-        n.parse::<f64>()?
+        parse_float(n)?
     } else {
         0.0
     };
     let i = find_ingredient_name(part)?;
+    dbg!(part);
+    dbg!(number);
+    dbg!(&i);
     Ok(Ingredient {
         part: i.to_string(),
         quantity: amount,
     })
+}
+
+fn parse_recipe(name: &str) -> Result<Recipe> {
+    Ok(find_recipe(name)?.clone())
 }

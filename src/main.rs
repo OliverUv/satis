@@ -113,7 +113,7 @@ fn find_ingredient_in_recipe<'a, 'b>(recipe: &'a Recipe, ingredient_query: &'b s
         .map(|(i, score)| (i, score.expect("Filtered out Nones already")))
         .collect();
     fuzz.sort_by_key(|(_i, score)| *score);
-    let best_match_ingredient = fuzz.last().ok_or(anyhow!("Could not find ingredient: {ingredient_query}"))?.0;
+    let best_match_ingredient = fuzz.last().ok_or(anyhow!("Could not find ingredient {ingredient_query} in {recipe:?}"))?.0;
     Ok(best_match_ingredient)
 }
 
@@ -125,7 +125,7 @@ fn find_ingredient_name<'a, 'b>(ingredient_query:&'b str) -> Result<&'a str> {
         .map(|(i, score)| (i, score.expect("Filtered out Nones already")))
         .collect();
     fuzz.sort_by_key(|(_i, score)| *score);
-    let best_match_ingredient = fuzz.last().ok_or(anyhow!("Could not find ingredient: {ingredient_query}"))?.0;
+    let best_match_ingredient = fuzz.last().ok_or(anyhow!("Could not find ingredient name: {ingredient_query}"))?.0;
     Ok(best_match_ingredient)
 }
 
