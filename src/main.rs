@@ -2,7 +2,7 @@ use std::collections::HashSet;
 use std::path::PathBuf;
 use std::fs::read_to_string;
 
-use anyhow::anyhow;
+use anyhow::{anyhow, Result};
 use clap::{Parser, Subcommand};
 use fuzzy_matcher::FuzzyMatcher;
 use fuzzy_matcher::skim::SkimMatcherV2;
@@ -39,7 +39,7 @@ enum Command {
     Chain{file_path: PathBuf},
 }
 
-fn main() -> Result<(), anyhow::Error> {
+fn main() -> Result<()> {
     let all_recipes = get_all_recipes()?;
     let all_ingredients = {
         let mut set = HashSet::new();
@@ -74,7 +74,7 @@ fn main() -> Result<(), anyhow::Error> {
                 })
         },
         Command::Chain{file_path} => {
-            println!("Using chain from: {file_path:?}");
+            println!("\nUsing chain from: {file_path:?}\n");
             let chain = read_to_string(file_path)?
                 .lines()
                 .map(|l| l.into())
@@ -85,7 +85,7 @@ fn main() -> Result<(), anyhow::Error> {
     Ok(())
 }
 
-fn find_recipe<'a, 'b>(all_recipes: &'a RecipeMap, recipe_query: &'b str) -> Result<&'a Recipe, anyhow::Error> {
+fn find_recipe<'a, 'b>(all_recipes: &'a RecipeMap, recipe_query: &'b str) -> Result<&'a Recipe> {
     let matcher = SkimMatcherV2::default();
     let mut fuzz: Vec<(&str, i64)> = all_recipes.keys()
         .map(String::as_str)
@@ -98,7 +98,7 @@ fn find_recipe<'a, 'b>(all_recipes: &'a RecipeMap, recipe_query: &'b str) -> Res
     all_recipes.get(best_match_key).ok_or(anyhow!("Could not find recipe: {best_match_key}"))
 }
 
-fn find_ingredient_in_recipe<'a, 'b>(recipe: &'a Recipe, ingredient_query: &'b str) -> Result<&'a Ingredient, anyhow::Error> {
+fn find_ingredient_in_recipe<'a, 'b>(recipe: &'a Recipe, ingredient_query: &'b str) -> Result<&'a Ingredient> {
     let matcher = SkimMatcherV2::default();
     let mut fuzz: Vec<(&Ingredient, i64)> = recipe.ingredients()
         .map(|i| (i, matcher.fuzzy_match(i.part.as_str(), ingredient_query)))
@@ -110,7 +110,7 @@ fn find_ingredient_in_recipe<'a, 'b>(recipe: &'a Recipe, ingredient_query: &'b s
     Ok(best_match_ingredient)
 }
 
-fn find_ingredient<'a, 'b>(all_ingredients: &'a HashSet<String>, ingredient_query:&'b str) -> Result<&'a str, anyhow::Error> {
+fn find_ingredient<'a, 'b>(all_ingredients: &'a HashSet<String>, ingredient_query:&'b str) -> Result<&'a str> {
     let matcher = SkimMatcherV2::default();
     let mut fuzz: Vec<(&String, i64)> = all_ingredients.iter()
         .map(|i| (i, matcher.fuzzy_match(i.as_str(), ingredient_query)))
@@ -122,13 +122,13 @@ fn find_ingredient<'a, 'b>(all_ingredients: &'a HashSet<String>, ingredient_quer
     Ok(best_match_ingredient)
 }
 
-fn suggest_blueprint(state: State, all_recipes: RecipeMap, recipe: &str) -> Result<(), anyhow::Error> {
+fn suggest_blueprint(state: State, all_recipes: RecipeMap, recipe: &str) -> Result<()> {
     let r = find_recipe(&all_recipes, recipe)?;
     r.print_blueprint_suggestion(&state)?;
     Ok(())
 }
 
-fn mult(_state: State, all_recipes: RecipeMap, recipe: &str, ingredient: &str, amount: f64) -> Result<(), anyhow::Error> {
+fn mult(_state: State, all_recipes: RecipeMap, recipe: &str, ingredient: &str, amount: f64) -> Result<()> {
     let r = find_recipe(&all_recipes, recipe)?;
 
     let i = find_ingredient_in_recipe(r, ingredient)?;

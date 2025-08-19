@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 use std::fmt::Display;
 
-use anyhow::{anyhow, bail};
+use anyhow::{anyhow, bail, Result};
 use serde::{ Serialize, Deserialize };
 
 #[derive(Debug, Serialize, Deserialize, PartialEq, Eq)]
@@ -80,7 +80,7 @@ impl State {
 
 pub type RecipeMap = HashMap<String, Recipe>;
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Recipe {
     pub building: String,
     pub name: String,
@@ -144,7 +144,7 @@ impl Recipe {
         (belt, pipe)
     }
 
-    pub fn suggest_blueprint(&self, state: &State) -> anyhow::Result<BlueprintSuggestion> {
+    pub fn suggest_blueprint(&self, state: &State) -> Result<BlueprintSuggestion> {
         let (max_belt, max_pipe) = self.max_outputs();
         let use_belt = max_belt >= 0.00001;
         let use_pipe = max_pipe >= 0.00001;
@@ -194,7 +194,7 @@ pub struct BlueprintSuggestion {
     pub power_usage_mw: f64,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Ingredient {
     pub part: String,
     pub quantity: f64,
@@ -224,7 +224,7 @@ impl Ingredient {
 
 /// Returns the power usage in MW if possible.
 /// TODO support variable power usage of Particle Accelerator and Converter
-fn calc_power_usage_mw(building: &str, clock: f64) -> anyhow::Result<f64> {
+fn calc_power_usage_mw(building: &str, clock: f64) -> Result<f64> {
     let base_power_usage = match building {
         "Assembler" => 15.0,
         "Blender" => 75.0,

@@ -8,7 +8,7 @@
 
 use std::collections::HashMap;
 
-use anyhow;
+use anyhow::Result;
 
 use crate::types::*;
 
@@ -16,7 +16,7 @@ pub fn recipe_file() -> &'static str {
     include_str!("../recipes.csv")
 }
 
-pub fn get_all_recipes() -> Result<RecipeMap, anyhow::Error> {
+pub fn get_all_recipes() -> Result<RecipeMap> {
     let mut reader = csv::ReaderBuilder::new()
         .has_headers(false)
         .from_reader(recipe_file().as_bytes());
@@ -46,7 +46,7 @@ pub fn get_all_recipes() -> Result<RecipeMap, anyhow::Error> {
     Ok(rmap)
 }
 
-fn apply_patches(recipes: &mut RecipeMap) -> Result<(), anyhow::Error> {
+fn apply_patches(recipes: &mut RecipeMap) -> Result<()> {
     // Diamonds -> Time Crystals, should be 10s 2:1 ratio
     let err = || anyhow::anyhow!("Could not apply patch to Time Crystal recipe");
     let tc = recipes.get_mut("Time Crystal").ok_or_else(err)?;
@@ -55,7 +55,7 @@ fn apply_patches(recipes: &mut RecipeMap) -> Result<(), anyhow::Error> {
     Ok(())
 }
 
-fn add_custom(recipes: &mut RecipeMap) -> Result<(), anyhow::Error> {
+fn add_custom(recipes: &mut RecipeMap) -> Result<()> {
     recipes.insert("Burn Uranium".into(), Recipe {
         building: "Nuclear Power Plant".into(),
         name: "Burn Uranium".into(),
@@ -82,7 +82,7 @@ fn add_custom(recipes: &mut RecipeMap) -> Result<(), anyhow::Error> {
     Ok(())
 }
 
-fn parse_recipe(record: &csv::StringRecord) -> Result<Option<Recipe>, anyhow::Error> {
+fn parse_recipe(record: &csv::StringRecord) -> Result<Option<Recipe>> {
     let fields: Vec<&str> = record.iter().collect();
     if fields[0].is_empty() { return Ok(None); }
     Ok(Some(Recipe {
@@ -101,7 +101,7 @@ fn parse_recipe(record: &csv::StringRecord) -> Result<Option<Recipe>, anyhow::Er
     }))
 }
 
-fn parse_ingredient(part: &str, quantity: &str) -> Result<Option<Ingredient>, anyhow::Error> {
+fn parse_ingredient(part: &str, quantity: &str) -> Result<Option<Ingredient>> {
     if part.is_empty() || quantity.is_empty() {
         return Ok(None);
     }
