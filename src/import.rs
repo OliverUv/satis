@@ -74,7 +74,7 @@ fn add_custom(recipes: &mut RecipeMap) -> Result<()> {
         in_3: None,
         in_4: None,
         out_1: Some(Ingredient {
-            part: "Nuclear Waste".into(),
+            part: "Uranium Waste".into(),
             quantity: 10.,
         }),
         out_2: None,

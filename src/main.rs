@@ -93,10 +93,15 @@ fn main() -> Result<()> {
 }
 
 fn find_recipe<'a, 'b>(recipe_query: &'b str) -> Result<&'a Recipe> {
+    // First try to find exact match
+    let exact = ALL_RECIPES.keys().find(|k| k.to_lowercase() == recipe_query.to_lowercase());
+    if let Some(e) = exact { return Ok(ALL_RECIPES.get(e).expect("Already verified key is in dict")); }
+
+    // Otherwise fuzz
     let matcher = SkimMatcherV2::default();
     let mut fuzz: Vec<(&str, i64)> = ALL_RECIPES.keys()
         .map(String::as_str)
-        .map(|key| (key, matcher.fuzzy_match(key, recipe_query)))
+        .map(|key| (key, matcher.fuzzy_match(key, recipe_query.to_lowercase().as_str())))
         .filter(|(_key, score)| score.is_some())
         .map(|(key, score)| (key, score.expect("Filtered out Nones already")))
         .collect();
@@ -106,9 +111,14 @@ fn find_recipe<'a, 'b>(recipe_query: &'b str) -> Result<&'a Recipe> {
 }
 
 fn find_ingredient_in_recipe<'a, 'b>(recipe: &'a Recipe, ingredient_query: &'b str) -> Result<&'a Ingredient> {
+    // First try to find exact match
+    let exact = recipe.ingredients().find(|i| i.same_type(ingredient_query));
+    if let Some(e) = exact { return Ok(e); }
+
+    // Otherwise fuzz
     let matcher = SkimMatcherV2::default();
     let mut fuzz: Vec<(&Ingredient, i64)> = recipe.ingredients()
-        .map(|i| (i, matcher.fuzzy_match(i.part.as_str(), ingredient_query)))
+        .map(|i| (i, matcher.fuzzy_match(i.part.as_str(), ingredient_query.to_lowercase().as_str())))
         .filter(|(_i, score)| score.is_some())
         .map(|(i, score)| (i, score.expect("Filtered out Nones already")))
         .collect();
@@ -118,9 +128,14 @@ fn find_ingredient_in_recipe<'a, 'b>(recipe: &'a Recipe, ingredient_query: &'b s
 }
 
 fn find_ingredient_name<'a, 'b>(ingredient_query:&'b str) -> Result<&'a str> {
+    // First try to find exact match
+    let exact = ALL_INGREDIENTS.iter().find(|i| i.to_lowercase() == ingredient_query.to_lowercase());
+    if let Some(e) = exact { return Ok(e); }
+
+    // Otherwise fuzz
     let matcher = SkimMatcherV2::default();
     let mut fuzz: Vec<(&String, i64)> = ALL_INGREDIENTS.iter()
-        .map(|i| (i, matcher.fuzzy_match(i.as_str().to_lowercase().as_str(), ingredient_query)))
+        .map(|i| (i, matcher.fuzzy_match(i.as_str(), ingredient_query.to_lowercase().as_str())))
         .filter(|(_i, score)| score.is_some())
         .map(|(i, score)| (i, score.expect("Filtered out Nones already")))
         .collect();

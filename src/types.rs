@@ -201,6 +201,51 @@ pub struct Ingredient {
 }
 
 impl Ingredient {
+
+    #[must_use]
+    pub fn same_type_as(&self, other: &Ingredient) -> bool {
+        self.part == other.part
+    }
+
+    pub fn same_type(&self, other_part: &str) -> bool {
+        self.part.to_lowercase() == other_part.to_lowercase()
+    }
+
+    #[must_use]
+    pub fn neg(&self) -> Self {
+        Ingredient {
+            part: self.part.clone(),
+            quantity: -self.quantity,
+        }
+    }
+
+    #[must_use]
+    pub fn scale(&self, scalar: f64) -> Ingredient {
+        Ingredient {
+            part: self.part.clone(),
+            quantity: self.quantity * scalar,
+        }
+    }
+
+    pub fn merge(&mut self, other: &Ingredient) {
+        if self.part != other.part { panic!("Tried to merge {} with {}", self.part, other.part) }
+        self.quantity = self.quantity + other.quantity;
+    }
+
+    pub fn merge_with(&self, others: &mut Vec<Ingredient>) {
+        let has_same = others.iter_mut().find(|o| o.part == self.part);
+        if let Some(o) = has_same {
+            o.merge(self);
+        } else {
+            others.push(self.clone());
+        }
+    }
+
+    #[must_use]
+    pub fn is_negative(&self) -> bool {
+        self.quantity <= 0.0
+    }
+
     pub fn transport(&self) -> Transport {
         match self.part.as_str() {
             "Alumina Solution" => Transport::Pipe,
@@ -220,6 +265,7 @@ impl Ingredient {
             _ => Transport::Belt,
         }
     }
+
 }
 
 /// Returns the power usage in MW if possible.
