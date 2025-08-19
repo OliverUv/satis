@@ -23,6 +23,7 @@ pub struct State {
     pub pref_multiple_packager: f64,
     pub pref_multiple_particle_accelerator: f64,
     pub pref_multiple_refinery: f64,
+    pub pref_multiple_smelter: f64,
 }
 
 impl Default for State {
@@ -40,6 +41,7 @@ impl Default for State {
             pref_multiple_manufacturer: 2.0,
             pref_multiple_packager: 4.0,
             pref_multiple_particle_accelerator: 1.0,
+            pref_multiple_smelter: 4.0,
             pref_multiple_refinery: 4.0,
         }
     }
@@ -56,6 +58,7 @@ impl State {
             "Manufacturer" => Some(self.pref_multiple_manufacturer),
             "Packager" => Some(self.pref_multiple_packager),
             "Particle Accelerator" => Some(self.pref_multiple_particle_accelerator),
+            "Smelter" => Some(self.pref_multiple_smelter),
             "Refinery" => Some(self.pref_multiple_refinery),
             _ => None,
         }
@@ -81,6 +84,19 @@ pub struct Recipe {
 }
 
 impl Recipe {
+
+    pub fn inputs(&self) -> [&Option<Ingredient>; 4] {
+        [&self.in_1, &self.in_2, &self.in_3, &self.in_4]
+    }
+
+    pub fn outputs(&self) -> [&Option<Ingredient>; 2] {
+        [&self.out_1, &self.out_2]
+    }
+
+    pub fn ingredients(&self) -> [&Option<Ingredient>; 6] {
+        [&self.in_1, &self.in_2, &self.in_3, &self.in_4, &self.out_1, &self.out_2]
+    }
+
     pub fn max_outputs(&self) -> (f64, f64) {
         let mut belt = 0.0;
         let mut pipe = 0.0;
@@ -97,17 +113,21 @@ impl Recipe {
                 *belt_pipe = i.quantity;
             }
         };
-        max_ing(&self.in_1);
-        max_ing(&self.in_2);
-        max_ing(&self.in_3);
-        max_ing(&self.in_4);
-        max_ing(&self.out_1);
-        max_ing(&self.out_2);
+
+        for ingredient in self.ingredients() {
+            max_ing(ingredient);
+        }
+        // max_ing(&self.in_1);
+        // max_ing(&self.in_2);
+        // max_ing(&self.in_3);
+        // max_ing(&self.in_4);
+        // max_ing(&self.out_1);
+        // max_ing(&self.out_2);
 
         (belt, pipe)
     }
 
-    pub fn calc(&self, state: &State) -> anyhow::Result<RecipeCalc> {
+    pub fn blueprint_calc(&self, state: &State) -> anyhow::Result<BlueprintCalc> {
         let (max_belt, max_pipe) = self.max_outputs();
         let use_belt = max_belt >= 0.00001;
         let use_pipe = max_pipe >= 0.00001;
@@ -133,7 +153,7 @@ impl Recipe {
 
         let power_usage_mw = n_boxes * pref_mult * calc_power_usage_mw(self.building.as_str(), clock)?;
 
-        Ok(RecipeCalc {
+        Ok(BlueprintCalc {
             use_belt,
             use_pipe,
             m_per_belt,
@@ -146,7 +166,7 @@ impl Recipe {
     }
 }
 
-pub struct RecipeCalc {
+pub struct BlueprintCalc {
     pub use_belt: bool,
     pub use_pipe: bool,
     pub m_per_belt: f64,

@@ -17,7 +17,10 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Command {
+    /// Generate a blueprint
     Calc{recipe: String},
+    /// See a recipe given a certain amount of an ingredient
+    Mult{recipe: String, ingredient: String, amount: f64}
 }
 
 fn main() -> Result<(), anyhow::Error> {
@@ -26,6 +29,9 @@ fn main() -> Result<(), anyhow::Error> {
     let cli = Cli::parse();
     match &cli.command {
         Command::Calc{recipe} => calc(state, all_recipes, recipe.as_str())?,
+        Command::Mult{recipe, ingredient, amount} => {
+            mult(state, all_recipes, recipe.as_str(), ingredient.as_str(), *amount)?;
+        }
     }
     Ok(())
 }
@@ -49,10 +55,29 @@ fn calc(state: State, all_recipes: RecipeMap, recipe: &str) -> Result<(), anyhow
     Ok(())
 }
 
+fn mult(_state: State, all_recipes: RecipeMap, recipe: &str, ingredient: &str, amount: f64) -> Result<(), anyhow::Error> {
+    let r = find_recipe(&all_recipes, recipe)?;
+    println!("{}", r.name);
+
+    let factor = r.ingredients().iter().find_map(|i| match i {
+        Some(Ingredient{ part, quantity }) if part.to_lowercase() == ingredient.to_lowercase() => {
+            Some(amount/quantity)
+        },
+        _ => None
+    }).ok_or_else(|| anyhow::anyhow!("Could not find ingredient {ingredient} in recipe {}", r.name))?;
+
+    println!("Out:");
+    r.outputs().iter().for_each(|i| print_ingredient(i, Some(factor)));
+    println!("In:");
+    r.inputs().iter().for_each(|i| print_ingredient(i, Some(factor)));
+
+    Ok(())
+}
+
 impl Recipe {
     pub fn print_calc(&self, state: &State) -> anyhow::Result<()> {
         let (max_belt, max_pipe) = self.max_outputs();
-        let RecipeCalc {
+        let BlueprintCalc {
             use_belt,
             use_pipe,
             m_per_belt,
@@ -61,7 +86,7 @@ impl Recipe {
             pref_mult,
             clock,
             power_usage_mw,
-        } = self.calc(state)?;
+        } = self.blueprint_calc(state)?;
 
         println!("\n{:12}{:>39}", self.building, self.name);
         println!("\n  --  IN  --");
@@ -137,5 +162,4 @@ fn print_ingredient(i: &Option<Ingredient>, modify: Option<f64>) {
         None => println!("({:4})  {:27} {:15.4}", t, i.part, i.quantity),
         Some(m) => println!("  {:24} {:7.2}", i.part, m * i.quantity),
     }
-    
 }
