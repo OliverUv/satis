@@ -1,4 +1,5 @@
 use std::collections::HashMap;
+use std::fmt::Display;
 
 use anyhow::{anyhow, bail};
 use serde::{ Serialize, Deserialize };
@@ -8,6 +9,15 @@ use serde::{ Serialize, Deserialize };
 pub enum Transport {
     Belt,
     Pipe,
+}
+
+impl Display for Transport {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            Transport::Belt => write!(f, "Belt"),
+            Transport::Pipe => write!(f, "Pipe"),
+        }
+    }
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -131,7 +141,7 @@ impl Recipe {
         (belt, pipe)
     }
 
-    pub fn blueprint_calc(&self, state: &State) -> anyhow::Result<BlueprintCalc> {
+    pub fn suggest_blueprint(&self, state: &State) -> anyhow::Result<BlueprintSuggestion> {
         let (max_belt, max_pipe) = self.max_outputs();
         let use_belt = max_belt >= 0.00001;
         let use_pipe = max_pipe >= 0.00001;
@@ -157,7 +167,7 @@ impl Recipe {
 
         let power_usage_mw = n_boxes * pref_mult * calc_power_usage_mw(self.building.as_str(), clock)?;
 
-        Ok(BlueprintCalc {
+        Ok(BlueprintSuggestion {
             use_belt,
             use_pipe,
             m_per_belt,
@@ -170,7 +180,7 @@ impl Recipe {
     }
 }
 
-pub struct BlueprintCalc {
+pub struct BlueprintSuggestion {
     pub use_belt: bool,
     pub use_pipe: bool,
     pub m_per_belt: f64,
@@ -215,13 +225,13 @@ fn calc_power_usage_mw(building: &str, clock: f64) -> anyhow::Result<f64> {
         "Assembler" => 15.0,
         "Blender" => 75.0,
         "Constructor" => 4.0,
-        "Converter" => 1.0,
+        "Converter" => 1.0, // fake
         "Foundry" => 16.0,
         "Manufacturer" => 55.0,
         "Packager" => 10.0,
         "Refinery" => 30.0,
         "Smelter" => 4.0,
-        "Particle Accelerator" => 1.0,
+        "Particle Accelerator" => 1.0, // fake
         _ => bail!("Building {} has no defined base power usage.", building),
     };
 

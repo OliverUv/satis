@@ -20,7 +20,7 @@ struct Cli {
 #[derive(Subcommand)]
 enum Command {
     /// Generate a blueprint
-    Calc{recipe: String},
+    Bp{recipe: String},
     /// See a recipe given a certain amount of an ingredient
     Mult{recipe: String, ingredient: String, amount: f64},
     /// Show recipe
@@ -44,7 +44,7 @@ fn main() -> Result<(), anyhow::Error> {
     let state = State::default();
     let cli = Cli::parse();
     match &cli.command {
-        Command::Calc{recipe} => calc(state, all_recipes, recipe.as_str())?,
+        Command::Bp{recipe} => suggest_blueprint(state, all_recipes, recipe.as_str())?,
         Command::Mult{recipe, ingredient, amount} => {
             mult(state, all_recipes, recipe.as_str(), ingredient.as_str(), *amount)?;
         }
@@ -104,9 +104,9 @@ fn find_ingredient<'a, 'b>(all_ingredients: &'a HashSet<String>, ingredient_quer
     Ok(best_match_ingredient)
 }
 
-fn calc(state: State, all_recipes: RecipeMap, recipe: &str) -> Result<(), anyhow::Error> {
+fn suggest_blueprint(state: State, all_recipes: RecipeMap, recipe: &str) -> Result<(), anyhow::Error> {
     let r = find_recipe(&all_recipes, recipe)?;
-    r.print_blueprint_calc(&state)?;
+    r.print_blueprint_suggestion(&state)?;
     Ok(())
 }
 
@@ -132,9 +132,9 @@ fn mult(_state: State, all_recipes: RecipeMap, recipe: &str, ingredient: &str, a
 }
 
 impl Recipe {
-    pub fn print_blueprint_calc(&self, state: &State) -> anyhow::Result<()> {
+    pub fn print_blueprint_suggestion(&self, state: &State) -> anyhow::Result<()> {
         let (max_belt, max_pipe) = self.max_outputs();
-        let BlueprintCalc {
+        let BlueprintSuggestion {
             use_belt,
             use_pipe,
             m_per_belt,
@@ -143,7 +143,7 @@ impl Recipe {
             pref_mult,
             clock,
             power_usage_mw,
-        } = self.blueprint_calc(state)?;
+        } = self.suggest_blueprint(state)?;
 
         println!("\n{:12}{:>39}", self.building, self.name);
         println!("\n  --  IN  --");
@@ -198,7 +198,7 @@ impl Recipe {
 
     fn print(&self) {
         println!("{}", self.name);
-        println!("    Building: {}", self.building);
+        println!("  Building: {}", self.building);
         println!("  Cycle time: {}", self.craft_time_s);
         println!("");
         println!("Out:");
@@ -209,12 +209,8 @@ impl Recipe {
 }
 
 fn print_ingredient(i: &Ingredient, modify: Option<f64>) {
-    let t = match i.transport() {
-        Transport::Belt => "Belt",
-        Transport::Pipe => "Pipe",
-    };
     match modify {
-        None => println!("({:4})  {:27} {:15.4}", t, i.part, i.quantity),
+        None => println!("({:4})  {:27} {:15.4}", i.transport(), i.part, i.quantity),
         Some(m) => println!("  {:24} {:7.2}", i.part, m * i.quantity),
     }
 }
