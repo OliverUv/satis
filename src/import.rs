@@ -41,6 +41,7 @@ pub fn get_all_recipes() -> Result<RecipeMap, anyhow::Error> {
     }
 
     apply_patches(&mut rmap)?;
+    add_custom(&mut rmap)?;
 
     Ok(rmap)
 }
@@ -54,13 +55,40 @@ fn apply_patches(recipes: &mut RecipeMap) -> Result<(), anyhow::Error> {
     Ok(())
 }
 
+fn add_custom(recipes: &mut RecipeMap) -> Result<(), anyhow::Error> {
+    recipes.insert("Burn Uranium".into(), Recipe {
+        building: "Nuclear Power Plant".into(),
+        name: "Burn Uranium".into(),
+        craft_time_s: 300.,
+        is_alt: false,
+        unlocks: "".to_string(),
+        is_unlocked: true,
+        in_1: Some(Ingredient {
+            part: "Uranium Fuel Rod".into(),
+            quantity: 0.2,
+        }),
+        in_2: Some(Ingredient {
+            part: "Water".into(),
+            quantity: 240.,
+        }),
+        in_3: None,
+        in_4: None,
+        out_1: Some(Ingredient {
+            part: "Nuclear Waste".into(),
+            quantity: 10.,
+        }),
+        out_2: None,
+    });
+    Ok(())
+}
+
 fn parse_recipe(record: &csv::StringRecord) -> Result<Option<Recipe>, anyhow::Error> {
     let fields: Vec<&str> = record.iter().collect();
     if fields[0].is_empty() { return Ok(None); }
     Ok(Some(Recipe {
         building: fields[0].into(),
         name: fields[1].into(),
-        craft_time: fields[2].parse()?,
+        craft_time_s: fields[2].parse()?,
         is_alt: fields[3] == "TRUE",
         unlocks: fields[4].into(),
         is_unlocked: fields[5] == "TRUE",

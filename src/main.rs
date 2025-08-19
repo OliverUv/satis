@@ -51,10 +51,7 @@ fn find_recipe<'a, 'b>(all_recipes: &'a RecipeMap, recipe_query: &'b str) -> Res
 
 fn find_ingredient<'a, 'b>(recipe: &'a Recipe, ingredient_query: &'b str) -> Result<&'a Ingredient, anyhow::Error> {
     let matcher = SkimMatcherV2::default();
-    let mut fuzz: Vec<(&Ingredient, i64)> = recipe.ingredients().into_iter()
-        // .filter(|i| i.is_some())
-        // .map(|i| i.as_ref().unwrap())
-        .filter_map(|i| i.as_ref())
+    let mut fuzz: Vec<(&Ingredient, i64)> = recipe.ingredients()
         .map(|i| (i, matcher.fuzzy_match(i.part.as_str(), ingredient_query)))
         .filter(|(_i, score)| score.is_some())
         .map(|(i, score)| (i, score.expect("Filtered out Nones already")))
@@ -66,7 +63,7 @@ fn find_ingredient<'a, 'b>(recipe: &'a Recipe, ingredient_query: &'b str) -> Res
 
 fn calc(state: State, all_recipes: RecipeMap, recipe: &str) -> Result<(), anyhow::Error> {
     let r = find_recipe(&all_recipes, recipe)?;
-    r.print_calc(&state)?;
+    r.print_blueprint_calc(&state)?;
     Ok(())
 }
 
@@ -78,21 +75,21 @@ fn mult(_state: State, all_recipes: RecipeMap, recipe: &str, ingredient: &str, a
 
     println!("Standard Recipe: {}\n", r.name);
     println!("Out:");
-    r.outputs().iter().for_each(|i| print_ingredient(i, None));
+    r.outputs().for_each(|i| print_ingredient(i, None));
     println!("In:");
-    r.inputs().iter().for_each(|i| print_ingredient(i, None));
+    r.inputs().for_each(|i| print_ingredient(i, None));
 
     println!("\n{} [{} = {}] ({:.4})", r.name, i.part, amount, factor);
     println!("Out:");
-    r.outputs().iter().for_each(|i| print_ingredient(i, Some(factor)));
+    r.outputs().for_each(|i| print_ingredient(i, Some(factor)));
     println!("In:");
-    r.inputs().iter().for_each(|i| print_ingredient(i, Some(factor)));
+    r.inputs().for_each(|i| print_ingredient(i, Some(factor)));
 
     Ok(())
 }
 
 impl Recipe {
-    pub fn print_calc(&self, state: &State) -> anyhow::Result<()> {
+    pub fn print_blueprint_calc(&self, state: &State) -> anyhow::Result<()> {
         let (max_belt, max_pipe) = self.max_outputs();
         let BlueprintCalc {
             use_belt,
@@ -107,13 +104,9 @@ impl Recipe {
 
         println!("\n{:12}{:>39}", self.building, self.name);
         println!("\n  --  IN  --");
-        print_ingredient(&self.in_1, None);
-        print_ingredient(&self.in_2, None);
-        print_ingredient(&self.in_3, None);
-        print_ingredient(&self.in_4, None);
+        self.inputs().for_each(|i| print_ingredient(i, None));
         println!("\n  -- OUT  --");
-        print_ingredient(&self.out_1, None);
-        print_ingredient(&self.out_2, None);
+        self.outputs().for_each(|i| print_ingredient(i, None));
         println!("\n  -- CALC --");
 
         if use_belt {
@@ -139,13 +132,9 @@ impl Recipe {
 
         let print_parts = |modifier: f64| {
             println!("Out:");
-            print_ingredient(&self.out_1, Some(modifier));
-            print_ingredient(&self.out_2, Some(modifier));
+            self.outputs().for_each(|i| print_ingredient(i, Some(modifier)));
             println!("In:");
-            print_ingredient(&self.in_1, Some(modifier));
-            print_ingredient(&self.in_2, Some(modifier));
-            print_ingredient(&self.in_3, Some(modifier));
-            print_ingredient(&self.in_4, Some(modifier));
+            self.inputs().for_each(|i| print_ingredient(i, Some(modifier)));
         };
 
         println!("\n  --  BP  --");
@@ -166,11 +155,7 @@ impl Recipe {
 
 }
 
-fn print_ingredient(i: &Option<Ingredient>, modify: Option<f64>) {
-    let i = match i {
-        Some(i) => i,
-        None => return,
-    };
+fn print_ingredient(i: &Ingredient, modify: Option<f64>) {
     let t = match i.transport() {
         Transport::Belt => "Belt",
         Transport::Pipe => "Pipe",

@@ -71,10 +71,11 @@ pub type RecipeMap = HashMap<String, Recipe>;
 pub struct Recipe {
     pub building: String,
     pub name: String,
-    pub craft_time: f64,
+    pub craft_time_s: f64,
     pub is_alt: bool,
     pub unlocks: String,
     pub is_unlocked: bool,
+    // Quanitites of ingredients is specified per minute
     pub in_1: Option<Ingredient>,
     pub in_2: Option<Ingredient>,
     pub in_3: Option<Ingredient>,
@@ -85,27 +86,37 @@ pub struct Recipe {
 
 impl Recipe {
 
-    // TODO .as_ref all the options
-    pub fn inputs(&self) -> [&Option<Ingredient>; 4] {
-        [&self.in_1, &self.in_2, &self.in_3, &self.in_4]
+    pub fn inputs(&self) -> impl Iterator<Item=&Ingredient> {
+        [
+            self.in_1.as_ref(),
+            self.in_2.as_ref(),
+            self.in_3.as_ref(),
+            self.in_4.as_ref(),
+        ].into_iter().filter_map(|i| i)
     }
 
-    pub fn outputs(&self) -> [&Option<Ingredient>; 2] {
-        [&self.out_1, &self.out_2]
+    pub fn outputs(&self) -> impl Iterator<Item=&Ingredient> {
+        [
+            self.out_1.as_ref(),
+            self.out_2.as_ref(),
+        ].into_iter().filter_map(|i| i)
     }
 
-    pub fn ingredients(&self) -> [&Option<Ingredient>; 6] {
-        [&self.in_1, &self.in_2, &self.in_3, &self.in_4, &self.out_1, &self.out_2]
+    pub fn ingredients(&self) -> impl Iterator<Item=&Ingredient> {
+        [
+            self.in_1.as_ref(),
+            self.in_2.as_ref(),
+            self.in_3.as_ref(),
+            self.in_4.as_ref(),
+            self.out_1.as_ref(),
+            self.out_2.as_ref(),
+        ].into_iter().filter_map(|i| i)
     }
 
     pub fn max_outputs(&self) -> (f64, f64) {
         let mut belt = 0.0;
         let mut pipe = 0.0;
-        let max_ing = |i: &Option<Ingredient>| {
-            let i = match i {
-                Some(i) => i,
-                None => return,
-            };
+        let max_ing = |i: &Ingredient| {
             let belt_pipe = match i.transport() {
                 Transport::Belt => &mut belt,
                 Transport::Pipe => &mut pipe,
@@ -115,7 +126,7 @@ impl Recipe {
             }
         };
 
-        self.ingredients().into_iter().for_each(max_ing);
+        self.ingredients().for_each(max_ing);
 
         (belt, pipe)
     }
