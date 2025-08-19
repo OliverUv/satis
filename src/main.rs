@@ -29,7 +29,7 @@ pub static ALL_INGREDIENTS: LazyLock<HashSet<String>> = LazyLock::new(|| {
     let mut set = HashSet::new();
     for (_name, r) in ALL_RECIPES.iter() {
         for i in r.ingredients() {
-            set.insert(i.part.to_lowercase());
+            set.insert(i.part.clone());
         }
     }
     set
@@ -73,7 +73,7 @@ fn main() -> Result<()> {
             let i = find_ingredient_name(ingredient)?;
             ALL_RECIPES.iter()
                 .map(|(_, r)| r)
-                .filter(|r| r.outputs().any(|o| o.part.to_lowercase() == i))
+                .filter(|r| r.outputs().any(|o| o.part == i))
                 .for_each(|r| {
                     println!("=========");
                     r.print();
@@ -120,7 +120,7 @@ fn find_ingredient_in_recipe<'a, 'b>(recipe: &'a Recipe, ingredient_query: &'b s
 fn find_ingredient_name<'a, 'b>(ingredient_query:&'b str) -> Result<&'a str> {
     let matcher = SkimMatcherV2::default();
     let mut fuzz: Vec<(&String, i64)> = ALL_INGREDIENTS.iter()
-        .map(|i| (i, matcher.fuzzy_match(i.as_str(), ingredient_query)))
+        .map(|i| (i, matcher.fuzzy_match(i.as_str().to_lowercase().as_str(), ingredient_query)))
         .filter(|(_i, score)| score.is_some())
         .map(|(i, score)| (i, score.expect("Filtered out Nones already")))
         .collect();
