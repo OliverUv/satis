@@ -1,4 +1,3 @@
-use std::collections::HashMap;
 use std::fmt::Display;
 
 use anyhow::{anyhow, bail, Result};
@@ -78,7 +77,11 @@ impl State {
     }
 }
 
-pub type RecipeMap = HashMap<String, Recipe>;
+pub type RecipeCollection = Vec<Recipe>;
+
+pub fn recipe_by_name_mut<'a, 'b>(col: &'a mut RecipeCollection, name: &'b str) -> Option<&'a mut Recipe> {
+    col.iter_mut().find(|r| r.name == name)
+}
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Recipe {

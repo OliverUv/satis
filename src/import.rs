@@ -6,8 +6,6 @@
 //! You MUST remove the first two header lines from the csv file.
 //! You SHOULD remove all the weird ,,,FALSE,,, lines at the bottom of the file.
 
-use std::collections::HashMap;
-
 use anyhow::Result;
 
 use crate::types::*;
@@ -16,7 +14,7 @@ pub fn recipe_file() -> &'static str {
     include_str!("../recipes.csv")
 }
 
-pub fn get_all_recipes() -> Result<RecipeMap> {
+pub fn get_all_recipes() -> Result<RecipeCollection> {
     let mut reader = csv::ReaderBuilder::new()
         .has_headers(false)
         .from_reader(recipe_file().as_bytes());
@@ -34,29 +32,23 @@ pub fn get_all_recipes() -> Result<RecipeMap> {
         }
     }
 
-    let mut rmap = HashMap::new();
-    for r in recipes.into_iter() {
-        let name = r.name.clone();
-        rmap.insert(name, r);
-    }
+    apply_patches(&mut recipes)?;
+    add_custom(&mut recipes)?;
 
-    apply_patches(&mut rmap)?;
-    add_custom(&mut rmap)?;
-
-    Ok(rmap)
+    Ok(recipes)
 }
 
-fn apply_patches(recipes: &mut RecipeMap) -> Result<()> {
+fn apply_patches(recipes: &mut RecipeCollection) -> Result<()> {
     // Diamonds -> Time Crystals, should be 10s 2:1 ratio
     let err = || anyhow::anyhow!("Could not apply patch to Time Crystal recipe");
-    let tc = recipes.get_mut("Time Crystal").ok_or_else(err)?;
+    let tc = recipe_by_name_mut(recipes, "Time Crystal").ok_or_else(err)?;
     let diamonds = tc.in_1.as_mut().ok_or_else(err)?;
     diamonds.quantity = 12.0;
     Ok(())
 }
 
-fn add_custom(recipes: &mut RecipeMap) -> Result<()> {
-    recipes.insert("Burn Uranium".into(), Recipe {
+fn add_custom(recipes: &mut RecipeCollection) -> Result<()> {
+    recipes.push(Recipe {
         building: "Nuclear Power Plant".into(),
         name: "Burn Uranium".into(),
         craft_time_s: 300.,

@@ -17,7 +17,7 @@ use chain::*;
 pub mod import;
 use import::get_all_recipes;
 
-pub static ALL_RECIPES: LazyLock<RecipeMap> = LazyLock::new(|| {
+pub static ALL_RECIPES: LazyLock<RecipeCollection> = LazyLock::new(|| {
     let r = get_all_recipes();
     match r {
         Err(e) => { panic!("Could not parse recipes: {}", e); }
@@ -27,7 +27,7 @@ pub static ALL_RECIPES: LazyLock<RecipeMap> = LazyLock::new(|| {
 
 pub static ALL_INGREDIENTS: LazyLock<HashSet<String>> = LazyLock::new(|| {
     let mut set = HashSet::new();
-    for (_name, r) in ALL_RECIPES.iter() {
+    for r in ALL_RECIPES.iter() {
         for i in r.ingredients() {
             set.insert(i.part.clone());
         }
@@ -72,7 +72,7 @@ fn main() -> Result<()> {
         Command::Find{ingredient} => {
             let i = find_ingredient_name(ingredient)?;
             ALL_RECIPES.iter()
-                .map(|(_, r)| r)
+                .map(|r| r)
                 .filter(|r| r.outputs().any(|o| o.part == i))
                 .for_each(|r| {
                     println!("=========");
@@ -94,20 +94,19 @@ fn main() -> Result<()> {
 
 fn find_recipe<'a, 'b>(recipe_query: &'b str) -> Result<&'a Recipe> {
     // First try to find exact match
-    let exact = ALL_RECIPES.keys().find(|k| k.to_lowercase() == recipe_query.to_lowercase());
-    if let Some(e) = exact { return Ok(ALL_RECIPES.get(e).expect("Already verified key is in dict")); }
+    let exact = ALL_RECIPES.iter().find(|k| k.name.to_lowercase() == recipe_query.to_lowercase());
+    if let Some(e) = exact { return Ok(e); }
 
     // Otherwise fuzz
     let matcher = SkimMatcherV2::default();
-    let mut fuzz: Vec<(&str, i64)> = ALL_RECIPES.keys()
-        .map(String::as_str)
-        .map(|key| (key, matcher.fuzzy_match(key, recipe_query.to_lowercase().as_str())))
-        .filter(|(_key, score)| score.is_some())
-        .map(|(key, score)| (key, score.expect("Filtered out Nones already")))
+    let mut fuzz: Vec<(&Recipe, i64)> = ALL_RECIPES.iter()
+        .map(|r| (r, matcher.fuzzy_match(&r.name, recipe_query.to_lowercase().as_str())))
+        .filter(|(_r, score)| score.is_some())
+        .map(|(r, score)| (r, score.expect("Filtered out Nones already")))
         .collect();
-    fuzz.sort_by_key(|(_key, score)| *score);
-    let best_match_key = fuzz.last().ok_or(anyhow!("Could not find recipe: {recipe_query}"))?.0;
-    ALL_RECIPES.get(best_match_key).ok_or(anyhow!("Could not find recipe: {best_match_key}"))
+    fuzz.sort_by_key(|(_r, score)| *score);
+    let best_match = fuzz.last().ok_or(anyhow!("Could not find recipe: {recipe_query}"))?.0;
+    Ok(best_match)
 }
 
 fn find_ingredient_in_recipe<'a, 'b>(recipe: &'a Recipe, ingredient_query: &'b str) -> Result<&'a Ingredient> {
