@@ -1,6 +1,7 @@
 use std::collections::HashSet;
-use std::path::PathBuf;
 use std::fs::read_to_string;
+use std::path::PathBuf;
+use std::sync::LazyLock;
 
 use anyhow::{anyhow, Result};
 use clap::{Parser, Subcommand};
@@ -13,9 +14,27 @@ pub mod output;
 use output::*;
 pub mod chain;
 use chain::*;
-
 pub mod import;
 use import::get_all_recipes;
+
+pub static ALL_RECIPES: LazyLock<RecipeMap> = LazyLock::new(|| {
+    let r = get_all_recipes();
+    match r {
+        Err(e) => { panic!("Could not parse recipes: {}", e); }
+        Ok(r) => r,
+    }
+});
+
+pub static ALL_INGREDIENTS: LazyLock<HashSet<String>> = LazyLock::new(|| {
+    let mut set = HashSet::new();
+    for (_name, r) in ALL_RECIPES.iter() {
+        for i in r.ingredients() {
+            set.insert(i.part.to_lowercase());
+        }
+    }
+    set
+});
+
 
 #[derive(Parser)]
 #[command(name = "satis")]
@@ -40,31 +59,19 @@ enum Command {
 }
 
 fn main() -> Result<()> {
-    let all_recipes = get_all_recipes()?;
-    let all_ingredients = {
-        let mut set = HashSet::new();
-        for (_name, r) in all_recipes.iter() {
-            for i in r.ingredients() {
-                set.insert(i.part.to_lowercase());
-            }
-        }
-        set
-    };
-
     let state = State::default();
     let cli = Cli::parse();
     match &cli.command {
-        Command::Bp{recipe} => suggest_blueprint(state, all_recipes, recipe.as_str())?,
+        Command::Bp{recipe} => suggest_blueprint(state, recipe.as_str())?,
         Command::Mult{recipe, ingredient, amount} => {
-            mult(state, all_recipes, recipe.as_str(), ingredient.as_str(), *amount)?;
+            mult(state, recipe.as_str(), ingredient.as_str(), *amount)?;
         }
         Command::Show{recipe} => {
-            let r = find_recipe(&all_recipes, recipe)?;
-            r.print();
+            find_recipe(recipe)?.print();
         }
         Command::Find{ingredient} => {
-            let i = find_ingredient(&all_ingredients, ingredient)?;
-            all_recipes.iter()
+            let i = find_ingredient_name(ingredient)?;
+            ALL_RECIPES.iter()
                 .map(|(_, r)| r)
                 .filter(|r| r.outputs().any(|o| o.part.to_lowercase() == i))
                 .for_each(|r| {
@@ -79,15 +86,15 @@ fn main() -> Result<()> {
                 .lines()
                 .map(|l| l.into())
                 .collect();
-            process_chain(state, all_recipes, chain)?;
+            process_chain(state, chain)?;
         }
     }
     Ok(())
 }
 
-fn find_recipe<'a, 'b>(all_recipes: &'a RecipeMap, recipe_query: &'b str) -> Result<&'a Recipe> {
+fn find_recipe<'a, 'b>(recipe_query: &'b str) -> Result<&'a Recipe> {
     let matcher = SkimMatcherV2::default();
-    let mut fuzz: Vec<(&str, i64)> = all_recipes.keys()
+    let mut fuzz: Vec<(&str, i64)> = ALL_RECIPES.keys()
         .map(String::as_str)
         .map(|key| (key, matcher.fuzzy_match(key, recipe_query)))
         .filter(|(_key, score)| score.is_some())
@@ -95,7 +102,7 @@ fn find_recipe<'a, 'b>(all_recipes: &'a RecipeMap, recipe_query: &'b str) -> Res
         .collect();
     fuzz.sort_by_key(|(_key, score)| *score);
     let best_match_key = fuzz.last().ok_or(anyhow!("Could not find recipe: {recipe_query}"))?.0;
-    all_recipes.get(best_match_key).ok_or(anyhow!("Could not find recipe: {best_match_key}"))
+    ALL_RECIPES.get(best_match_key).ok_or(anyhow!("Could not find recipe: {best_match_key}"))
 }
 
 fn find_ingredient_in_recipe<'a, 'b>(recipe: &'a Recipe, ingredient_query: &'b str) -> Result<&'a Ingredient> {
@@ -110,9 +117,9 @@ fn find_ingredient_in_recipe<'a, 'b>(recipe: &'a Recipe, ingredient_query: &'b s
     Ok(best_match_ingredient)
 }
 
-fn find_ingredient<'a, 'b>(all_ingredients: &'a HashSet<String>, ingredient_query:&'b str) -> Result<&'a str> {
+fn find_ingredient_name<'a, 'b>(ingredient_query:&'b str) -> Result<&'a str> {
     let matcher = SkimMatcherV2::default();
-    let mut fuzz: Vec<(&String, i64)> = all_ingredients.iter()
+    let mut fuzz: Vec<(&String, i64)> = ALL_INGREDIENTS.iter()
         .map(|i| (i, matcher.fuzzy_match(i.as_str(), ingredient_query)))
         .filter(|(_i, score)| score.is_some())
         .map(|(i, score)| (i, score.expect("Filtered out Nones already")))
@@ -122,14 +129,14 @@ fn find_ingredient<'a, 'b>(all_ingredients: &'a HashSet<String>, ingredient_quer
     Ok(best_match_ingredient)
 }
 
-fn suggest_blueprint(state: State, all_recipes: RecipeMap, recipe: &str) -> Result<()> {
-    let r = find_recipe(&all_recipes, recipe)?;
+fn suggest_blueprint(state: State, recipe: &str) -> Result<()> {
+    let r = find_recipe(recipe)?;
     r.print_blueprint_suggestion(&state)?;
     Ok(())
 }
 
-fn mult(_state: State, all_recipes: RecipeMap, recipe: &str, ingredient: &str, amount: f64) -> Result<()> {
-    let r = find_recipe(&all_recipes, recipe)?;
+fn mult(_state: State, recipe: &str, ingredient: &str, amount: f64) -> Result<()> {
+    let r = find_recipe(recipe)?;
 
     let i = find_ingredient_in_recipe(r, ingredient)?;
     let factor = amount/i.quantity;
