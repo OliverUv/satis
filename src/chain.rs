@@ -2,7 +2,7 @@ use std::collections::HashMap;
 use std::sync::LazyLock;
 
 use anyhow::{anyhow, bail, Context as _, Result};
-use crate::output::{print_chain, print_ingredient};
+use crate::output::print_chain;
 use crate::{find_ingredient_in_recipe, find_ingredient_name, find_recipe, types::*};
 
 use regex::Regex;
@@ -20,6 +20,7 @@ re!(RE_GROUP, r"^group\s+(.+)$");
 re!(RE_MINE, r"^mine\s+([\d|\.]+)\s+(.+)$");
 re!(RE_ALL_INTO, r"^all\s+(.+)\s+into\s+(.+)$");
 re!(RE_USE_INTO, r"^use\s+([\d|\.]+)\s+(.+)\s+into\s+(.+)$");
+re!(RE_PROVIDE_WITH, r"^provide\s+(.+)\s+with\s+(.+)$");
 
 #[allow(unused)]
 #[derive(Debug, Clone)]
