@@ -165,7 +165,6 @@ impl Action {
         }
 
         Err(anyhow!("Could not parse chain command: {}", v))
-        // Ok(Action::Unknown(v.into()))
     }
 }
 

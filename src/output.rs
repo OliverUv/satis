@@ -90,15 +90,15 @@ pub fn print_chain(chain: &ChainState) {
         let q = i.quantity;
         let n = &i.part;
         let r = (q * pmf).round();
-        let sq = format!("[{:.2}]", q * scale);
-        println!(" {r:4} {n:31} {q:10.2} {sq:>15}");
+        let sq = format!("[{:.3}]", q * scale);
+        println!(" {r:4} {n:31} {q:10.3} {sq:>15}");
     }
     for (_name, g) in chain.groups.iter() {
         println!("\n\nGROUP: {}\n", g.name);
         for (scale, r) in g.recipes.iter() {
             let n = &r.name;
             let b = &r.building;
-            let s = format!("{scale:.2}");
+            let s = format!("{scale:.3}");
             let bs = format!("{b} * {s}");
             println!("\n\n{n:31} {bs:>32}");
 
@@ -125,5 +125,7 @@ pub fn print_chain(chain: &ChainState) {
         for i in b.iter().filter(|i| i.quantity < -0.0001) {
             print_ingredient(i, Some(-1.0));
         }
+
+        // println!("{:#?}", b); // For debug
     }
 }
